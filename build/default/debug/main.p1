@@ -20,7 +20,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _clkInit `(v ~T0 @X0 0 ef ]
 "5 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
-"7 ./sensor.h
+"9 ./sensor.h
 [v _sensorInit `(v ~T0 @X0 0 ef ]
 "9 ./motor.h
 [v _motorInit `(v ~T0 @X0 0 ef ]
@@ -700,43 +700,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _buzzerInit ..  ]
 "56
 [e ( _i2cInit ..  ]
-"61
+"59
 [e ( _buzz (1 -> -> 200 `i `ui ]
-"63
+"61
 [e :U 841 ]
 {
 }
 [e :U 840 ]
 [e $U 841  ]
 [e :U 842 ]
-"64
+"62
 [e ) -> 0 `i ]
 [e $UE 839  ]
-"65
+"63
 [e :UE 839 ]
 }
 [v $root$_globalInt `(v ~T0 @X0 0 e ]
-"68
+"66
 [v _globalInt `(v ~T1 @X0 1 ef ]
 {
 [e :U _globalInt ]
 [f ]
-"69
+"67
 [e $ ! _TMR0IF 844  ]
 {
-"70
+"68
 [e ( _clockInterrupt ..  ]
-"71
+"69
 }
 [e :U 844 ]
-"72
+"70
 [e $ ! _SSP1IF 845  ]
 {
-"73
+"71
 [e ( _i2cInterrupt ..  ]
-"74
+"72
 }
 [e :U 845 ]
-"75
+"73
 [e :UE 843 ]
 }

@@ -13,4 +13,6 @@ typedef char bool;
 #define true  1
 #define false 0
 
+#define BREAK __builtin_software_breakpoint()
+
 #endif	/* TYPES_H */

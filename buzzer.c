@@ -21,7 +21,7 @@ void buzzEndInt(void){
   BUZZ_LAT = 0;
 }
 
-// runs in interrupt
+// called from interrupt every 1 ms
 void chkBuzzer(void) {
   if(buzzCountdown) {
     if(buzzCountdown-- == 1) 

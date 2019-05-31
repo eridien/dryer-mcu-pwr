@@ -55,8 +55,6 @@ int main(int argc, char** argv) {
   buzzerInit();
   i2cInit();
   
-//  __builtin_software_breakpoint();
-  
   // beep at wakeup
   buzz(200); // 200 msec
   
