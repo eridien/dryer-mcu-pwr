@@ -28,8 +28,10 @@
 #define MC_LAT     LATC5
 #define MD_LAT     LATC4
 
-#define SENSH_ANS  ANSA2
-#define SENSB_ANS  ANSA4
+#define SENSH_ANS  ANSELAbits.ANSA2
+#define SENSB_ANS  ANSELAbits.ANSA4
 
+#define SENSH_CHAN 2  // for CHS channel select
+#define SENSB_CHAN 4
 
 #endif	/* PINS_H */

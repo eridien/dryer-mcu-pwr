@@ -3,9 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _LATA5 `Vb ~T0 @X0 0 e@197 ]
 "21934
 [v _TRISA5 `Vb ~T0 @X0 0 e@149 ]
-"9 ./buzzer.h
-[v _buzzEnd `(v ~T0 @X0 0 ef ]
-"19024 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+"19024
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
@@ -586,7 +584,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17909
 [; <" TOSH equ 01FEFh ;# ">
 "6 buzzer.c
-[v _buzzCountdown `Vui ~T0 @X0 1 e ]
+[v _buzzCountdown `ui ~T0 @X0 1 e ]
+[i _buzzCountdown
+-> -> 0 `i `ui
+]
 "8
 [v _buzzerInit `(v ~T0 @X0 1 ef ]
 {
@@ -600,55 +601,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 839 ]
 }
 "13
+[v _buzzEnd `(v ~T0 @X0 1 ef ]
+{
+[e :U _buzzEnd ]
+[f ]
+"14
+[e = _GIE -> -> 0 `i `b ]
+"15
+[e = _buzzCountdown -> -> 0 `i `ui ]
+"16
+[e = _GIE -> -> 1 `i `b ]
+"17
+[e = _LATA5 -> -> 0 `i `b ]
+"18
+[e :UE 840 ]
+}
+"19
+[v _buzzEndInt `(v ~T0 @X0 1 ef ]
+{
+[e :U _buzzEndInt ]
+[f ]
+"20
+[e = _buzzCountdown -> -> 0 `i `ui ]
+"21
+[e = _LATA5 -> -> 0 `i `b ]
+"22
+[e :UE 841 ]
+}
+"25
+[v _chkBuzzer `(v ~T0 @X0 1 ef ]
+{
+[e :U _chkBuzzer ]
+[f ]
+"26
+[e $ ! != _buzzCountdown -> -> 0 `i `ui 843  ]
+{
+"27
+[e $ ! == -- _buzzCountdown -> -> 1 `i `ui -> -> 1 `i `ui 844  ]
+"28
+[e ( _buzzEndInt ..  ]
+[e :U 844 ]
+"29
+}
+[e :U 843 ]
+"30
+[e :UE 842 ]
+}
+"33
 [v _buzz `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _buzz ]
 [v _ms `ui ~T0 @X0 1 r1 ]
 [f ]
-"14
+"34
 [e ( _buzzEnd ..  ]
-"15
-[e $ ! != _ms -> -> 0 `i `ui 841  ]
+"35
+[e $ ! != _ms -> -> 0 `i `ui 846  ]
 {
-"16
+"36
 [e = _LATA5 -> -> 1 `i `b ]
-"17
+"37
 [e = _GIE -> -> 0 `i `b ]
-"18
+"38
 [e = _buzzCountdown _ms ]
-"19
+"39
 [e = _GIE -> -> 1 `i `b ]
-"20
+"40
 }
-[e :U 841 ]
-"21
-[e :UE 840 ]
-}
-"23
-[v _buzzEnd `(v ~T0 @X0 1 ef ]
-{
-[e :U _buzzEnd ]
-[f ]
-"24
-[e = _GIE -> -> 0 `i `b ]
-"25
-[e = _buzzCountdown -> -> 0 `i `ui ]
-"26
-[e = _GIE -> -> 1 `i `b ]
-"27
-[e = _LATA5 -> -> 0 `i `b ]
-"28
-[e :UE 842 ]
-}
-"29
-[v _buzzEndInt `(v ~T0 @X0 1 ef ]
-{
-[e :U _buzzEndInt ]
-[f ]
-"30
-[e = _buzzCountdown -> -> 0 `i `ui ]
-"31
-[e = _LATA5 -> -> 0 `i `b ]
-"32
-[e :UE 843 ]
+[e :U 846 ]
+"41
+[e :UE 845 ]
 }

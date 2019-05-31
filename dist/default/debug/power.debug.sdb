@@ -6,18 +6,20 @@
 "8 S:\dev\erdry\power\buzzer.c
 [v _buzzerInit buzzerInit `(v  1 e 1 0 ]
 "13
-[v _buzz buzz `(v  1 e 1 0 ]
-"23
 [v _buzzEnd buzzEnd `(v  1 e 1 0 ]
-"29
+"19
 [v _buzzEndInt buzzEndInt `(v  1 e 1 0 ]
+"25
+[v _chkBuzzer chkBuzzer `(v  1 e 1 0 ]
+"33
+[v _buzz buzz `(v  1 e 1 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"12 S:\dev\erdry\power\clock.c
+"13 S:\dev\erdry\power\clock.c
 [v _clkInit clkInit `(v  1 e 1 0 ]
-"27
+"29
 [v _clockInterrupt clockInterrupt `(v  1 e 1 0 ]
 "6 S:\dev\erdry\power\command.c
 [v _handleCmd handleCmd `(v  1 e 1 0 ]
@@ -35,11 +37,58 @@
 [v _motorInit motorInit `(v  1 e 1 0 ]
 "2 S:\dev\erdry\power\pwm.c
 [v _pwmInit pwmInit `(v  1 e 1 0 ]
-"2 S:\dev\erdry\power\sensor.c
+"10 S:\dev\erdry\power\sensor.c
 [v _sensorInit sensorInit `(v  1 e 1 0 ]
+"27
+[v _chkSensors chkSensors `(v  1 e 1 0 ]
 "6 S:\dev\erdry\power\buzzer.c
-[v _buzzCountdown buzzCountdown `VEui  1 e 2 0 ]
-"1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _buzzCountdown buzzCountdown `ui  1 e 2 0 ]
+"743 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"813
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+[s S579 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GOnDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+`uc 1 CHS5 1 0 :1:7 
+]
+"904
+[s S588 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CHS 1 0 :6:2 
+]
+[u S591 . 1 `S579 1 . 1 0 `S588 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES591  1 e 1 @157 ]
+[s S512 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"975
+[s S520 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS 1 0 :3:4 
+]
+[u S524 . 1 `S512 1 . 1 0 `S520 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES524  1 e 1 @158 ]
+[s S540 . 1 `uc 1 ADACT0 1 0 :1:0 
+`uc 1 ADACT1 1 0 :1:1 
+`uc 1 ADACT2 1 0 :1:2 
+`uc 1 ADACT3 1 0 :1:3 
+`uc 1 ADACT4 1 0 :1:4 
+]
+"1037
+[s S546 . 1 `uc 1 ADACT 1 0 :5:0 
+]
+[u S548 . 1 `S540 1 . 1 0 `S546 1 . 1 0 ]
+[v _ADACTbits ADACTbits `VES548  1 e 1 @159 ]
+"1917
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "1937
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
@@ -210,26 +259,26 @@
 [v _SSP1CON3bits SSP1CON3bits `VES425  1 e 1 @402 ]
 "6619
 [v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
-[s S563 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S691 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "6893
-[s S569 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S697 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S574 . 1 `S563 1 . 1 0 `S569 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES574  1 e 1 @1438 ]
-[s S516 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[u S702 . 1 `S691 1 . 1 0 `S697 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES702  1 e 1 @1438 ]
+[s S644 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 T0ASYNC 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "6969
-[s S520 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S648 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -238,17 +287,27 @@
 `uc 1 T0CS1 1 0 :1:6 
 `uc 1 T0CS2 1 0 :1:7 
 ]
-[s S529 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S657 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
-[s S534 . 1 `uc 1 T0PS 1 0 :4:0 
+[s S662 . 1 `uc 1 T0PS 1 0 :4:0 
 ]
-[u S536 . 1 `S516 1 . 1 0 `S520 1 . 1 0 `S529 1 . 1 0 `S534 1 . 1 0 ]
-[v _T0CON1bits T0CON1bits `VES536  1 e 1 @1439 ]
+[u S664 . 1 `S644 1 . 1 0 `S648 1 . 1 0 `S657 1 . 1 0 `S662 1 . 1 0 ]
+[v _T0CON1bits T0CON1bits `VES664  1 e 1 @1439 ]
 "16814
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+[s S562 . 1 `uc 1 ANSA0 1 0 :1:0 
+`uc 1 ANSA1 1 0 :1:1 
+`uc 1 ANSA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ANSA4 1 0 :1:4 
+`uc 1 ANSA5 1 0 :1:5 
+]
+"16829
+[u S569 . 1 `S562 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES569  1 e 1 @7992 ]
 [s S24 . 1 `uc 1 WPUA0 1 0 :1:0 
 `uc 1 WPUA1 1 0 :1:1 
 `uc 1 WPUA2 1 0 :1:2 
@@ -279,9 +338,13 @@
 [v _TMR0IE TMR0IE `VEb  1 e 0 @14517 ]
 "21718
 [v _TMR0IF TMR0IF `VEb  1 e 0 @14437 ]
+"21928
+[v _TRISA2 TRISA2 `VEb  1 e 0 @146 ]
+"21931
+[v _TRISA4 TRISA4 `VEb  1 e 0 @148 ]
 "21934
 [v _TRISA5 TRISA5 `VEb  1 e 0 @149 ]
-"25 S:\dev\erdry\power\clock.c
+"26 S:\dev\erdry\power\clock.c
 [v _timeTicks timeTicks `VEui  1 e 2 0 ]
 "4 S:\dev\erdry\power\command.c
 [v _haveCommand haveCommand `uc  1 e 1 0 ]
@@ -293,15 +356,21 @@
 [v _i2cSendBytes i2cSendBytes `VE[10]uc  1 e 10 0 ]
 "14
 [v _i2cSendBytesPtr i2cSendBytesPtr `VEuc  1 e 1 0 ]
+"5 S:\dev\erdry\power\sensor.c
+[v _curSensor curSensor `uc  1 e 1 0 ]
+"6
+[v _sensDelaying sensDelaying `uc  1 e 1 0 ]
+"8
+[v _curSensorReading curSensorReading `VE[2]ui  1 e 4 0 ]
 "42 S:\dev\erdry\power\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "65
 } 0
-"2 S:\dev\erdry\power\sensor.c
+"10 S:\dev\erdry\power\sensor.c
 [v _sensorInit sensorInit `(v  1 e 1 0 ]
 {
-"4
+"24
 } 0
 "2 S:\dev\erdry\power\pwm.c
 [v _pwmInit pwmInit `(v  1 e 1 0 ]
@@ -318,26 +387,26 @@
 {
 "27
 } 0
-"12 S:\dev\erdry\power\clock.c
+"13 S:\dev\erdry\power\clock.c
 [v _clkInit clkInit `(v  1 e 1 0 ]
 {
-"23
+"24
 } 0
 "8 S:\dev\erdry\power\buzzer.c
 [v _buzzerInit buzzerInit `(v  1 e 1 0 ]
 {
 "11
 } 0
-"13
+"33
 [v _buzz buzz `(v  1 e 1 0 ]
 {
-[v buzz@ms ms `ui  1 p 2 1 ]
-"21
+[v buzz@ms ms `ui  1 p 2 3 ]
+"41
 } 0
-"23
+"13
 [v _buzzEnd buzzEnd `(v  1 e 1 0 ]
 {
-"28
+"18
 } 0
 "68 S:\dev\erdry\power\main.c
 [v _globalInt globalInt `II(v  1 e 1 0 ]
@@ -359,13 +428,23 @@
 {
 "8
 } 0
-"27 S:\dev\erdry\power\clock.c
+"29 S:\dev\erdry\power\clock.c
 [v _clockInterrupt clockInterrupt `(v  1 e 1 0 ]
 {
-"38
+"35
 } 0
-"29 S:\dev\erdry\power\buzzer.c
+"27 S:\dev\erdry\power\sensor.c
+[v _chkSensors chkSensors `(v  1 e 1 0 ]
+{
+"42
+} 0
+"25 S:\dev\erdry\power\buzzer.c
+[v _chkBuzzer chkBuzzer `(v  1 e 1 0 ]
+{
+"30
+} 0
+"19
 [v _buzzEndInt buzzEndInt `(v  1 e 1 0 ]
 {
-"32
+"22
 } 0

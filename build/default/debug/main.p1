@@ -20,15 +20,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _clkInit `(v ~T0 @X0 0 ef ]
 "5 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
-"5 ./sensor.h
+"7 ./sensor.h
 [v _sensorInit `(v ~T0 @X0 0 ef ]
 "9 ./motor.h
 [v _motorInit `(v ~T0 @X0 0 ef ]
-"7 ./buzzer.h
+"5 ./buzzer.h
 [v _buzzerInit `(v ~T0 @X0 0 ef ]
 "21 ./i2c.h
 [v _i2cInit `(v ~T0 @X0 0 ef ]
-"8 ./buzzer.h
+"7 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]

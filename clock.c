@@ -5,16 +5,17 @@
 #include "pins.h"
 #include "motor.h"
 #include "buzzer.h"
+#include "sensor.h"
 
 
 volatile uint16 timeTicks; 
 
 void clkInit(void) {
   // timer 0 interrupts every ms
-  T016BIT               =  0;
+  T016BIT               =  0;  // 8-bit counter
   T0ASYNC               =  0;  // sync mode
   T0CON1bits.T0CS       =  4;  // Clock Source LFINTOSC (32 KHz)
-  TMR0H                 =  31; // counts to 32
+  TMR0H                 =  31; // counts to 32 (1 KHz)
   T0CON1bits.T0CKPS     =  0;  // input prescaler  is 1:1
   T0CON0bits.T0OUTPS    =  0;  // output prescaler is 1:1 
   TMR0IF                =  0;  // int flag
@@ -24,15 +25,11 @@ void clkInit(void) {
 
 volatile uint16 timeTicks;     // units: 1 ms
 
+// interrupts every ms
 void clockInterrupt(void) {
   TMR0IF = 0;
   timeTicks++;
   
-  // buzzer
-  if(buzzCountdown) {
-    if(buzzCountdown-- == 1) 
-      buzzEndInt();
-  }
-  
-  // motor
+  chkBuzzer();
+  chkSensors();
 }

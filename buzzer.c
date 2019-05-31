@@ -3,21 +3,11 @@
 #include "pins.h"
 #include "buzzer.h"
 
-volatile uint16 buzzCountdown;
+uint16 buzzCountdown = 0;
 
 void buzzerInit(void) {
   BUZZ_LAT  = 0;
   BUZZ_TRIS = 0;
-}
-
-void buzz(uint16 ms) {
-  buzzEnd();
-  if(ms) {
-    BUZZ_LAT = 1;
-    GIE = 0;
-    buzzCountdown = ms;
-    GIE = 1;
-  }
 }
 
 void buzzEnd(void){
@@ -30,3 +20,23 @@ void buzzEndInt(void){
   buzzCountdown = 0;
   BUZZ_LAT = 0;
 }
+
+// runs in interrupt
+void chkBuzzer(void) {
+  if(buzzCountdown) {
+    if(buzzCountdown-- == 1) 
+      buzzEndInt();
+  }
+}
+
+// called from command
+void buzz(uint16 ms) {
+  buzzEnd();
+  if(ms) {
+    BUZZ_LAT = 1;
+    GIE = 0;
+    buzzCountdown = ms;
+    GIE = 1;
+  }
+}
+

@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
   
 //  __builtin_software_breakpoint();
   
-  // test 
+  // beep at wakeup
   buzz(200); // 200 msec
   
   while(true){};

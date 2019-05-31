@@ -11,47 +11,50 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
+$C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 10 10 1 2
 config CONFIG 0 8007 8007 5 2
 $dist/default/production\power.production.o
-cinit CODE 0 11 11 F 2
-text1 CODE 0 BE BE 1 2
-text2 CODE 0 BF BF 1 2
-text3 CODE 0 C0 C0 1 2
-text4 CODE 0 78 78 11 2
-text5 CODE 0 65 65 13 2
-text6 CODE 0 BA BA 4 2
-text7 CODE 0 9A 9A E 2
-text8 CODE 0 A8 A8 7 2
-text10 CODE 0 20 20 32 2
-text11 CODE 0 C1 C1 1 2
-text12 CODE 0 C2 C2 1 2
-text13 CODE 0 89 89 11 2
-text14 CODE 0 B5 B5 5 2
-maintext CODE 0 52 52 13 2
-cstackCOMMON COMMON 1 70 70 7 1
+cinit CODE 0 11 11 E 2
+text1 CODE 0 87 87 18 2
+text2 CODE 0 113 113 1 2
+text3 CODE 0 114 114 1 2
+text4 CODE 0 C5 C5 11 2
+text5 CODE 0 B2 B2 13 2
+text6 CODE 0 10F 10F 4 2
+text7 CODE 0 E5 E5 E 2
+text8 CODE 0 FD FD 7 2
+text10 CODE 0 55 55 32 2
+text11 CODE 0 115 115 1 2
+text12 CODE 0 116 116 1 2
+text13 CODE 0 F3 F3 A 2
+text14 CODE 0 1F 1F 36 2
+text15 CODE 0 D6 D6 F 2
+text16 CODE 0 10A 10A 5 2
+maintext CODE 0 9F 9F 13 2
+cstackCOMMON COMMON 1 70 70 6 1
+cstackBANK0 BANK0 1 3C 3C 6 1
 intentry CODE 0 4 4 C 2
-bssBANK0 BANK0 1 20 20 16 1
-clrtext CODE 0 AF AF 6 2
-bssCOMMON COMMON 1 77 77 6 1
+bssBANK0 BANK0 1 20 20 1C 1
+clrtext CODE 0 104 104 6 2
+bssCOMMON COMMON 1 76 76 5 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 36-6F 1
+RAM 42-6F 1
 RAM A0-EF 1
 RAM 120-16F 1
-BANK0 36-6F 1
+BANK0 42-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 CONST 1-3 2
-CONST C3-7FF 2
+CONST 117-7FF 2
 ENTRY 1-3 2
-ENTRY C3-7FF 2
+ENTRY 117-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -107,9 +110,9 @@ SFR60 1E00-1E6F 1
 SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
-STACK 2016-20EF 1
+STACK 2022-20EF 1
 CODE 1-3 2
-CODE C3-7FF 2
+CODE 117-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -121,11 +124,11 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-20EF 1
-COMMON 7D-7D 1
+COMMON 7B-7D 1
 STRCODE 1-3 2
-STRCODE C3-7FF 2
+STRCODE 117-7FF 2
 STRING 1-3 2
-STRING C3-7FF 2
+STRING 117-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -140,129 +143,150 @@ STRING C3-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\power.production.o
-11 cinit CODE >3109:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-11 cinit CODE >3112:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-11 cinit CODE >3160:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-12 cinit CODE >3161:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-13 cinit CODE >3162:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-14 cinit CODE >3163:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-15 cinit CODE >3164:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-16 cinit CODE >3165:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-17 cinit CODE >3169:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-18 cinit CODE >3170:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-19 cinit CODE >3171:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1A cinit CODE >3172:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1B cinit CODE >3173:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1C cinit CODE >3174:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1D cinit CODE >3180:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1D cinit CODE >3182:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1E cinit CODE >3183:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-1F cinit CODE >3184:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-4 intentry CODE >70:S:\dev\erdry\power\main.c
-6 intentry CODE >71:S:\dev\erdry\power\main.c
-9 intentry CODE >72:S:\dev\erdry\power\main.c
-A intentry CODE >74:S:\dev\erdry\power\main.c
-D intentry CODE >75:S:\dev\erdry\power\main.c
-E intentry CODE >77:S:\dev\erdry\power\main.c
-B5 text14 CODE >29:S:\dev\erdry\power\buzzer.c
-B5 text14 CODE >30:S:\dev\erdry\power\buzzer.c
-B7 text14 CODE >31:S:\dev\erdry\power\buzzer.c
-B9 text14 CODE >32:S:\dev\erdry\power\buzzer.c
-89 text13 CODE >26:S:\dev\erdry\power\clock.c
-89 text13 CODE >27:S:\dev\erdry\power\clock.c
-8B text13 CODE >28:S:\dev\erdry\power\clock.c
-90 text13 CODE >29:S:\dev\erdry\power\clock.c
-98 text13 CODE >30:S:\dev\erdry\power\clock.c
-99 text13 CODE >31:S:\dev\erdry\power\clock.c
-C2 text12 CODE >6:S:\dev\erdry\power\command.c
-C2 text12 CODE >8:S:\dev\erdry\power\command.c
-C1 text11 CODE >3:S:\dev\erdry\power\error.c
-C1 text11 CODE >5:S:\dev\erdry\power\error.c
-20 text10 CODE >29:S:\dev\erdry\power\i2c.c
-20 text10 CODE >30:S:\dev\erdry\power\i2c.c
-22 text10 CODE >31:S:\dev\erdry\power\i2c.c
-25 text10 CODE >33:S:\dev\erdry\power\i2c.c
-26 text10 CODE >34:S:\dev\erdry\power\i2c.c
-27 text10 CODE >36:S:\dev\erdry\power\i2c.c
-2A text10 CODE >38:S:\dev\erdry\power\i2c.c
-2C text10 CODE >39:S:\dev\erdry\power\i2c.c
-2E text10 CODE >41:S:\dev\erdry\power\i2c.c
-30 text10 CODE >43:S:\dev\erdry\power\i2c.c
-33 text10 CODE >45:S:\dev\erdry\power\i2c.c
-35 text10 CODE >46:S:\dev\erdry\power\i2c.c
-36 text10 CODE >47:S:\dev\erdry\power\i2c.c
-3A text10 CODE >48:S:\dev\erdry\power\i2c.c
-47 text10 CODE >53:S:\dev\erdry\power\i2c.c
-51 text10 CODE >55:S:\dev\erdry\power\i2c.c
-A8 text8 CODE >23:S:\dev\erdry\power\buzzer.c
-A8 text8 CODE >24:S:\dev\erdry\power\buzzer.c
-A9 text8 CODE >25:S:\dev\erdry\power\buzzer.c
-AB text8 CODE >26:S:\dev\erdry\power\buzzer.c
-AC text8 CODE >27:S:\dev\erdry\power\buzzer.c
-AE text8 CODE >28:S:\dev\erdry\power\buzzer.c
-9A text7 CODE >13:S:\dev\erdry\power\buzzer.c
-9A text7 CODE >14:S:\dev\erdry\power\buzzer.c
-9B text7 CODE >15:S:\dev\erdry\power\buzzer.c
-9F text7 CODE >16:S:\dev\erdry\power\buzzer.c
-A1 text7 CODE >17:S:\dev\erdry\power\buzzer.c
-A2 text7 CODE >18:S:\dev\erdry\power\buzzer.c
-A6 text7 CODE >19:S:\dev\erdry\power\buzzer.c
-A7 text7 CODE >21:S:\dev\erdry\power\buzzer.c
-BA text6 CODE >8:S:\dev\erdry\power\buzzer.c
-BA text6 CODE >9:S:\dev\erdry\power\buzzer.c
-BC text6 CODE >10:S:\dev\erdry\power\buzzer.c
-BD text6 CODE >11:S:\dev\erdry\power\buzzer.c
-65 text5 CODE >12:S:\dev\erdry\power\clock.c
-65 text5 CODE >14:S:\dev\erdry\power\clock.c
-67 text5 CODE >15:S:\dev\erdry\power\clock.c
-68 text5 CODE >16:S:\dev\erdry\power\clock.c
-6C text5 CODE >17:S:\dev\erdry\power\clock.c
-70 text5 CODE >18:S:\dev\erdry\power\clock.c
-72 text5 CODE >19:S:\dev\erdry\power\clock.c
-74 text5 CODE >20:S:\dev\erdry\power\clock.c
-75 text5 CODE >21:S:\dev\erdry\power\clock.c
-77 text5 CODE >22:S:\dev\erdry\power\clock.c
-78 text4 CODE >16:S:\dev\erdry\power\i2c.c
-78 text4 CODE >17:S:\dev\erdry\power\i2c.c
-7D text4 CODE >18:S:\dev\erdry\power\i2c.c
-7F text4 CODE >19:S:\dev\erdry\power\i2c.c
-81 text4 CODE >20:S:\dev\erdry\power\i2c.c
-82 text4 CODE >21:S:\dev\erdry\power\i2c.c
-83 text4 CODE >22:S:\dev\erdry\power\i2c.c
-84 text4 CODE >23:S:\dev\erdry\power\i2c.c
-85 text4 CODE >24:S:\dev\erdry\power\i2c.c
-86 text4 CODE >25:S:\dev\erdry\power\i2c.c
-87 text4 CODE >26:S:\dev\erdry\power\i2c.c
-88 text4 CODE >27:S:\dev\erdry\power\i2c.c
-C0 text3 CODE >8:S:\dev\erdry\power\motor.c
-C0 text3 CODE >9:S:\dev\erdry\power\motor.c
-BF text2 CODE >2:S:\dev\erdry\power\pwm.c
-BF text2 CODE >4:S:\dev\erdry\power\pwm.c
-BE text1 CODE >2:S:\dev\erdry\power\sensor.c
-BE text1 CODE >4:S:\dev\erdry\power\sensor.c
-52 maintext CODE >42:S:\dev\erdry\power\main.c
-52 maintext CODE >43:S:\dev\erdry\power\main.c
-54 maintext CODE >44:S:\dev\erdry\power\main.c
-55 maintext CODE >45:S:\dev\erdry\power\main.c
-56 maintext CODE >48:S:\dev\erdry\power\main.c
-57 maintext CODE >49:S:\dev\erdry\power\main.c
-58 maintext CODE >51:S:\dev\erdry\power\main.c
-59 maintext CODE >52:S:\dev\erdry\power\main.c
-5A maintext CODE >53:S:\dev\erdry\power\main.c
-5B maintext CODE >54:S:\dev\erdry\power\main.c
-5C maintext CODE >55:S:\dev\erdry\power\main.c
-5D maintext CODE >56:S:\dev\erdry\power\main.c
-5E maintext CODE >58:S:\dev\erdry\power\main.c
-5F maintext CODE >61:S:\dev\erdry\power\main.c
-64 maintext CODE >63:S:\dev\erdry\power\main.c
-AF clrtext CODE >3149:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-AF clrtext CODE >3150:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B0 clrtext CODE >3151:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B0 clrtext CODE >3152:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B1 clrtext CODE >3153:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B2 clrtext CODE >3154:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B3 clrtext CODE >3155:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
-B4 clrtext CODE >3156:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
+11 cinit CODE >3709:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+11 cinit CODE >3712:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+11 cinit CODE >3766:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+12 cinit CODE >3767:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+13 cinit CODE >3768:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+14 cinit CODE >3769:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+15 cinit CODE >3770:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+16 cinit CODE >3774:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+17 cinit CODE >3775:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+18 cinit CODE >3776:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+19 cinit CODE >3777:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1A cinit CODE >3778:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1B cinit CODE >3779:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1C cinit CODE >3785:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1C cinit CODE >3787:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1D cinit CODE >3788:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+1E cinit CODE >3789:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+4 intentry CODE >68:S:\dev\erdry\power\main.c
+6 intentry CODE >69:S:\dev\erdry\power\main.c
+9 intentry CODE >70:S:\dev\erdry\power\main.c
+A intentry CODE >72:S:\dev\erdry\power\main.c
+D intentry CODE >73:S:\dev\erdry\power\main.c
+E intentry CODE >75:S:\dev\erdry\power\main.c
+10A text16 CODE >19:S:\dev\erdry\power\buzzer.c
+10A text16 CODE >20:S:\dev\erdry\power\buzzer.c
+10D text16 CODE >21:S:\dev\erdry\power\buzzer.c
+10E text16 CODE >22:S:\dev\erdry\power\buzzer.c
+D6 text15 CODE >25:S:\dev\erdry\power\buzzer.c
+D6 text15 CODE >26:S:\dev\erdry\power\buzzer.c
+DB text15 CODE >27:S:\dev\erdry\power\buzzer.c
+E3 text15 CODE >28:S:\dev\erdry\power\buzzer.c
+E4 text15 CODE >30:S:\dev\erdry\power\buzzer.c
+1F text14 CODE >25:S:\dev\erdry\power\sensor.c
+1F text14 CODE >26:S:\dev\erdry\power\sensor.c
+22 text14 CODE >28:S:\dev\erdry\power\sensor.c
+3D text14 CODE >29:S:\dev\erdry\power\sensor.c
+42 text14 CODE >30:S:\dev\erdry\power\sensor.c
+54 text14 CODE >32:S:\dev\erdry\power\sensor.c
+F3 text13 CODE >29:S:\dev\erdry\power\clock.c
+F3 text13 CODE >30:S:\dev\erdry\power\clock.c
+F5 text13 CODE >31:S:\dev\erdry\power\clock.c
+FA text13 CODE >33:S:\dev\erdry\power\clock.c
+FB text13 CODE >34:S:\dev\erdry\power\clock.c
+FC text13 CODE >35:S:\dev\erdry\power\clock.c
+116 text12 CODE >6:S:\dev\erdry\power\command.c
+116 text12 CODE >8:S:\dev\erdry\power\command.c
+115 text11 CODE >3:S:\dev\erdry\power\error.c
+115 text11 CODE >5:S:\dev\erdry\power\error.c
+55 text10 CODE >29:S:\dev\erdry\power\i2c.c
+55 text10 CODE >30:S:\dev\erdry\power\i2c.c
+57 text10 CODE >31:S:\dev\erdry\power\i2c.c
+5A text10 CODE >33:S:\dev\erdry\power\i2c.c
+5B text10 CODE >34:S:\dev\erdry\power\i2c.c
+5C text10 CODE >36:S:\dev\erdry\power\i2c.c
+5F text10 CODE >38:S:\dev\erdry\power\i2c.c
+61 text10 CODE >39:S:\dev\erdry\power\i2c.c
+63 text10 CODE >41:S:\dev\erdry\power\i2c.c
+65 text10 CODE >43:S:\dev\erdry\power\i2c.c
+68 text10 CODE >45:S:\dev\erdry\power\i2c.c
+6A text10 CODE >46:S:\dev\erdry\power\i2c.c
+6B text10 CODE >47:S:\dev\erdry\power\i2c.c
+6F text10 CODE >48:S:\dev\erdry\power\i2c.c
+7C text10 CODE >53:S:\dev\erdry\power\i2c.c
+86 text10 CODE >55:S:\dev\erdry\power\i2c.c
+FD text8 CODE >13:S:\dev\erdry\power\buzzer.c
+FD text8 CODE >14:S:\dev\erdry\power\buzzer.c
+FE text8 CODE >15:S:\dev\erdry\power\buzzer.c
+101 text8 CODE >16:S:\dev\erdry\power\buzzer.c
+102 text8 CODE >17:S:\dev\erdry\power\buzzer.c
+103 text8 CODE >18:S:\dev\erdry\power\buzzer.c
+E5 text7 CODE >33:S:\dev\erdry\power\buzzer.c
+E5 text7 CODE >34:S:\dev\erdry\power\buzzer.c
+E6 text7 CODE >35:S:\dev\erdry\power\buzzer.c
+EB text7 CODE >36:S:\dev\erdry\power\buzzer.c
+EC text7 CODE >37:S:\dev\erdry\power\buzzer.c
+ED text7 CODE >38:S:\dev\erdry\power\buzzer.c
+F1 text7 CODE >39:S:\dev\erdry\power\buzzer.c
+F2 text7 CODE >41:S:\dev\erdry\power\buzzer.c
+10F text6 CODE >8:S:\dev\erdry\power\buzzer.c
+10F text6 CODE >9:S:\dev\erdry\power\buzzer.c
+111 text6 CODE >10:S:\dev\erdry\power\buzzer.c
+112 text6 CODE >11:S:\dev\erdry\power\buzzer.c
+B2 text5 CODE >13:S:\dev\erdry\power\clock.c
+B2 text5 CODE >15:S:\dev\erdry\power\clock.c
+B4 text5 CODE >16:S:\dev\erdry\power\clock.c
+B5 text5 CODE >17:S:\dev\erdry\power\clock.c
+B9 text5 CODE >18:S:\dev\erdry\power\clock.c
+BB text5 CODE >19:S:\dev\erdry\power\clock.c
+BD text5 CODE >20:S:\dev\erdry\power\clock.c
+BF text5 CODE >21:S:\dev\erdry\power\clock.c
+C1 text5 CODE >22:S:\dev\erdry\power\clock.c
+C2 text5 CODE >23:S:\dev\erdry\power\clock.c
+C4 text5 CODE >24:S:\dev\erdry\power\clock.c
+C5 text4 CODE >16:S:\dev\erdry\power\i2c.c
+C5 text4 CODE >17:S:\dev\erdry\power\i2c.c
+CA text4 CODE >18:S:\dev\erdry\power\i2c.c
+CC text4 CODE >19:S:\dev\erdry\power\i2c.c
+CE text4 CODE >20:S:\dev\erdry\power\i2c.c
+CF text4 CODE >21:S:\dev\erdry\power\i2c.c
+D0 text4 CODE >22:S:\dev\erdry\power\i2c.c
+D1 text4 CODE >23:S:\dev\erdry\power\i2c.c
+D2 text4 CODE >24:S:\dev\erdry\power\i2c.c
+D3 text4 CODE >25:S:\dev\erdry\power\i2c.c
+D4 text4 CODE >26:S:\dev\erdry\power\i2c.c
+D5 text4 CODE >27:S:\dev\erdry\power\i2c.c
+114 text3 CODE >8:S:\dev\erdry\power\motor.c
+114 text3 CODE >9:S:\dev\erdry\power\motor.c
+113 text2 CODE >2:S:\dev\erdry\power\pwm.c
+113 text2 CODE >4:S:\dev\erdry\power\pwm.c
+87 text1 CODE >9:S:\dev\erdry\power\sensor.c
+87 text1 CODE >10:S:\dev\erdry\power\sensor.c
+89 text1 CODE >11:S:\dev\erdry\power\sensor.c
+8B text1 CODE >12:S:\dev\erdry\power\sensor.c
+8F text1 CODE >13:S:\dev\erdry\power\sensor.c
+91 text1 CODE >15:S:\dev\erdry\power\sensor.c
+93 text1 CODE >16:S:\dev\erdry\power\sensor.c
+94 text1 CODE >17:S:\dev\erdry\power\sensor.c
+96 text1 CODE >18:S:\dev\erdry\power\sensor.c
+97 text1 CODE >20:S:\dev\erdry\power\sensor.c
+9C text1 CODE >21:S:\dev\erdry\power\sensor.c
+9D text1 CODE >22:S:\dev\erdry\power\sensor.c
+9E text1 CODE >23:S:\dev\erdry\power\sensor.c
+9F maintext CODE >42:S:\dev\erdry\power\main.c
+9F maintext CODE >43:S:\dev\erdry\power\main.c
+A1 maintext CODE >44:S:\dev\erdry\power\main.c
+A2 maintext CODE >45:S:\dev\erdry\power\main.c
+A3 maintext CODE >48:S:\dev\erdry\power\main.c
+A4 maintext CODE >49:S:\dev\erdry\power\main.c
+A5 maintext CODE >51:S:\dev\erdry\power\main.c
+A6 maintext CODE >52:S:\dev\erdry\power\main.c
+A7 maintext CODE >53:S:\dev\erdry\power\main.c
+A8 maintext CODE >54:S:\dev\erdry\power\main.c
+A9 maintext CODE >55:S:\dev\erdry\power\main.c
+AA maintext CODE >56:S:\dev\erdry\power\main.c
+AB maintext CODE >61:S:\dev\erdry\power\main.c
+B1 maintext CODE >63:S:\dev\erdry\power\main.c
+104 clrtext CODE >3755:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+104 clrtext CODE >3756:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+105 clrtext CODE >3757:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+105 clrtext CODE >3758:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+106 clrtext CODE >3759:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+107 clrtext CODE >3760:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+108 clrtext CODE >3761:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
+109 clrtext CODE >3762:C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -277,7 +301,7 @@ B4 clrtext CODE >3156:C:\Users\MARKHA~1\AppData\Local\Temp\sk58.
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production\power.production.o
 __Hspace_0 800C 0 ABS 0 - -
-__Hspace_1 7D 0 ABS 0 - -
+__Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 _SSP1STATbits 18F 0 ABS 0 - dist/default/production\power.production.o
@@ -286,58 +310,69 @@ __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\power.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\power.production.o
 _T0EN 2CF7 0 ABS 0 - dist/default/production\power.production.o
-___sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-_buzz 134 0 CODE 0 text7 dist/default/production\power.production.o
-_main A4 0 CODE 0 maintext dist/default/production\power.production.o
+___sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+_buzz 1CA 0 CODE 0 text7 dist/default/production\power.production.o
+_main 13E 0 CODE 0 maintext dist/default/production\power.production.o
 btemp 7E 0 ABS 0 - dist/default/production\power.production.o
-start 20 0 CODE 0 init C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
+start 20 0 CODE 0 init C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
 __size_of_buzz 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\power.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_chkSensors AA 0 CODE 0 text14 dist/default/production\power.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-_timeTicks 34 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
-_buzzEndInt 16A 0 CODE 0 text14 dist/default/production\power.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-_i2cInterrupt 40 0 CODE 0 text10 dist/default/production\power.production.o
+_timeTicks 38 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
+_buzzEndInt 214 0 CODE 0 text16 dist/default/production\power.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+_i2cInterrupt AA 0 CODE 0 text10 dist/default/production\power.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\power.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __size_of_buzzEnd 0 0 ABS 0 - dist/default/production\power.production.o
+_curSensorReading 34 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
+_ADRESH 9C 0 ABS 0 - dist/default/production\power.production.o
+_ADRESL 9B 0 ABS 0 - dist/default/production\power.production.o
 __size_of_clockInterrupt 0 0 ABS 0 - dist/default/production\power.production.o
 _ANSELA 1F38 0 ABS 0 - dist/default/production\power.production.o
 _ANSELC 1F4E 0 ABS 0 - dist/default/production\power.production.o
-_i2cInit F0 0 CODE 0 text4 dist/default/production\power.production.o
-__end_of_setErrorInt 184 0 CODE 0 text11 dist/default/production\power.production.o
+_i2cInit 18A 0 CODE 0 text4 dist/default/production\power.production.o
+_ADACTbits 9F 0 ABS 0 - dist/default/production\power.production.o
+__end_of_setErrorInt 22C 0 CODE 0 text11 dist/default/production\power.production.o
 __size_of_i2cInterrupt 0 0 ABS 0 - dist/default/production\power.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_buzzEndInt 174 0 CODE 0 text14 dist/default/production\power.production.o
-___stackhi 20EF 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-___stacklo 2016 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
+__end_of_buzzEndInt 21E 0 CODE 0 text16 dist/default/production\power.production.o
+_chkSensors$640 75 0 COMMON 1 cstackCOMMON dist/default/production\power.production.o
+_chkSensors$641 73 0 COMMON 1 cstackCOMMON dist/default/production\power.production.o
+___stackhi 20EF 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+___stacklo 2022 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_i2cInterrupt A4 0 CODE 0 text10 dist/default/production\power.production.o
+__end_of_i2cInterrupt 10E 0 CODE 0 text10 dist/default/production\power.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 _WPUAbits 1F39 0 ABS 0 - dist/default/production\power.production.o
-_haveCommand 7C 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
+_haveCommand 7A 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
 start_initialization 22 0 CODE 0 cinit dist/default/production\power.production.o
-_sensorInit 17C 0 CODE 0 text1 dist/default/production\power.production.o
+_sensorInit 10E 0 CODE 0 text1 dist/default/production\power.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production\power.production.o
-clear_ram0 15E 0 CODE 0 clrtext dist/default/production\power.production.o
+clear_ram0 208 0 CODE 0 clrtext dist/default/production\power.production.o
+__pcstackBANK0 3C 0 BANK0 1 cstackBANK0 dist/default/production\power.production.o
 _SSP1IF 3878 0 ABS 0 - dist/default/production\power.production.o
-__end_of_buzzEnd 15E 0 CODE 0 text8 dist/default/production\power.production.o
+__end_of_buzzEnd 208 0 CODE 0 text8 dist/default/production\power.production.o
 _TMR0IE 38B5 0 ABS 0 - dist/default/production\power.production.o
 _TMR0IF 3865 0 ABS 0 - dist/default/production\power.production.o
+_TRISA2 92 0 ABS 0 - dist/default/production\power.production.o
+_TRISA4 94 0 ABS 0 - dist/default/production\power.production.o
 _TRISA5 95 0 ABS 0 - dist/default/production\power.production.o
 __CFG_RSTOSC$HFINTPLL 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_clkInit 0 0 ABS 0 - dist/default/production\power.production.o
+__size_of_chkSensors 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_pwmInit 0 0 ABS 0 - dist/default/production\power.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
+___int_sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -348,7 +383,7 @@ __Hbank6 0 0 BANK6 1 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit 40 0 CODE 0 cinit -
+__Hcinit 3E 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
@@ -405,7 +440,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
-_buzzCountdown 77 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
+_buzzCountdown 3A 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
 __Hbank10 0 0 BANK10 1 bank10 -
 __Hbank11 0 0 BANK11 1 bank11 -
 __Hbank12 0 0 BANK12 1 bank12 -
@@ -462,10 +497,10 @@ __Hbank62 0 0 BANK62 1 bank62 -
 __Hbank63 0 0 BANK63 1 bank63 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_buzzerInit 174 0 CODE 0 text6 dist/default/production\power.production.o
+_buzzerInit 21E 0 CODE 0 text6 dist/default/production\power.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 0 config -
-_i2cRecvBytesPtr 7A 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
+_i2cRecvBytesPtr 78 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -533,7 +568,7 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_sensorInit 17E 0 CODE 0 text1 dist/default/production\power.production.o
+__end_of_sensorInit 13E 0 CODE 0 text1 dist/default/production\power.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 20 0 CODE 0 init -
@@ -563,38 +598,44 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production\power.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production\power.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\power.production.o
 __S0 800C 0 ABS 0 - -
-__S1 7D 0 ABS 0 - -
+__S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
+__end_of_chkBuzzer 1CA 0 CODE 0 text15 dist/default/production\power.production.o
 __end_of_globalInt 20 0 CODE 0 intentry dist/default/production\power.production.o
 __size_of_setErrorInt 0 0 ABS 0 - dist/default/production\power.production.o
+__size_of_chkBuzzer 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_globalInt 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_handleCmd 186 0 CODE 0 text12 dist/default/production\power.production.o
+__end_of_handleCmd 22E 0 CODE 0 text12 dist/default/production\power.production.o
 __size_of_handleCmd 0 0 ABS 0 - dist/default/production\power.production.o
 __CFG_BBEN$OFF 0 0 ABS 0 - dist/default/production\power.production.o
+_chkBuzzer 1AC 0 CODE 0 text15 dist/default/production\power.production.o
 _globalInt 8 0 CODE 0 intentry dist/default/production\power.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\power.production.o
 _i2cSendBytes 20 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
 __Lintentry 8 0 CODE 0 intentry -
-__end_of_buzzerInit 17C 0 CODE 0 text6 dist/default/production\power.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\MARKHA~1\AppData\Local\Temp\sk58.o
-_handleCmd 184 0 CODE 0 text12 dist/default/production\power.production.o
+__end_of_buzzerInit 226 0 CODE 0 text6 dist/default/production\power.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\MARKHA~1\AppData\Local\Temp\s8h8.o
+_handleCmd 22C 0 CODE 0 text12 dist/default/production\power.production.o
 __size_of_buzzEndInt 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_clkInit F0 0 CODE 0 text5 dist/default/production\power.production.o
+__end_of_clkInit 18A 0 CODE 0 text5 dist/default/production\power.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-buzz@ms 71 0 COMMON 1 cstackCOMMON dist/default/production\power.production.o
+buzz@ms 3C 0 BANK0 1 cstackBANK0 dist/default/production\power.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_pwmInit 180 0 CODE 0 text2 dist/default/production\power.production.o
-__ptext10 40 0 CODE 0 text10 dist/default/production\power.production.o
-__ptext11 182 0 CODE 0 text11 dist/default/production\power.production.o
-__ptext12 184 0 CODE 0 text12 dist/default/production\power.production.o
-__ptext13 112 0 CODE 0 text13 dist/default/production\power.production.o
-__ptext14 16A 0 CODE 0 text14 dist/default/production\power.production.o
-_i2cSendBytesPtr 79 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
-__end_of_motorInit 182 0 CODE 0 text3 dist/default/production\power.production.o
+__end_of_pwmInit 228 0 CODE 0 text2 dist/default/production\power.production.o
+__ptext10 AA 0 CODE 0 text10 dist/default/production\power.production.o
+__ptext11 22A 0 CODE 0 text11 dist/default/production\power.production.o
+__ptext12 22C 0 CODE 0 text12 dist/default/production\power.production.o
+__ptext13 1E6 0 CODE 0 text13 dist/default/production\power.production.o
+__ptext14 3E 0 CODE 0 text14 dist/default/production\power.production.o
+__ptext15 1AC 0 CODE 0 text15 dist/default/production\power.production.o
+__ptext16 214 0 CODE 0 text16 dist/default/production\power.production.o
+_i2cSendBytesPtr 77 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
+__end_of_motorInit 22A 0 CODE 0 text3 dist/default/production\power.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -649,7 +690,7 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext A4 0 CODE 0 maintext dist/default/production\power.production.o
+__pmaintext 13E 0 CODE 0 maintext dist/default/production\power.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_motorInit 0 0 ABS 0 - dist/default/production\power.production.o
@@ -658,48 +699,52 @@ __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-_clockInterrupt 112 0 CODE 0 text13 dist/default/production\power.production.o
+_clockInterrupt 1E6 0 CODE 0 text13 dist/default/production\power.production.o
 __CFG_WRTAPP$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 __size_of_i2cInit 0 0 ABS 0 - dist/default/production\power.production.o
-_motorInit 180 0 CODE 0 text3 dist/default/production\power.production.o
+_motorInit 228 0 CODE 0 text3 dist/default/production\power.production.o
+_ADCON0bits 9D 0 ABS 0 - dist/default/production\power.production.o
+_ADCON1bits 9E 0 ABS 0 - dist/default/production\power.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production\power.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 20 0 CODE 0 end_init -
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production\power.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_buzzEnd 150 0 CODE 0 text8 dist/default/production\power.production.o
+_buzzEnd 1FA 0 CODE 0 text8 dist/default/production\power.production.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-end_of_initialization 3A 0 CODE 0 cinit dist/default/production\power.production.o
+end_of_initialization 38 0 CODE 0 cinit dist/default/production\power.production.o
 __Hintentry 20 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\power.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__end_of_clockInterrupt 134 0 CODE 0 text13 dist/default/production\power.production.o
+__end_of_clockInterrupt 1FA 0 CODE 0 text13 dist/default/production\power.production.o
 __size_of_sensorInit 0 0 ABS 0 - dist/default/production\power.production.o
-__ptext1 17C 0 CODE 0 text1 dist/default/production\power.production.o
-__ptext2 17E 0 CODE 0 text2 dist/default/production\power.production.o
-__ptext3 180 0 CODE 0 text3 dist/default/production\power.production.o
-__ptext4 F0 0 CODE 0 text4 dist/default/production\power.production.o
-__ptext5 CA 0 CODE 0 text5 dist/default/production\power.production.o
-__ptext6 174 0 CODE 0 text6 dist/default/production\power.production.o
-__ptext7 134 0 CODE 0 text7 dist/default/production\power.production.o
-__ptext8 150 0 CODE 0 text8 dist/default/production\power.production.o
+__ptext1 10E 0 CODE 0 text1 dist/default/production\power.production.o
+__ptext2 226 0 CODE 0 text2 dist/default/production\power.production.o
+__ptext3 228 0 CODE 0 text3 dist/default/production\power.production.o
+__ptext4 18A 0 CODE 0 text4 dist/default/production\power.production.o
+__ptext5 164 0 CODE 0 text5 dist/default/production\power.production.o
+__ptext6 21E 0 CODE 0 text6 dist/default/production\power.production.o
+__ptext7 1CA 0 CODE 0 text7 dist/default/production\power.production.o
+__ptext8 1FA 0 CODE 0 text8 dist/default/production\power.production.o
+_curSensor 76 0 COMMON 1 bssCOMMON dist/default/production\power.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_setErrorInt 182 0 CODE 0 text11 dist/default/production\power.production.o
+_setErrorInt 22A 0 CODE 0 text11 dist/default/production\power.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of__initialization 3A 0 CODE 0 cinit dist/default/production\power.production.o
+__end_of__initialization 38 0 CODE 0 cinit dist/default/production\power.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\power.production.o
-__end_of_i2cInit 112 0 CODE 0 text4 dist/default/production\power.production.o
+__end_of_i2cInit 1AC 0 CODE 0 text4 dist/default/production\power.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 190 0 ABS 0 - dist/default/production\power.production.o
 _SSP1CON2bits 191 0 ABS 0 - dist/default/production\power.production.o
@@ -714,20 +759,23 @@ _SSP1ADD 18D 0 ABS 0 - dist/default/production\power.production.o
 _SSP1BUF 18C 0 ABS 0 - dist/default/production\power.production.o
 _SSP1MSK 18E 0 ABS 0 - dist/default/production\power.production.o
 __Hend_init 22 0 CODE 0 end_init -
-__end_of_buzz 150 0 CODE 0 text7 dist/default/production\power.production.o
-__end_of_main CA 0 CODE 0 maintext dist/default/production\power.production.o
+__end_of_buzz 1E6 0 CODE 0 text7 dist/default/production\power.production.o
+__end_of_main 164 0 CODE 0 maintext dist/default/production\power.production.o
 __CFG_WRTSAF$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 _LATA5 C5 0 ABS 0 - dist/default/production\power.production.o
+_TMR0H 59D 0 ABS 0 - dist/default/production\power.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __pintentry 8 0 CODE 0 intentry dist/default/production\power.production.o
-_clkInit CA 0 CODE 0 text5 dist/default/production\power.production.o
+_clkInit 164 0 CODE 0 text5 dist/default/production\power.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\power.production.o
-_pwmInit 17E 0 CODE 0 text2 dist/default/production\power.production.o
+_pwmInit 226 0 CODE 0 text2 dist/default/production\power.production.o
+_chkSensors 3E 0 CODE 0 text14 dist/default/production\power.production.o
 _i2cRecvBytes 2A 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
 __initialization 22 0 CODE 0 cinit dist/default/production\power.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\power.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
+_ANSELAbits 1F38 0 ABS 0 - dist/default/production\power.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -753,8 +801,8 @@ __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\power.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMMON 1 70 70 D 1
-intentry 0 4 8 BF 2
+cstackCOMMON 1 70 70 B 1
+intentry 0 4 8 113 2
 reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 16 1
+bssBANK0 1 20 20 22 1
 config 0 8007 1000E 5 2
