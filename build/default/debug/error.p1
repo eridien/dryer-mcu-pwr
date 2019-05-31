@@ -1,0 +1,10 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"3 error.c
+[v _setErrorInt `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setErrorInt ]
+[v _errCode `uc ~T0 @X0 1 r1 ]
+[f ]
+"5
+[e :UE 1 ]
+}

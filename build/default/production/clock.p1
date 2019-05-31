@@ -37,6 +37,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TMR0IE `Vb ~T0 @X0 0 e@14517 ]
 "21454
 [v _T0EN `Vb ~T0 @X0 0 e@11511 ]
+"5 ./buzzer.h
+[v _buzzCountdown `Vui ~T0 @X0 0 e ]
+"10
+[v _buzzEndInt `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -615,29 +619,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 clock.c
+"10 clock.c
+[v _timeTicks `Vui ~T0 @X0 1 e ]
+"12
 [v _clkInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _clkInit ]
 [f ]
-"10
-[e = _T016BIT -> -> 1 `i `b ]
-"11
-[e = _T0ASYNC -> -> 0 `i `b ]
-"12
-[e = . . _T0CON1bits 0 2 -> -> 4 `i `uc ]
-"13
-[e = . . _T0CON1bits 0 0 -> -> 5 `i `uc ]
 "14
-[e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
+[e = _T016BIT -> -> 1 `i `b ]
 "15
-[e = _TMR0IF -> -> 0 `i `b ]
+[e = _T0ASYNC -> -> 0 `i `b ]
 "16
-[e = _TMR0IE -> -> 1 `i `b ]
+[e = . . _T0CON1bits 0 2 -> -> 4 `i `uc ]
 "17
-[e = _T0EN -> -> 1 `i `b ]
+[e = . . _T0CON1bits 0 0 -> -> 5 `i `uc ]
 "18
+[e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
+"19
+[e = _TMR0IF -> -> 0 `i `b ]
+"20
+[e = _TMR0IE -> -> 1 `i `b ]
+"21
+[e = _T0EN -> -> 1 `i `b ]
+"22
 [e :UE 839 ]
 }
-"20
+"24
 [v _timeTicks `Vui ~T0 @X0 1 e ]
+"26
+[v _clockInterrupt `(v ~T0 @X0 1 ef ]
+{
+[e :U _clockInterrupt ]
+[f ]
+"27
+[e = _TMR0IF -> -> 0 `i `b ]
+"28
+[e ++ _timeTicks -> -> 1 `i `Vui ]
+"29
+[e $ ! == -- _buzzCountdown -> -> 1 `i `Vui -> -> 1 `i `ui 841  ]
+"30
+[e ( _buzzEndInt ..  ]
+[e :U 841 ]
+"31
+[e :UE 840 ]
+}

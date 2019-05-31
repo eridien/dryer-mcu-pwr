@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
   WPUAbits.WPUA3 = 1;  // mclr is input and not used so enable pull-up
   
   // all ints on
-  GIE  = 1;
+  GIE = 1;
   PEIE = 1;
   
   clkInit();
@@ -55,11 +55,12 @@ int main(int argc, char** argv) {
   buzzerInit();
   i2cInit();
   
-  __builtin_software_breakpoint();
+//  __builtin_software_breakpoint();
   
-  while(true){}
+  // test 
+  buzz(200); // 200 msec
   
-  
+  while(true){};
   return 0;
 }
 

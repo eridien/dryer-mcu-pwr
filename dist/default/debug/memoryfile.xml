@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\power.production.hex">
+  <executable name="dist/default/debug\power.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>2048</length>
-      <used>192</used>
-      <free>1856</free>
+      <used>195</used>
+      <free>1853</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

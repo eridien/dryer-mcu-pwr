@@ -1,4 +1,97 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"16814 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _ANSELA `Vuc ~T0 @X0 0 e@7992 ]
+"17199
+[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
+"16865
+[s S785 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S785 . WPUA0 WPUA1 WPUA2 WPUA3 WPUA4 WPUA5 ]
+"16864
+[u S784 `S785 1 ]
+[n S784 . . ]
+"16874
+[v _WPUAbits `VS784 ~T0 @X0 0 e@7993 ]
+"19024
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"20608
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"9 ./clock.h
+[v _clkInit `(v ~T0 @X0 0 ef ]
+"5 ./pwm.h
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"5 ./sensor.h
+[v _sensorInit `(v ~T0 @X0 0 ef ]
+"9 ./motor.h
+[v _motorInit `(v ~T0 @X0 0 ef ]
+"7 ./buzzer.h
+[v _buzzerInit `(v ~T0 @X0 0 ef ]
+"21 ./i2c.h
+[v _i2cInit `(v ~T0 @X0 0 ef ]
+"8 ./buzzer.h
+[v _buzz `(v ~T0 @X0 0 ef1`ui ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"21718 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _TMR0IF `Vb ~T0 @X0 0 e@14437 ]
+"10 ./clock.h
+[v _clockInterrupt `(v ~T0 @X0 0 ef ]
+"21289 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
+"22 ./i2c.h
+[v _i2cInterrupt `(v ~T0 @X0 0 ef ]
+"5 main.c
+[p x FEXTOSC = OFF ]
+"6
+[p x RSTOSC = HFINTPLL ]
+"7
+[p x CLKOUTEN = OFF ]
+"8
+[p x CSWEN = ON ]
+"9
+[p x FCMEN = ON ]
+"10
+[p x MCLRE = OFF ]
+"11
+[p x PWRTE = OFF ]
+"12
+[p x LPBOREN = OFF ]
+"13
+[p x BOREN = ON ]
+"14
+[p x BORV = LO ]
+"15
+[p x ZCD = OFF ]
+"16
+[p x PPS1WAY = ON ]
+"17
+[p x STVREN = ON ]
+"18
+[p x WDTCPS = WDTCPS_31 ]
+"19
+[p x WDTE = OFF ]
+"20
+[p x WDTCWS = WDTCWS_7 ]
+"21
+[p x WDTCCS = SC ]
+"22
+[p x BBSIZE = BB512 ]
+"23
+[p x BBEN = OFF ]
+"24
+[p x SAFEN = OFF ]
+"25
+[p x WRTAPP = OFF ]
+"26
+[p x WRTB = OFF ]
+"27
+[p x WRTC = OFF ]
+"28
+[p x WRTSAF = OFF ]
+"29
+[p x LVP = OFF ]
+"30
+[p x CP = OFF ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -577,11 +670,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 motor.c
-[v _motorInit `(v ~T0 @X0 1 ef ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"42 main.c
+[v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
-[e :U _motorInit ]
+[e :U _main ]
+[v _argc `i ~T0 @X0 1 r1 ]
+[v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"9
+"43
+[e = _ANSELA -> -> 0 `i `uc ]
+"44
+[e = _ANSELC -> -> 0 `i `uc ]
+"45
+[e = . . _WPUAbits 0 3 -> -> 1 `i `uc ]
+"48
+[e = _GIE -> -> 1 `i `b ]
+"49
+[e = _PEIE -> -> 1 `i `b ]
+"51
+[e ( _clkInit ..  ]
+"52
+[e ( _pwmInit ..  ]
+"53
+[e ( _sensorInit ..  ]
+"54
+[e ( _motorInit ..  ]
+"55
+[e ( _buzzerInit ..  ]
+"56
+[e ( _i2cInit ..  ]
+"61
+[e ( _buzz (1 -> -> 200 `i `ui ]
+"63
+[e :U 841 ]
+{
+}
+[e :U 840 ]
+[e $U 841  ]
+[e :U 842 ]
+"64
+[e ) -> 0 `i ]
+[e $UE 839  ]
+"65
 [e :UE 839 ]
+}
+[v $root$_globalInt `(v ~T0 @X0 0 e ]
+"68
+[v _globalInt `(v ~T1 @X0 1 ef ]
+{
+[e :U _globalInt ]
+[f ]
+"69
+[e $ ! _TMR0IF 844  ]
+{
+"70
+[e ( _clockInterrupt ..  ]
+"71
+}
+[e :U 844 ]
+"72
+[e $ ! _SSP1IF 845  ]
+{
+"73
+[e ( _i2cInterrupt ..  ]
+"74
+}
+[e :U 845 ]
+"75
+[e :UE 843 ]
 }

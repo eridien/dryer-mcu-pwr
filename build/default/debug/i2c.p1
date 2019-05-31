@@ -1,4 +1,112 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2497 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[s S133 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S133 . SSPM CKP SSPEN SSPOV WCOL ]
+"2504
+[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S134 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"2510
+[s S135 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S135 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
+"2496
+[u S132 `S133 1 `S134 1 `S135 1 ]
+[n S132 . . . . ]
+"2521
+[v _SSP1CON1bits `VS132 ~T0 @X0 0 e@400 ]
+"2057
+[v _SSP1MSK `Vuc ~T0 @X0 0 e@398 ]
+"1937
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@397 ]
+"2133
+[s S117 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S117 . BF UA R_nW S P D_nA CKE SMP ]
+"2143
+[s S118 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S118 . . R_W . D_A ]
+"2149
+[s S119 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S119 . . nW . nA ]
+"2155
+[s S120 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S120 . . nWRITE . nADDRESS ]
+"2161
+[s S121 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S121 . . READ_WRITE . DATA_ADDRESS ]
+"2167
+[s S122 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S122 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"2174
+[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S123 . BF1 UA1 R START STOP D CKE1 SMP1 ]
+"2184
+[s S124 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S124 . . RW START1 STOP1 DA ]
+"2191
+[s S125 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S125 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
+"2198
+[s S126 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S126 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
+"2205
+[s S127 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S127 . . READ_WRITE1 . D_A1 ]
+"2211
+[s S128 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S128 . . R_W1 . D_nA1 ]
+"2217
+[s S129 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S129 . . R_nW1 . I2C_DAT1 ]
+"2223
+[s S130 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S130 . . nW2 . nA2 ]
+"2229
+[s S131 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S131 . . nWRITE1 . nADDRESS1 ]
+"2132
+[u S116 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 `S123 1 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
+[n S116 . . . . . . . . . . . . . . . . ]
+"2236
+[v _SSP1STATbits `VS116 ~T0 @X0 0 e@399 ]
+"2617
+[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S137 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"2627
+[s S138 :1 `uc 1 :5 `uc 1 ]
+[n S138 . . ADMSK ]
+"2631
+[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S139 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
+"2639
+[s S140 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S140 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
+"2649
+[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S141 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
+"2616
+[u S136 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 ]
+[n S136 . . . . . . ]
+"2658
+[v _SSP1CON2bits `VS136 ~T0 @X0 0 e@401 ]
+"2804
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . DHEN AHEN SBCDE SDAHT BOEN SCIE PCIE ACKTIM ]
+"2803
+[u S142 `S143 1 ]
+[n S142 . . ]
+"2815
+[v _SSP1CON3bits `VS142 ~T0 @X0 0 e@402 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"21289
+[v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
+"7 ./command.h
+[v _handleCmd `(v ~T0 @X0 0 ef ]
+"5
+[v _haveCommand `uc ~T0 @X0 0 e ]
+"7 ./error.h
+[v _setErrorInt `(v ~T0 @X0 0 ef1`uc ]
+"1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -577,11 +685,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 motor.c
-[v _motorInit `(v ~T0 @X0 1 ef ]
+"9 i2c.c
+[v _i2cAddrBase `uc ~T0 @X0 1 e ]
+"11
+[v _i2cRecvBytes `Vuc ~T0 @X0 -> 10 `i e ]
+"12
+[v _i2cRecvBytesPtr `Vuc ~T0 @X0 1 e ]
+"13
+[v _i2cSendBytes `Vuc ~T0 @X0 -> 10 `i e ]
+"14
+[v _i2cSendBytesPtr `Vuc ~T0 @X0 1 e ]
+"16
+[v _i2cInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _motorInit ]
+[e :U _i2cInit ]
 [f ]
-"9
+"17
+[e = . . _SSP1CON1bits 0 0 -> -> 6 `i `uc ]
+"18
+[e = _SSP1MSK -> -> 254 `i `uc ]
+"19
+[e = _SSP1ADD -> -> 16 `i `uc ]
+"20
+[e = . . _SSP1STATbits 0 7 -> -> 0 `i `uc ]
+"21
+[e = . . _SSP1STATbits 0 6 -> -> 1 `i `uc ]
+"22
+[e = . . _SSP1CON2bits 0 0 -> -> 0 `i `uc ]
+"23
+[e = . . _SSP1CON3bits 0 1 -> -> 0 `i `uc ]
+"24
+[e = . . _SSP1CON3bits 0 0 -> -> 0 `i `uc ]
+"25
+[e = . . _SSP1CON3bits 0 4 -> -> 1 `i `uc ]
+"26
+[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
+"27
 [e :UE 839 ]
+}
+[v $root$_i2cInterrupt `(v ~T0 @X0 0 e ]
+"29
+[v _i2cInterrupt `(v ~T1 @X0 1 ef ]
+{
+[e :U _i2cInterrupt ]
+[f ]
+"30
+[e = _SSP1IF -> -> 0 `i `b ]
+"31
+[e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 841  ]
+{
+"33
+[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
+"34
+[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
+"36
+}
+[e $U 842  ]
+[e :U 841 ]
+[e $ ! != -> . . _SSP1STATbits 0 4 `i -> 0 `i 843  ]
+{
+"38
+[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 844  ]
+"39
+[e ( _handleCmd ..  ]
+[e :U 844 ]
+"41
+}
+[e $U 845  ]
+[e :U 843 ]
+[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 846  ]
+{
+"43
+[e $ ! != -> _haveCommand `i -> 0 `i 847  ]
+{
+"45
+[e ( _setErrorInt (1 -> -> 1 `i `uc ]
+"46
+}
+[e $U 848  ]
+[e :U 847 ]
+{
+"47
+[e $ ! < -> _i2cRecvBytesPtr `i + -> 10 `i -> 1 `i 849  ]
+"48
+[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
+[e :U 849 ]
+"49
+}
+[e :U 848 ]
+"51
+}
+[e $U 850  ]
+[e :U 846 ]
+{
+"53
+[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
+"54
+}
+[e :U 850 ]
+[e :U 845 ]
+[e :U 842 ]
+"55
+[e :UE 840 ]
 }

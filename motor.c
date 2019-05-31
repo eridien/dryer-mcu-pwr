@@ -8,8 +8,3 @@
 void motorInit(void) {
 }
 
-void clockInterrupt(void) {
-  TMR0IF = 0;
-  timeTicks++;
-  
-}

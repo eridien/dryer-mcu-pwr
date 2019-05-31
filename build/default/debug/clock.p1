@@ -1,4 +1,48 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"21409 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _T016BIT `Vb ~T0 @X0 0 e@11508 ]
+"21412
+[v _T0ASYNC `Vb ~T0 @X0 0 e@11516 ]
+"6944
+[s S339 :4 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S339 . T0CKPS T0ASYNC T0CS ]
+"6949
+[s S340 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S340 . T0CKPS0 T0CKPS1 T0CKPS2 T0CKPS3 . T0CS0 T0CS1 T0CS2 ]
+"6959
+[s S341 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S341 . T0PS0 T0PS1 T0PS2 T0PS3 ]
+"6965
+[s S342 :4 `uc 1 ]
+[n S342 . T0PS ]
+"6943
+[u S338 `S339 1 `S340 1 `S341 1 `S342 1 ]
+[n S338 . . . . . ]
+"6969
+[v _T0CON1bits `VS338 ~T0 @X0 0 e@1439 ]
+"6619
+[v _TMR0H `Vuc ~T0 @X0 0 e@1437 ]
+"6879
+[s S336 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S336 . T0OUTPS T016BIT T0OUT . T0EN ]
+"6886
+[s S337 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S337 . T0OUTPS0 T0OUTPS1 T0OUTPS2 T0OUTPS3 ]
+"6878
+[u S335 `S336 1 `S337 1 ]
+[n S335 . . . ]
+"6893
+[v _T0CON0bits `VS335 ~T0 @X0 0 e@1438 ]
+"21718
+[v _TMR0IF `Vb ~T0 @X0 0 e@14437 ]
+"21715
+[v _TMR0IE `Vb ~T0 @X0 0 e@14517 ]
+"21454
+[v _T0EN `Vb ~T0 @X0 0 e@11511 ]
+"5 ./buzzer.h
+[v _buzzCountdown `Vui ~T0 @X0 0 e ]
+"10
+[v _buzzEndInt `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -577,11 +621,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 motor.c
-[v _motorInit `(v ~T0 @X0 1 ef ]
+"10 clock.c
+[v _timeTicks `Vui ~T0 @X0 1 e ]
+"12
+[v _clkInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _motorInit ]
+[e :U _clkInit ]
 [f ]
-"9
+"14
+[e = _T016BIT -> -> 0 `i `b ]
+"15
+[e = _T0ASYNC -> -> 0 `i `b ]
+"16
+[e = . . _T0CON1bits 0 2 -> -> 4 `i `uc ]
+"17
+[e = _TMR0H -> -> 31 `i `uc ]
+"18
+[e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
+"19
+[e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
+"20
+[e = _TMR0IF -> -> 0 `i `b ]
+"21
+[e = _TMR0IE -> -> 1 `i `b ]
+"22
+[e = _T0EN -> -> 1 `i `b ]
+"23
 [e :UE 839 ]
+}
+"25
+[v _timeTicks `Vui ~T0 @X0 1 e ]
+"27
+[v _clockInterrupt `(v ~T0 @X0 1 ef ]
+{
+[e :U _clockInterrupt ]
+[f ]
+"28
+[e = _TMR0IF -> -> 0 `i `b ]
+"29
+[e ++ _timeTicks -> -> 1 `i `Vui ]
+"32
+[e $ ! != _buzzCountdown -> -> 0 `i `ui 841  ]
+{
+"33
+[e $ ! == -- _buzzCountdown -> -> 1 `i `Vui -> -> 1 `i `ui 842  ]
+"34
+[e ( _buzzEndInt ..  ]
+[e :U 842 ]
+"35
+}
+[e :U 841 ]
+"38
+[e :UE 840 ]
 }

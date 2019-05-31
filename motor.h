@@ -7,7 +7,6 @@
 #include "pins.h"
 
 void motorInit(void);
-void clockInterrupt(void);
 
 #endif	/* MOTOR_H */
 
