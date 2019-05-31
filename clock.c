@@ -32,4 +32,5 @@ void clockInterrupt(void) {
   
   chkBuzzer();
   chkSensors();
+  chkMotor();
 }

@@ -18,9 +18,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PEIE `Vb ~T0 @X0 0 e@94 ]
 "9 ./clock.h
 [v _clkInit `(v ~T0 @X0 0 ef ]
-"5 ./pwm.h
+"8 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
-"7 ./sensor.h
+"9 ./sensor.h
 [v _sensorInit `(v ~T0 @X0 0 ef ]
 "9 ./motor.h
 [v _motorInit `(v ~T0 @X0 0 ef ]
@@ -30,6 +30,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i2cInit `(v ~T0 @X0 0 ef ]
 "7 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
+"9 ./pwm.h
+[v _setDutyCycle `(v ~T0 @X0 0 ef2`uc`ui ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "21718 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
@@ -700,43 +702,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _buzzerInit ..  ]
 "56
 [e ( _i2cInit ..  ]
-"61
+"59
 [e ( _buzz (1 -> -> 200 `i `ui ]
-"63
+"62
+[e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 512 `i `ui ]
+"64
 [e :U 841 ]
 {
 }
 [e :U 840 ]
 [e $U 841  ]
 [e :U 842 ]
-"64
+"65
 [e ) -> 0 `i ]
 [e $UE 839  ]
-"65
+"66
 [e :UE 839 ]
 }
 [v $root$_globalInt `(v ~T0 @X0 0 e ]
-"68
+"69
 [v _globalInt `(v ~T1 @X0 1 ef ]
 {
 [e :U _globalInt ]
 [f ]
-"69
+"70
 [e $ ! _TMR0IF 844  ]
 {
-"70
-[e ( _clockInterrupt ..  ]
 "71
+[e ( _clockInterrupt ..  ]
+"72
 }
 [e :U 844 ]
-"72
+"73
 [e $ ! _SSP1IF 845  ]
 {
-"73
-[e ( _i2cInterrupt ..  ]
 "74
+[e ( _i2cInterrupt ..  ]
+"75
 }
 [e :U 845 ]
-"75
+"76
 [e :UE 843 ]
 }

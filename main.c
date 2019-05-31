@@ -58,6 +58,9 @@ int main(int argc, char** argv) {
   // beep at wakeup
   buzz(200); // 200 msec
   
+  // test pwm
+  setDutyCycle(FPWM, 512); //set fan to 50%
+          
   while(true){};
   return 0;
 }

@@ -1,4 +1,5 @@
 
+#include <xc.h>
 #include "types.h"
 #include "pins.h"
 #include "pwm.h"
@@ -6,7 +7,7 @@
 void setDutyCycle(uint8 pwm, uint16 count) {
   // pwm:  0:fan pwm, 1: heater pwm
   // count ranges from 0 to 1023
-  if(pwm = HPWM) {
+  if(pwm == HPWM) {
     // heater
     PWM3DCH   =  count > 2;
     PWM3DCL   = (count & 0x03) << 6;
@@ -20,9 +21,10 @@ void setDutyCycle(uint8 pwm, uint16 count) {
 void pwmInit(void) {
   // timer2 is base for both PWMs
   T2PR     = 255; // 10-bit resolution
-  T2CS     = 1;   // must use FOsc/4 for PWM clocking
-  T2CKPS   = 7;   // prescaler is 1:2^^CKPS, 1:128
-  T2OUTPS  = 15;  // postscaler is (1:OUTPS+1), 1:16
+  T2CLKCONbits.CS = 1;   // must use FOsc/4 for PWM clocking
+  T2CONbits.CKPS  = 7;   // prescaler is 1:2^^CKPS, 1:128
+  T2CONbits.OUTPS = 15;  // postscaler is (1:OUTPS+1), 1:16
+  
   T2PSYNC  = 1;   // prescaler synced to FOsc/4
   T2CKPOL  = 0;   // Rising edge of input clock clocks timer/prescaler
   T2CKSYNC = 1;   // ON register bit is synchronized to TMR2_clk input

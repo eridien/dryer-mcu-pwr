@@ -41,7 +41,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _T0EN `Vb ~T0 @X0 0 e@11511 ]
 "6 ./buzzer.h
 [v _chkBuzzer `(v ~T0 @X0 0 ef ]
-"8 ./sensor.h
+"10 ./sensor.h
 [v _chkSensors `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
