@@ -21,7 +21,7 @@
 #pragma config WDTCCS = SC      // WDT input clock selector (Software Control)
 #pragma config BBSIZE = BB512   // Boot Block Size Selection bits (512 words boot block size)
 #pragma config BBEN = OFF       // Boot Block Enable bit (Boot Block disabled)
-#pragma config SAFEN = OFF      // SAF Enable bit (SAF disabled)
+#pragma config SAFEN = ON       // SAF Enable bit (SAF enabled) -- eeprom substitute
 #pragma config WRTAPP = OFF     // Application Block Write Protection bit (Application Block not write protected)
 #pragma config WRTB = OFF       // Boot Block Write Protection bit (Boot Block not write protected)
 #pragma config WRTC = OFF       // Configuration Register Write Protection bit (Configuration Register not write protected)
@@ -54,6 +54,7 @@ int main(int argc, char** argv) {
   motorInit();
   buzzerInit();
   i2cInit();
+  cmdInit();
   
   // beep at wakeup
   buzz(200); // 200 msec
@@ -61,7 +62,9 @@ int main(int argc, char** argv) {
   // test pwm
   setDutyCycle(FPWM, 512); //set fan to 50%
           
-  while(true){};
+  // foreground code loop, never returns
+  eventLoop();
+  
   return 0;
 }
 

@@ -7,7 +7,6 @@
 #include "buzzer.h"
 #include "sensor.h"
 
-
 volatile uint16 timeTicks; 
 
 void clkInit(void) {
@@ -32,5 +31,7 @@ void clockInterrupt(void) {
   
   chkBuzzer();
   chkSensors();
-  chkMotor();
+  // chk motor every 2 ms (500 Hz)
+  if(timeTicks & 0x0001)
+    chkMotor();
 }

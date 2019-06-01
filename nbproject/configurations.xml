@@ -13,7 +13,6 @@
       <itemPath>buzzer.h</itemPath>
       <itemPath>sensor.h</itemPath>
       <itemPath>command.h</itemPath>
-      <itemPath>error.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

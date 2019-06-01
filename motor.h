@@ -15,8 +15,9 @@
 extern bool motorRunning;
 
 void motorInit(void);
+void chkMotor(void);
 void motorOff(void);
-void setFlapPos(uint8 pos);
+void setFlapPos(uint8 pos); // 0: dry beads, 1: dry filament
 
 #endif	/* MOTOR_H */
 

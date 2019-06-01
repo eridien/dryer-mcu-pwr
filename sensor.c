@@ -21,7 +21,7 @@ void sensorInit(void) {
   SENSH_ANS  = 1; // heater sensor pin analog input
   SENSB_ANS  = 1; // bottom sensor pin analog input
   
-  curSensor = 0;                   // start with bottom senstor
+  curSensor          = 0;          // start with bottom senstor
   ADCON0bits.CHS     = SENSB_CHAN; // starting channel select
   sensDelaying       = A2D_SETTLE_TIME; 
   ADCON0bits.GOnDONE = 0;          // no first conversion

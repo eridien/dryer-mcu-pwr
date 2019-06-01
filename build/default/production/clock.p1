@@ -41,8 +41,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _T0EN `Vb ~T0 @X0 0 e@11511 ]
 "6 ./buzzer.h
 [v _chkBuzzer `(v ~T0 @X0 0 ef ]
-"10 ./sensor.h
+"13 ./sensor.h
 [v _chkSensors `(v ~T0 @X0 0 ef ]
+"18 ./motor.h
+[v _chkMotor `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -621,49 +623,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"11 clock.c
+"10 clock.c
 [v _timeTicks `Vui ~T0 @X0 1 e ]
-"13
+"12
 [v _clkInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _clkInit ]
 [f ]
-"15
+"14
 [e = _T016BIT -> -> 0 `i `b ]
-"16
+"15
 [e = _T0ASYNC -> -> 0 `i `b ]
-"17
+"16
 [e = . . _T0CON1bits 0 2 -> -> 4 `i `uc ]
-"18
+"17
 [e = _TMR0H -> -> 31 `i `uc ]
-"19
+"18
 [e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
-"20
+"19
 [e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
-"21
+"20
 [e = _TMR0IF -> -> 0 `i `b ]
-"22
+"21
 [e = _TMR0IE -> -> 1 `i `b ]
-"23
+"22
 [e = _T0EN -> -> 1 `i `b ]
-"24
+"23
 [e :UE 839 ]
 }
-"26
+"25
 [v _timeTicks `Vui ~T0 @X0 1 e ]
-"29
+"28
 [v _clockInterrupt `(v ~T0 @X0 1 ef ]
 {
 [e :U _clockInterrupt ]
 [f ]
-"30
+"29
 [e = _TMR0IF -> -> 0 `i `b ]
-"31
+"30
 [e ++ _timeTicks -> -> 1 `i `Vui ]
-"33
+"32
 [e ( _chkBuzzer ..  ]
-"34
+"33
 [e ( _chkSensors ..  ]
 "35
+[e $ ! != & _timeTicks -> -> 1 `i `ui -> -> 0 `i `ui 841  ]
+"36
+[e ( _chkMotor ..  ]
+[e :U 841 ]
+"37
 [e :UE 840 ]
 }

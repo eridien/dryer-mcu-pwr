@@ -20,18 +20,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _clkInit `(v ~T0 @X0 0 ef ]
 "8 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
-"9 ./sensor.h
+"12 ./sensor.h
 [v _sensorInit `(v ~T0 @X0 0 ef ]
-"9 ./motor.h
+"17 ./motor.h
 [v _motorInit `(v ~T0 @X0 0 ef ]
 "5 ./buzzer.h
 [v _buzzerInit `(v ~T0 @X0 0 ef ]
-"21 ./i2c.h
+"22 ./i2c.h
 [v _i2cInit `(v ~T0 @X0 0 ef ]
+"32 ./command.h
+[v _cmdInit `(v ~T0 @X0 0 ef ]
 "7 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
 "9 ./pwm.h
 [v _setDutyCycle `(v ~T0 @X0 0 ef2`uc`ui ]
+"33 ./command.h
+[v _eventLoop `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "21718 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
@@ -40,7 +44,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _clockInterrupt `(v ~T0 @X0 0 ef ]
 "21289 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
-"22 ./i2c.h
+"23 ./i2c.h
 [v _i2cInterrupt `(v ~T0 @X0 0 ef ]
 "5 main.c
 [p x FEXTOSC = OFF ]
@@ -81,7 +85,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [p x BBEN = OFF ]
 "24
-[p x SAFEN = OFF ]
+[p x SAFEN = ON ]
 "25
 [p x WRTAPP = OFF ]
 "26
@@ -702,45 +706,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _buzzerInit ..  ]
 "56
 [e ( _i2cInit ..  ]
-"59
+"57
+[e ( _cmdInit ..  ]
+"60
 [e ( _buzz (1 -> -> 200 `i `ui ]
-"62
+"63
 [e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 512 `i `ui ]
-"64
-[e :U 841 ]
-{
-}
-[e :U 840 ]
-[e $U 841  ]
-[e :U 842 ]
-"65
+"66
+[e ( _eventLoop ..  ]
+"68
 [e ) -> 0 `i ]
 [e $UE 839  ]
-"66
+"69
 [e :UE 839 ]
 }
 [v $root$_globalInt `(v ~T0 @X0 0 e ]
-"69
+"72
 [v _globalInt `(v ~T1 @X0 1 ef ]
 {
 [e :U _globalInt ]
 [f ]
-"70
-[e $ ! _TMR0IF 844  ]
-{
-"71
-[e ( _clockInterrupt ..  ]
-"72
-}
-[e :U 844 ]
 "73
-[e $ ! _SSP1IF 845  ]
+[e $ ! _TMR0IF 841  ]
 {
 "74
-[e ( _i2cInterrupt ..  ]
+[e ( _clockInterrupt ..  ]
 "75
 }
-[e :U 845 ]
+[e :U 841 ]
 "76
-[e :UE 843 ]
+[e $ ! _SSP1IF 842  ]
+{
+"77
+[e ( _i2cInterrupt ..  ]
+"78
+}
+[e :U 842 ]
+"79
+[e :UE 840 ]
 }

@@ -1,4 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"19303 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _LATA1 `Vb ~T0 @X0 0 e@193 ]
+"19306
+[v _LATA2 `Vb ~T0 @X0 0 e@194 ]
+"19330
+[v _LATC5 `Vb ~T0 @X0 0 e@213 ]
+"19327
+[v _LATC4 `Vb ~T0 @X0 0 e@212 ]
+"21925
+[v _TRISA1 `Vb ~T0 @X0 0 e@145 ]
+"21928
+[v _TRISA2 `Vb ~T0 @X0 0 e@146 ]
+"21952
+[v _TRISC5 `Vb ~T0 @X0 0 e@165 ]
+"21949
+[v _TRISC4 `Vb ~T0 @X0 0 e@164 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -577,11 +593,188 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 motor.c
+"10 motor.c
+[v _phase `uc ~T0 @X0 1 e ]
+[i _phase
+-> -> 0 `i `uc
+]
+"11
+[v _curPos `ui ~T0 @X0 1 e ]
+[i _curPos
+-> -> 0 `i `ui
+]
+"12
+[v _tgtPos `ui ~T0 @X0 1 e ]
+[i _tgtPos
+-> -> 0 `i `ui
+]
+"13
+[v _motorRunning `uc ~T0 @X0 1 e ]
+[i _motorRunning
+-> -> 0 `i `uc
+]
+"15
+[v _motorOff `(v ~T0 @X0 1 ef ]
+{
+[e :U _motorOff ]
+[f ]
+"16
+[e = _LATA1 -> -> 0 `i `b ]
+"17
+[e = _LATA2 -> -> 0 `i `b ]
+"18
+[e = _LATC5 -> -> 0 `i `b ]
+"19
+[e = _LATC4 -> -> 0 `i `b ]
+"20
+[e = _motorRunning -> -> 0 `i `uc ]
+"21
+[e :UE 839 ]
+}
+"23
+[v _motorOffInt `(v ~T0 @X0 1 ef ]
+{
+[e :U _motorOffInt ]
+[f ]
+"24
+[e = _LATA1 -> -> 0 `i `b ]
+"25
+[e = _LATA2 -> -> 0 `i `b ]
+"26
+[e = _LATC5 -> -> 0 `i `b ]
+"27
+[e = _LATC4 -> -> 0 `i `b ]
+"28
+[e = _motorRunning -> -> 0 `i `uc ]
+"29
+[e :UE 840 ]
+}
+"31
+[v _setFlapPos `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setFlapPos ]
+[v _pos `uc ~T0 @X0 1 r1 ]
+[f ]
+"32
+[e = _tgtPos -> ? == -> _pos `i -> 1 `i : -> 0 `i - / -> 2038 `i -> 12 `i -> 1 `i `ui ]
+"33
+[e = _motorRunning -> -> 1 `i `uc ]
+"34
+[e :UE 841 ]
+}
+"36
+[v _step `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _step ]
+[v _cw `uc ~T0 @X0 1 r1 ]
+[f ]
+"37
+[e =+ _phase -> ? != -> _cw `i -> 0 `i : -> 1 `i -U -> 1 `i `uc ]
+"38
+[e $ ! > -> _phase `i -> 3 `i 843  ]
+[e = _phase -> ? != -> _cw `i -> 0 `i : -> 0 `i -> 3 `i `uc ]
+[e :U 843 ]
+"39
+[e $U 845  ]
+{
+"40
+[e :U 846 ]
+[e = _LATA1 -> -> 1 `i `b ]
+[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATC5 -> -> 0 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e $U 844  ]
+"41
+[e :U 847 ]
+[e = _LATA1 -> -> 0 `i `b ]
+[e = _LATA2 -> -> 1 `i `b ]
+[e = _LATC5 -> -> 0 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e $U 844  ]
+"42
+[e :U 848 ]
+[e = _LATA1 -> -> 0 `i `b ]
+[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATC5 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e $U 844  ]
+"43
+[e :U 849 ]
+[e = _LATA1 -> -> 0 `i `b ]
+[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATC5 -> -> 0 `i `b ]
+[e = _LATC4 -> -> 1 `i `b ]
+[e $U 844  ]
+"44
+}
+[e $U 844  ]
+[e :U 845 ]
+[e [\ -> _phase `i , $ -> 0 `i 846
+ , $ -> 1 `i 847
+ , $ -> 2 `i 848
+ , $ -> 3 `i 849
+ 844 ]
+[e :U 844 ]
+"45
+[e =+ _curPos -> ? != -> _cw `i -> 0 `i : -> 1 `i -U -> 1 `i `ui ]
+"46
+[e $ ! == _curPos -> / -> 2038 `i -> 12 `i `ui 850  ]
+[e = _curPos -> - / -> 2038 `i -> 12 `i -> 1 `i `ui ]
+[e :U 850 ]
+"47
+[e $ ! == _curPos -> 65535 `ui 851  ]
+[e = _curPos -> -> 0 `i `ui ]
+[e :U 851 ]
+"48
+[e :UE 842 ]
+}
+"50
 [v _motorInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorInit ]
 [f ]
-"9
-[e :UE 839 ]
+"51
+[e ( _motorOff ..  ]
+"52
+[e = _TRISA1 -> -> 0 `i `b ]
+"53
+[e = _TRISA2 -> -> 0 `i `b ]
+"54
+[e = _TRISC5 -> -> 0 `i `b ]
+"55
+[e = _TRISC4 -> -> 0 `i `b ]
+"57
+[e = _curPos -> -> 0 `i `ui ]
+"58
+[e ( _setFlapPos (1 -> -> 0 `i `uc ]
+"59
+[e :UE 852 ]
+}
+"62
+[v _chkMotor `(v ~T0 @X0 1 ef ]
+{
+[e :U _chkMotor ]
+[f ]
+"63
+[e $ ! != -> _motorRunning `i -> 0 `i 854  ]
+{
+"64
+[e $ ! < _curPos _tgtPos 855  ]
+[e ( _step (1 -> -> 1 `i `uc ]
+[e $U 856  ]
+"65
+[e :U 855 ]
+[e $ ! > _curPos _tgtPos 857  ]
+[e ( _step (1 -> -> 0 `i `uc ]
+[e $U 858  ]
+"66
+[e :U 857 ]
+[e ( _motorOffInt ..  ]
+[e :U 858 ]
+[e :U 856 ]
+"67
+}
+[e :U 854 ]
+"68
+[e :UE 853 ]
 }

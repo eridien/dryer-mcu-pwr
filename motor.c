@@ -20,8 +20,16 @@ void motorOff(void) {
   motorRunning = false;
 }
 
+void motorOffInt(void) {
+  MA_LAT = 0;  // all pins off
+  MB_LAT = 0;
+  MC_LAT = 0;
+  MD_LAT = 0;
+  motorRunning = false;
+}
+
 void setFlapPos(uint8 pos) {
-  tgtPos = (pos == FLAP_BEADS ? 0 : FLAP_STEPS);
+  tgtPos = (pos == FLAP_BEADS ? 0 : FLAP_STEPS-1);
   motorRunning = true;
 }
 
@@ -50,12 +58,11 @@ void motorInit(void) {
   setFlapPos(FLAP_FILAMENT); // start going to FLAP_STEPS-1, may go past end
 }
 
-// called from interrupts every 1 ms
+// called from interrupts every 2 ms
 void chkMotor(void) {
   if(motorRunning) {
     if      (curPos < tgtPos) step(CW);
     else if (curPos > tgtPos) step(CCW);
-    else
-      motorRunning = false;
+    else motorOffInt();
   }
 }
