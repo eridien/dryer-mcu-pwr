@@ -1,5 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"2497 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+"21937 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _TRISC0 `Vb ~T0 @X0 0 e@160 ]
+"21940
+[v _TRISC1 `Vb ~T0 @X0 0 e@161 ]
+"15996
+[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
+"16054
+[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
+"16550
+[v _RC0PPS `Vuc ~T0 @X0 0 e@7968 ]
+"16594
+[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
+"2497
 [s S133 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S133 . SSPM CKP SSPEN SSPOV WCOL ]
 "2504
@@ -95,16 +107,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S142 . . ]
 "2815
 [v _SSP1CON3bits `VS142 ~T0 @X0 0 e@402 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
 "21289
 [v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
-"1917
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
-"29 ./command.h
-[v _haveCommand `Vuc ~T0 @X0 0 e ]
-"35
+"21286
+[v _SSP1IE `Vb ~T0 @X0 0 e@14536 ]
+"43 ./command.h
 [v _setErrorInt `(v ~T0 @X0 0 ef1`uc ]
+"1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
+"37 ./command.h
+[v _haveCommand `Vuc ~T0 @X0 0 e ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -685,118 +697,139 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "8 i2c.c
 [v _i2cAddrBase `uc ~T0 @X0 1 e ]
-"10
-[v _i2cRecvBytes `Vuc ~T0 @X0 -> 66 `i e ]
+"9
+[v _dummy `Vuc ~T0 @X0 1 e ]
 "11
-[v _i2cRecvBytesPtr `Vuc ~T0 @X0 1 e ]
+[v _i2cRecvBytes `Vuc ~T0 @X0 -> 32 `i e ]
 "12
-[v _i2cSendBytes `Vuc ~T0 @X0 -> 65 `i e ]
+[v _i2cRecvBytesPtr `Vuc ~T0 @X0 1 e ]
 "13
+[v _i2cSendBytes `Vuc ~T0 @X0 -> 31 `i e ]
+"14
 [v _i2cSendBytesPtr `Vuc ~T0 @X0 1 e ]
-"15
+"16
 [v _i2cInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _i2cInit ]
 [f ]
-"16
-[e = . . _SSP1CON1bits 0 0 -> -> 6 `i `uc ]
 "17
-[e = _SSP1MSK -> -> 254 `i `uc ]
+[e = _TRISC0 -> -> 1 `i `b ]
 "18
-[e = _SSP1ADD -> -> 16 `i `uc ]
+[e = _TRISC1 -> -> 1 `i `b ]
 "19
-[e = . . _SSP1STATbits 0 7 -> -> 0 `i `uc ]
+[e = _SSP1CLKPPS -> -> 16 `i `uc ]
 "20
-[e = . . _SSP1STATbits 0 6 -> -> 1 `i `uc ]
+[e = _SSP1DATPPS -> -> 17 `i `uc ]
 "21
-[e = . . _SSP1CON2bits 0 0 -> -> 0 `i `uc ]
+[e = _RC0PPS -> -> 21 `i `uc ]
 "22
-[e = . . _SSP1CON3bits 0 1 -> -> 0 `i `uc ]
+[e = _RC1PPS -> -> 22 `i `uc ]
 "23
-[e = . . _SSP1CON3bits 0 0 -> -> 0 `i `uc ]
+[e = . . _SSP1CON1bits 0 0 -> -> 6 `i `uc ]
 "24
-[e = . . _SSP1CON3bits 0 4 -> -> 1 `i `uc ]
+[e = _SSP1MSK -> -> 254 `i `uc ]
 "25
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
+[e = _SSP1ADD -> -> 16 `i `uc ]
 "26
+[e = . . _SSP1STATbits 0 7 -> -> 0 `i `uc ]
+"27
+[e = . . _SSP1STATbits 0 6 -> -> 0 `i `uc ]
+"28
+[e = . . _SSP1CON2bits 0 0 -> -> 0 `i `uc ]
+"29
+[e = . . _SSP1CON3bits 0 1 -> -> 0 `i `uc ]
+"30
+[e = . . _SSP1CON3bits 0 0 -> -> 0 `i `uc ]
+"31
+[e = . . _SSP1CON3bits 0 4 -> -> 1 `i `uc ]
+"32
+[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
+"33
+[e = _SSP1IF -> -> 0 `i `b ]
+"34
+[e = _SSP1IE -> -> 1 `i `b ]
+"35
 [e :UE 839 ]
 }
-[v $root$_i2cInterrupt `(v ~T0 @X0 0 e ]
-"28
-[v _i2cInterrupt `(v ~T1 @X0 1 ef ]
+"37
+[v _i2cInterrupt `(v ~T0 @X0 1 ef ]
 {
 [e :U _i2cInterrupt ]
 [f ]
-"29
+"38
 [e = _SSP1IF -> -> 0 `i `b ]
-"30
-[e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 841  ]
-{
-"32
-[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
-"33
-[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
-"34
-[e $ ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 842  ]
-"35
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-[e :U 842 ]
-"37
-}
-[e $U 843  ]
-[e :U 841 ]
-[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 844  ]
+"39
+[e $ ! != -> . . _SSP1CON1bits 0 3 `i -> 0 `i 841  ]
 {
 "40
-[e $ ! != -> _haveCommand `i -> 0 `i 845  ]
-{
-"42
 [e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"44
+"41
+[e $UE 840  ]
+"42
 }
-[e $U 846  ]
-[e :U 845 ]
-[e $ ! >= -> _i2cRecvBytesPtr `i + -> 64 `i -> 2 `i 847  ]
-"46
-[e ( _setErrorInt (1 -> -> 2 `i `uc ]
-[e $U 848  ]
-"47
-[e :U 847 ]
+[e :U 841 ]
+"43
+[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+"45
+[e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 842  ]
 {
+"47
+[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
 "48
-[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
+[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
 "49
-[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 849  ]
+[e $ ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 843  ]
+{
 "50
-[e = _haveCommand -> -> 1 `i `uc ]
-[e :U 849 ]
+[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
 "51
 }
-[e :U 848 ]
-[e :U 846 ]
-"53
-}
-[e $U 850  ]
+[e $U 844  ]
+[e :U 843 ]
+"52
+[e = _dummy _SSP1BUF ]
 [e :U 844 ]
+"54
+}
+[e $U 845  ]
+[e :U 842 ]
+[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 846  ]
 {
 "56
-[e $ ! >= -> _i2cSendBytesPtr `i + -> 64 `i -> 1 `i 851  ]
+[e $ ! != -> _haveCommand `i -> 0 `i 847  ]
 {
 "58
-[e ( _setErrorInt (1 -> -> 3 `i `uc ]
-"59
-[e = _SSP1BUF -> -> 0 `i `uc ]
+[e ( _setErrorInt (1 -> -> 1 `i `uc ]
 "60
 }
-[e $U 852  ]
-[e :U 851 ]
-"61
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-[e :U 852 ]
+[e $U 848  ]
+[e :U 847 ]
+[e $ ! >= -> _i2cRecvBytesPtr `i + -> 30 `i -> 2 `i 849  ]
 "62
+[e ( _setErrorInt (1 -> -> 2 `i `uc ]
+[e $U 850  ]
+"63
+[e :U 849 ]
+{
+"64
+[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
+"65
+[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 851  ]
+"66
+[e = _haveCommand -> -> 1 `i `uc ]
+[e :U 851 ]
+"67
 }
 [e :U 850 ]
-[e :U 843 ]
-"63
+[e :U 848 ]
+"69
+}
+[e $U 852  ]
+[e :U 846 ]
+"71
+[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
+[e :U 852 ]
+[e :U 845 ]
+"72
 [e :UE 840 ]
 }

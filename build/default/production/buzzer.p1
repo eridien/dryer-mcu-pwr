@@ -584,7 +584,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17909
 [; <" TOSH equ 01FEFh ;# ">
 "6 buzzer.c
-[v _buzzCountdown `ui ~T0 @X0 1 e ]
+[v _buzzCountdown `Vui ~T0 @X0 1 e ]
 [i _buzzCountdown
 -> -> 0 `i `ui
 ]
@@ -616,59 +616,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [e :UE 840 ]
 }
-"19
-[v _buzzEndInt `(v ~T0 @X0 1 ef ]
-{
-[e :U _buzzEndInt ]
-[f ]
-"20
-[e = _buzzCountdown -> -> 0 `i `ui ]
 "21
-[e = _LATA5 -> -> 0 `i `b ]
-"22
-[e :UE 841 ]
-}
-"25
 [v _chkBuzzer `(v ~T0 @X0 1 ef ]
 {
 [e :U _chkBuzzer ]
 [f ]
-"26
-[e $ ! != _buzzCountdown -> -> 0 `i `ui 843  ]
-{
+"22
+[e $ ! && != _buzzCountdown -> -> 0 `i `ui == =- _buzzCountdown -> -> 1 `i `Vui -> -> 0 `i `ui 842  ]
+"23
+[e = _LATA5 -> -> 0 `i `b ]
+[e :U 842 ]
+"24
+[e :UE 841 ]
+}
 "27
-[e $ ! == -- _buzzCountdown -> -> 1 `i `ui -> -> 1 `i `ui 844  ]
-"28
-[e ( _buzzEndInt ..  ]
-[e :U 844 ]
-"29
-}
-[e :U 843 ]
-"30
-[e :UE 842 ]
-}
-"33
 [v _buzz `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _buzz ]
 [v _ms `ui ~T0 @X0 1 r1 ]
 [f ]
-"34
+"28
 [e ( _buzzEnd ..  ]
-"35
-[e $ ! != _ms -> -> 0 `i `ui 846  ]
+"29
+[e $ ! != _ms -> -> 0 `i `ui 844  ]
 {
-"36
+"30
 [e = _LATA5 -> -> 1 `i `b ]
-"37
+"31
 [e = _GIE -> -> 0 `i `b ]
-"38
+"32
 [e = _buzzCountdown _ms ]
-"39
+"33
 [e = _GIE -> -> 1 `i `b ]
-"40
+[e = _GIE -> -> 1 `i `b ]
+"35
 }
-[e :U 846 ]
-"41
-[e :UE 845 ]
+[e :U 844 ]
+"36
+[e :UE 843 ]
 }

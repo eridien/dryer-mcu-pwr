@@ -16,7 +16,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "20608
 [v _PEIE `Vb ~T0 @X0 0 e@94 ]
-"9 ./clock.h
+"7 ./clock.h
 [v _clkInit `(v ~T0 @X0 0 ef ]
 "8 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
@@ -28,19 +28,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _buzzerInit `(v ~T0 @X0 0 ef ]
 "22 ./i2c.h
 [v _i2cInit `(v ~T0 @X0 0 ef ]
-"32 ./command.h
+"40 ./command.h
 [v _cmdInit `(v ~T0 @X0 0 ef ]
-"7 ./buzzer.h
+"8 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
 "9 ./pwm.h
 [v _setDutyCycle `(v ~T0 @X0 0 ef2`uc`ui ]
-"33 ./command.h
+"41 ./command.h
 [v _eventLoop `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "21718 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [v _TMR0IF `Vb ~T0 @X0 0 e@14437 ]
-"10 ./clock.h
+"8 ./clock.h
 [v _clockInterrupt `(v ~T0 @X0 0 ef ]
 "21289 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]

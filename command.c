@@ -41,7 +41,17 @@ void setSendBytes(void) {
   GIE = 0;
   i2cSendBytes[0] = curRegister;
   
-  switch (curRegister) {
+  if (curRegister >= REG_OPTIONS0 && curRegister <= REG_OPTIONS3) {
+    NVMCON1bits.NVMREGS = 1;
+    NVMADRH = 0x07;
+    NVMADRL = 0x80 + (curRegister - REG_OPTIONS0) * 32;
+    for(uint8 i=0; i < NUM_OPT_BYTES_IO; i++) {
+      NVMCON1bits.RD = 1;
+      i2cSendBytes[i+1] = NVMDATL;
+    }
+  }
+  
+  else switch (curRegister) {
     case 0: break;
     
     case REG_CHIPID:
@@ -60,22 +70,12 @@ void setSendBytes(void) {
        break;
 
     case REG_SENS:
-      i2cSendBytes[1] = (curSensorReading[0] >> 8   );
+      i2cSendBytes[1] = 0xaa; // (curSensorReading[0] >> 8   );
       i2cSendBytes[2] = (curSensorReading[0] &  0xff);
       i2cSendBytes[3] = (curSensorReading[1] >> 8   );
       i2cSendBytes[4] = (curSensorReading[1] &  0xff);
       break;
       
-    case REG_OPTIONS:
-      NVMCON1bits.NVMREGS = 1;
-      NVMADRH = 0x07;
-      NVMADRL = 0x80;
-      for(uint8 i=0; i < NUM_OPTION_BYTES; i++) {
-        NVMCON1bits.RD = 1;
-        i2cSendBytes[i+1] = NVMDATL;
-      }
-      break;
-
     default: 
       setError(REG_MISSING_ERROR);
   }
@@ -109,8 +109,50 @@ void eventLoop (void) {
     else if(haveCommand) {
       cmdLen        = i2cRecvBytes[0];
       uint8 cmdByte = i2cRecvBytes[1];
+      
+      if (cmdByte >= CMD_SET_OPTIONS0 && cmdByte <= CMD_SET_OPTIONS3) {
+        if(cmdLenIs(2+NUM_OPT_BYTES_IO)) {
+          uint8 cmdBufIdx = 2;
+          uint16 flashAddr = 
+                0x780 + (cmdByte - CMD_SET_OPTIONS0) * 32;
+          while(cmdBufIdx < 2+NUM_OPT_BYTES_IO) {
+            // erase one 32-word row
+            NVMADRH = (flashAddr >> 8);
+            NVMADRL = (flashAddr & 0x00ff);
+            NVMCON1bits.NVMREGS = 0;
+            NVMCON1bits.FREE    = 1;
+            NVMCON1bits.WREN    = 1;
+            // unlock and erase row
+            GIE = 0;
+            NVMCON2 = 0x55;
+            NVMCON2 = 0xaa;
+            NVMCON1bits.WR = 1;
+            GIE = 1;
+            NVMCON1bits.WREN = 0;
 
-      switch (cmdByte) {
+            // write one 32-word row
+            NVMCON1bits.WREN = 1;
+            NVMCON1bits.NVMREGS = 0;
+             // fill one row of data latches
+            for(uint8 j=0; j<NUM_OPT_BYTES_IO; j++, flashAddr++) {
+              NVMCON1bits.LWLO = (j < NUM_OPT_BYTES_IO-1); // write on last word
+              NVMADRH = (flashAddr >> 8);
+              NVMADRL = (flashAddr & 0x00ff);
+              NVMDATH = 0; // only 8 bits per 14-bit word
+              NVMDATL = i2cRecvBytes[cmdBufIdx++];
+              // unlock and set data latch
+              GIE = 0;
+              NVMCON2 = 0x55;
+              NVMCON2 = 0xaa;
+              NVMCON1bits.WR = 1;
+              GIE = 1;
+            }
+            // finished writing one 32-word row
+            NVMCON1bits.WREN = 0;
+          }
+        }
+
+      } else switch (cmdByte) {
         case CMD_CLR_ERR: 
           if(cmdLenIs(2)) {
             curRegister = 0;
@@ -144,63 +186,6 @@ void eventLoop (void) {
         case CMD_BEEP: 
           if(cmdLenIs(3))
             buzz(i2cRecvBytes[2]);
-          break;
-
-        case CMD_SET_OPTIONS: 
-          if(cmdLenIs(NUM_OPTION_BYTES+2)) {
-            uint8 cmdBufIdx = 2;
-            uint16 flashAddr = 0x780;
-            while(cmdBufIdx < NUM_OPTION_BYTES+2) {
-              // erase one 32-word row
-              NVMADRH = (flashAddr >> 8);
-              NVMADRL = (flashAddr & 0x00ff);
-              NVMCON1bits.NVMREGS = 0;
-              NVMCON1bits.FREE    = 1;
-              NVMCON1bits.WREN    = 1;
-              // unlock and erase row
-              GIE = 0;
-              NVMCON2 = 0x55;
-              NVMCON2 = 0xaa;
-              NVMCON1bits.WR = 1;
-              GIE = 1;
-              // protection back on
-              NVMCON1bits.WREN = 0;
-
-              // write a 32-word row
-              NVMCON1bits.WREN = 1;
-              NVMCON1bits.NVMREGS = 0;
-              NVMCON1bits.LWLO = 1;  // write to latches only
-
-               // fill one row of data latches (except last latch)
-              for(uint8 j=0; j<31; j++, flashAddr++) {
-                NVMADRH = (flashAddr >> 8);
-                NVMADRL = (flashAddr & 0x00ff);
-                NVMDATH = 0; // only 8 bits per 14-bit word
-                NVMDATL = i2cRecvBytes[cmdBufIdx++];
-                // unlock and set data latch
-                GIE = 0;
-                NVMCON2 = 0x55;
-                NVMCON2 = 0xaa;
-                NVMCON1bits.WR = 1;
-                GIE = 1;
-              }
-              // write to last data latch will write entire row
-              NVMCON1bits.LWLO = 0; 
-              NVMADRH = (flashAddr >> 8);
-              NVMADRL = (flashAddr & 0x00ff);
-              flashAddr++;
-              NVMDATH = 0; // only 8 bits per 14-bit word
-              NVMDATL = i2cRecvBytes[cmdBufIdx++];
-              // unlock and set data latch and write entire row
-              GIE = 0;
-              NVMCON2 = 0x55;
-              NVMCON2 = 0xaa;
-              NVMCON1bits.WR = 1;
-              GIE = 1;
-              // finished writing  one 32-word row
-              NVMCON1bits.WREN = 0;
-            }
-          }
           break;
 
         default:

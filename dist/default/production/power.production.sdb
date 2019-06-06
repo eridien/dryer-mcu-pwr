@@ -7,11 +7,9 @@
 [v _buzzerInit buzzerInit `(v  1 e 1 0 ]
 "13
 [v _buzzEnd buzzEnd `(v  1 e 1 0 ]
-"19
-[v _buzzEndInt buzzEndInt `(v  1 e 1 0 ]
-"25
+"21
 [v _chkBuzzer chkBuzzer `(v  1 e 1 0 ]
-"33
+"27
 [v _buzz buzz `(v  1 e 1 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -23,23 +21,23 @@
 [v _clockInterrupt clockInterrupt `(v  1 e 1 0 ]
 "18 S:\dev\erdry\power\command.c
 [v _resetBoard resetBoard `(v  1 e 1 0 ]
-"24
+"25
 [v _cmdInit cmdInit `(v  1 e 1 0 ]
-"31
+"32
 [v _setError setError `(v  1 e 1 0 ]
-"35
+"36
 [v _setErrorInt setErrorInt `(v  1 e 1 0 ]
-"39
+"40
 [v _setSendBytes setSendBytes `(v  1 e 1 0 ]
-"82
+"85
 [v _handleDelayedError handleDelayedError `(v  1 e 1 0 ]
-"92
+"96
 [v _cmdLenIs cmdLenIs `(uc  1 e 1 0 ]
-"101
+"105
 [v _eventLoop eventLoop `(v  1 e 1 0 ]
-"15 S:\dev\erdry\power\i2c.c
+"16 S:\dev\erdry\power\i2c.c
 [v _i2cInit i2cInit `(v  1 e 1 0 ]
-"28
+"37
 [v _i2cInterrupt i2cInterrupt `(v  1 e 1 0 ]
 "42 S:\dev\erdry\power\main.c
 [v _main main `(i  1 e 2 0 ]
@@ -66,12 +64,12 @@
 "32
 [v _chkSensors chkSensors `(v  1 e 1 0 ]
 "6 S:\dev\erdry\power\buzzer.c
-[v _buzzCountdown buzzCountdown `ui  1 e 2 0 ]
+[v _buzzCountdown buzzCountdown `VEui  1 e 2 0 ]
 "743 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
 "813
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
-[s S785 . 1 `uc 1 ADON 1 0 :1:0 
+[s S787 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GOnDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -81,12 +79,12 @@
 `uc 1 CHS5 1 0 :1:7 
 ]
 "904
-[s S794 . 1 `uc 1 . 1 0 :2:0 
+[s S796 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CHS 1 0 :6:2 
 ]
-[u S797 . 1 `S785 1 . 1 0 `S794 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES797  1 e 1 @157 ]
-[s S718 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[u S799 . 1 `S787 1 . 1 0 `S796 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES799  1 e 1 @157 ]
+[s S720 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS0 1 0 :1:4 
@@ -95,30 +93,30 @@
 `uc 1 ADFM 1 0 :1:7 
 ]
 "975
-[s S726 . 1 `uc 1 ADPREF 1 0 :2:0 
+[s S728 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS 1 0 :3:4 
 ]
-[u S730 . 1 `S718 1 . 1 0 `S726 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES730  1 e 1 @158 ]
-[s S746 . 1 `uc 1 ADACT0 1 0 :1:0 
+[u S732 . 1 `S720 1 . 1 0 `S728 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES732  1 e 1 @158 ]
+[s S748 . 1 `uc 1 ADACT0 1 0 :1:0 
 `uc 1 ADACT1 1 0 :1:1 
 `uc 1 ADACT2 1 0 :1:2 
 `uc 1 ADACT3 1 0 :1:3 
 `uc 1 ADACT4 1 0 :1:4 
 ]
 "1037
-[s S752 . 1 `uc 1 ADACT 1 0 :5:0 
+[s S754 . 1 `uc 1 ADACT 1 0 :5:0 
 ]
-[u S754 . 1 `S746 1 . 1 0 `S752 1 . 1 0 ]
-[v _ADACTbits ADACTbits `VES754  1 e 1 @159 ]
+[u S756 . 1 `S748 1 . 1 0 `S754 1 . 1 0 ]
+[v _ADACTbits ADACTbits `VES756  1 e 1 @159 ]
 "1917
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "1937
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
 "2057
 [v _SSP1MSK SSP1MSK `VEuc  1 e 1 @398 ]
-[s S188 . 1 `uc 1 BF 1 0 :1:0 
+[s S194 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -128,33 +126,33 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2236
-[s S197 . 1 `uc 1 . 1 0 :2:0 
+[s S203 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S202 . 1 `uc 1 . 1 0 :2:0 
+[s S208 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S207 . 1 `uc 1 . 1 0 :2:0 
+[s S213 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S212 . 1 `uc 1 . 1 0 :2:0 
+[s S218 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S217 . 1 `uc 1 . 1 0 :2:0 
+[s S223 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S223 . 1 `uc 1 BF1 1 0 :1:0 
+[s S229 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -163,64 +161,64 @@
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S232 . 1 `uc 1 . 1 0 :2:0 
+[s S238 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S238 . 1 `uc 1 . 1 0 :2:0 
+[s S244 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S244 . 1 `uc 1 . 1 0 :2:0 
+[s S250 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S250 . 1 `uc 1 . 1 0 :2:0 
+[s S256 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S255 . 1 `uc 1 . 1 0 :2:0 
+[s S261 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S260 . 1 `uc 1 . 1 0 :2:0 
+[s S266 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S265 . 1 `uc 1 . 1 0 :2:0 
+[s S271 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S270 . 1 `uc 1 . 1 0 :2:0 
+[s S276 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S275 . 1 `S188 1 . 1 0 `S197 1 . 1 0 `S202 1 . 1 0 `S207 1 . 1 0 `S212 1 . 1 0 `S217 1 . 1 0 `S223 1 . 1 0 `S232 1 . 1 0 `S238 1 . 1 0 `S244 1 . 1 0 `S250 1 . 1 0 `S255 1 . 1 0 `S260 1 . 1 0 `S265 1 . 1 0 `S270 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES275  1 e 1 @399 ]
-[s S141 . 1 `uc 1 SSPM 1 0 :4:0 
+[u S281 . 1 `S194 1 . 1 0 `S203 1 . 1 0 `S208 1 . 1 0 `S213 1 . 1 0 `S218 1 . 1 0 `S223 1 . 1 0 `S229 1 . 1 0 `S238 1 . 1 0 `S244 1 . 1 0 `S250 1 . 1 0 `S256 1 . 1 0 `S261 1 . 1 0 `S266 1 . 1 0 `S271 1 . 1 0 `S276 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES281  1 e 1 @399 ]
+[s S147 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "2521
-[s S147 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S153 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S152 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S158 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -229,9 +227,9 @@
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S161 . 1 `S141 1 . 1 0 `S147 1 . 1 0 `S152 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES161  1 e 1 @400 ]
-[s S379 . 1 `uc 1 SEN 1 0 :1:0 
+[u S167 . 1 `S147 1 . 1 0 `S153 1 . 1 0 `S158 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES167  1 e 1 @400 ]
+[s S385 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -241,17 +239,17 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "2658
-[s S388 . 1 `uc 1 . 1 0 :1:0 
+[s S394 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S391 . 1 `uc 1 . 1 0 :1:0 
+[s S397 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S398 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S404 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -260,16 +258,16 @@
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S407 . 1 `uc 1 . 1 0 :1:0 
+[s S413 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S414 . 1 `S379 1 . 1 0 `S388 1 . 1 0 `S391 1 . 1 0 `S398 1 . 1 0 `S407 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES414  1 e 1 @401 ]
-[s S456 . 1 `uc 1 DHEN 1 0 :1:0 
+[u S420 . 1 `S385 1 . 1 0 `S394 1 . 1 0 `S397 1 . 1 0 `S404 1 . 1 0 `S413 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES420  1 e 1 @401 ]
+[s S462 . 1 `uc 1 DHEN 1 0 :1:0 
 `uc 1 AHEN 1 0 :1:1 
 `uc 1 SBCDE 1 0 :1:2 
 `uc 1 SDAHT 1 0 :1:3 
@@ -279,16 +277,16 @@
 `uc 1 ACKTIM 1 0 :1:7 
 ]
 "2815
-[u S465 . 1 `S456 1 . 1 0 ]
-[v _SSP1CON3bits SSP1CON3bits `VES465  1 e 1 @402 ]
+[u S471 . 1 `S462 1 . 1 0 ]
+[v _SSP1CON3bits SSP1CON3bits `VES471  1 e 1 @402 ]
 "3811
 [v _T2PR T2PR `VEuc  1 e 1 @653 ]
-[s S586 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S588 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "3901
-[s S590 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S592 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -296,11 +294,11 @@
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S598 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S600 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S602 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S604 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -309,50 +307,50 @@
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S611 . 1 `S586 1 . 1 0 `S590 1 . 1 0 `S598 1 . 1 0 `S602 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES611  1 e 1 @654 ]
-[s S645 . 1 `uc 1 MODE 1 0 :5:0 
+[u S613 . 1 `S588 1 . 1 0 `S592 1 . 1 0 `S600 1 . 1 0 `S604 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES613  1 e 1 @654 ]
+[s S647 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "4044
-[s S650 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S652 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S656 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S658 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S661 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S663 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S667 . 1 `S645 1 . 1 0 `S650 1 . 1 0 `S656 1 . 1 0 `S661 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES667  1 e 1 @655 ]
-[s S552 . 1 `uc 1 CS 1 0 :4:0 
+[u S669 . 1 `S647 1 . 1 0 `S652 1 . 1 0 `S658 1 . 1 0 `S663 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES669  1 e 1 @655 ]
+[s S554 . 1 `uc 1 CS 1 0 :4:0 
 ]
 "4164
-[s S554 . 1 `uc 1 CS0 1 0 :1:0 
+[s S556 . 1 `uc 1 CS0 1 0 :1:0 
 `uc 1 CS1 1 0 :1:1 
 `uc 1 CS2 1 0 :1:2 
 `uc 1 CS3 1 0 :1:3 
 ]
-[s S559 . 1 `uc 1 T2CS 1 0 :4:0 
+[s S561 . 1 `uc 1 T2CS 1 0 :4:0 
 ]
-[s S561 . 1 `uc 1 T2CS0 1 0 :1:0 
+[s S563 . 1 `uc 1 T2CS0 1 0 :1:0 
 `uc 1 T2CS1 1 0 :1:1 
 `uc 1 T2CS2 1 0 :1:2 
 `uc 1 T2CS3 1 0 :1:3 
 ]
-[u S566 . 1 `S552 1 . 1 0 `S554 1 . 1 0 `S559 1 . 1 0 `S561 1 . 1 0 ]
-[v _T2CLKCONbits T2CLKCONbits `VES566  1 e 1 @656 ]
+[u S568 . 1 `S554 1 . 1 0 `S556 1 . 1 0 `S561 1 . 1 0 `S563 1 . 1 0 ]
+[v _T2CLKCONbits T2CLKCONbits `VES568  1 e 1 @656 ]
 "4790
 [v _PWM3DCL PWM3DCL `VEuc  1 e 1 @788 ]
 "4856
@@ -363,26 +361,26 @@
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @793 ]
 "6619
 [v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
-[s S900 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S902 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "6893
-[s S906 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S908 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S911 . 1 `S900 1 . 1 0 `S906 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES911  1 e 1 @1438 ]
-[s S853 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[u S913 . 1 `S902 1 . 1 0 `S908 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES913  1 e 1 @1438 ]
+[s S855 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 T0ASYNC 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "6969
-[s S857 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S859 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -391,15 +389,15 @@
 `uc 1 T0CS1 1 0 :1:6 
 `uc 1 T0CS2 1 0 :1:7 
 ]
-[s S866 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S868 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
-[s S871 . 1 `uc 1 T0PS 1 0 :4:0 
+[s S873 . 1 `uc 1 T0PS 1 0 :4:0 
 ]
-[u S873 . 1 `S853 1 . 1 0 `S857 1 . 1 0 `S866 1 . 1 0 `S871 1 . 1 0 ]
-[v _T0CON1bits T0CON1bits `VES873  1 e 1 @1439 ]
+[u S875 . 1 `S855 1 . 1 0 `S859 1 . 1 0 `S868 1 . 1 0 `S873 1 . 1 0 ]
+[v _T0CON1bits T0CON1bits `VES875  1 e 1 @1439 ]
 "9252
 [v _NVMADRL NVMADRL `VEuc  1 e 1 @2074 ]
 "9314
@@ -408,7 +406,7 @@
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
 "9439
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2077 ]
-[s S951 . 1 `uc 1 RD 1 0 :1:0 
+[s S953 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -417,17 +415,25 @@
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "9505
-[u S959 . 1 `S951 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES959  1 e 1 @2078 ]
+[u S961 . 1 `S953 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES961  1 e 1 @2078 ]
 "9545
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
+"15996
+[v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @7877 ]
+"16054
+[v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @7878 ]
+"16550
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @7968 ]
+"16594
+[v _RC1PPS RC1PPS `VEuc  1 e 1 @7969 ]
 "16638
 [v _RC2PPS RC2PPS `VEuc  1 e 1 @7970 ]
 "16682
 [v _RC3PPS RC3PPS `VEuc  1 e 1 @7971 ]
 "16814
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
-[s S768 . 1 `uc 1 ANSA0 1 0 :1:0 
+[s S770 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -435,8 +441,8 @@
 `uc 1 ANSA5 1 0 :1:5 
 ]
 "16829
-[u S775 . 1 `S768 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES775  1 e 1 @7992 ]
+[u S777 . 1 `S770 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES777  1 e 1 @7992 ]
 [s S24 . 1 `uc 1 WPUA0 1 0 :1:0 
 `uc 1 WPUA1 1 0 :1:1 
 `uc 1 WPUA2 1 0 :1:2 
@@ -475,6 +481,8 @@
 [v _PWM4OUT PWM4OUT `VEb  1 e 0 @6357 ]
 "20779
 [v _PWM4POL PWM4POL `VEb  1 e 0 @6356 ]
+"21286
+[v _SSP1IE SSP1IE `VEb  1 e 0 @14536 ]
 "21289
 [v _SSP1IF SSP1IF `VEb  1 e 0 @14456 ]
 "21409
@@ -503,6 +511,10 @@
 [v _TRISA4 TRISA4 `VEb  1 e 0 @148 ]
 "21934
 [v _TRISA5 TRISA5 `VEb  1 e 0 @149 ]
+"21937
+[v _TRISC0 TRISC0 `VEb  1 e 0 @160 ]
+"21940
+[v _TRISC1 TRISC1 `VEb  1 e 0 @161 ]
 "21943
 [v _TRISC2 TRISC2 `VEb  1 e 0 @162 ]
 "21946
@@ -511,8 +523,8 @@
 [v _TRISC4 TRISC4 `VEb  1 e 0 @164 ]
 "21952
 [v _TRISC5 TRISC5 `VEb  1 e 0 @165 ]
-"25 S:\dev\erdry\power\clock.c
-[v _timeTicks timeTicks `VEui  1 e 2 0 ]
+"10 S:\dev\erdry\power\clock.c
+[v _timeTicks timeTicks `VEuc  1 e 1 0 ]
 "10 S:\dev\erdry\power\command.c
 [v _haveCommand haveCommand `VEuc  1 e 1 0 ]
 "11
@@ -521,15 +533,17 @@
 [v _curError curError `VEuc  1 e 1 0 ]
 "14
 [v _curRegister curRegister `uc  1 e 1 0 ]
-"90
+"94
 [v _cmdLen cmdLen `uc  1 e 1 0 ]
-"10 S:\dev\erdry\power\i2c.c
-[v _i2cRecvBytes i2cRecvBytes `VE[66]uc  1 e 66 0 ]
+"9 S:\dev\erdry\power\i2c.c
+[v _dummy dummy `VEuc  1 e 1 0 ]
 "11
-[v _i2cRecvBytesPtr i2cRecvBytesPtr `VEuc  1 e 1 0 ]
+[v _i2cRecvBytes i2cRecvBytes `VE[32]uc  1 e 32 0 ]
 "12
-[v _i2cSendBytes i2cSendBytes `VE[65]uc  1 e 65 0 ]
+[v _i2cRecvBytesPtr i2cRecvBytesPtr `VEuc  1 e 1 0 ]
 "13
+[v _i2cSendBytes i2cSendBytes `VE[31]uc  1 e 31 0 ]
+"14
 [v _i2cSendBytesPtr i2cSendBytesPtr `VEuc  1 e 1 0 ]
 "10 S:\dev\erdry\power\motor.c
 [v _phase phase `uc  1 e 1 0 ]
@@ -569,23 +583,23 @@
 {
 "59
 } 0
-"15 S:\dev\erdry\power\i2c.c
+"16 S:\dev\erdry\power\i2c.c
 [v _i2cInit i2cInit `(v  1 e 1 0 ]
 {
-"26
+"35
 } 0
-"101 S:\dev\erdry\power\command.c
+"105 S:\dev\erdry\power\command.c
 [v _eventLoop eventLoop `(v  1 e 1 0 ]
 {
-"171
-[v eventLoop@j j `uc  1 a 1 12 ]
-"148
-[v eventLoop@flashAddr flashAddr `ui  1 a 2 15 ]
-"147
-[v eventLoop@cmdBufIdx cmdBufIdx `uc  1 a 1 14 ]
-"107
-[v eventLoop@cmdByte cmdByte `uc  1 a 1 13 ]
-"213
+"137
+[v eventLoop@j j `uc  1 a 1 13 ]
+"116
+[v eventLoop@flashAddr flashAddr `ui  1 a 2 14 ]
+"115
+[v eventLoop@cmdBufIdx cmdBufIdx `uc  1 a 1 12 ]
+"111
+[v eventLoop@cmdByte cmdByte `uc  1 a 1 16 ]
+"201
 } 0
 "31 S:\dev\erdry\power\motor.c
 [v _setFlapPos setFlapPos `(v  1 e 1 0 ]
@@ -595,56 +609,51 @@
 [v setFlapPos@pos pos `uc  1 a 1 0 ]
 "34
 } 0
-"82 S:\dev\erdry\power\command.c
+"85 S:\dev\erdry\power\command.c
 [v _handleDelayedError handleDelayedError `(v  1 e 1 0 ]
 {
-"88
+"92
 } 0
-"39
+"40
 [v _setSendBytes setSendBytes `(v  1 e 1 0 ]
 {
-"70
-[v setSendBytes@i_999 i `uc  1 a 1 5 ]
-"49
+"62
+[v setSendBytes@i_1001 i `uc  1 a 1 5 ]
+"48
 [v setSendBytes@i i `uc  1 a 1 4 ]
-"80
+"83
 } 0
-"33 S:\dev\erdry\power\buzzer.c
+"27 S:\dev\erdry\power\buzzer.c
 [v _buzz buzz `(v  1 e 1 0 ]
 {
 [v buzz@ms ms `ui  1 p 2 0 ]
-"41
+"36
 } 0
-"13
-[v _buzzEnd buzzEnd `(v  1 e 1 0 ]
-{
-"18
-} 0
-"92 S:\dev\erdry\power\command.c
+"96 S:\dev\erdry\power\command.c
 [v _cmdLenIs cmdLenIs `(uc  1 e 1 0 ]
 {
 [v cmdLenIs@len len `uc  1 a 1 wreg ]
 [v cmdLenIs@len len `uc  1 a 1 wreg ]
 [v cmdLenIs@len len `uc  1 a 1 2 ]
-"98
+"102
 } 0
-"31
+"32
 [v _setError setError `(v  1 e 1 0 ]
 {
 [v setError@err err `uc  1 a 1 wreg ]
 [v setError@err err `uc  1 a 1 wreg ]
 [v setError@err err `uc  1 a 1 1 ]
-"33
+"34
 } 0
-"24
+"25
 [v _cmdInit cmdInit `(v  1 e 1 0 ]
 {
-"29
+"30
 } 0
 "18
 [v _resetBoard resetBoard `(v  1 e 1 0 ]
 {
-"22
+"23
 } 0
 "7 S:\dev\erdry\power\pwm.c
 [v _setDutyCycle setDutyCycle `(v  1 e 1 0 ]
@@ -661,6 +670,11 @@
 {
 "21
 } 0
+"13 S:\dev\erdry\power\buzzer.c
+[v _buzzEnd buzzEnd `(v  1 e 1 0 ]
+{
+"18
+} 0
 "12 S:\dev\erdry\power\clock.c
 [v _clkInit clkInit `(v  1 e 1 0 ]
 {
@@ -676,18 +690,18 @@
 {
 "79
 } 0
-"28 S:\dev\erdry\power\i2c.c
+"37 S:\dev\erdry\power\i2c.c
 [v _i2cInterrupt i2cInterrupt `(v  1 e 1 0 ]
 {
-"63
+"72
 } 0
-"35 S:\dev\erdry\power\command.c
+"36 S:\dev\erdry\power\command.c
 [v _setErrorInt setErrorInt `(v  1 e 1 0 ]
 {
 [v setErrorInt@err err `uc  1 a 1 wreg ]
 [v setErrorInt@err err `uc  1 a 1 wreg ]
 [v setErrorInt@err err `uc  1 a 1 1 ]
-"37
+"38
 } 0
 "28 S:\dev\erdry\power\clock.c
 [v _clockInterrupt clockInterrupt `(v  1 e 1 0 ]
@@ -719,13 +733,8 @@
 {
 "29
 } 0
-"25 S:\dev\erdry\power\buzzer.c
+"21 S:\dev\erdry\power\buzzer.c
 [v _chkBuzzer chkBuzzer `(v  1 e 1 0 ]
 {
-"30
-} 0
-"19
-[v _buzzEndInt buzzEndInt `(v  1 e 1 0 ]
-{
-"22
+"24
 } 0

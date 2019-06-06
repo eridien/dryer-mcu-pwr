@@ -8,8 +8,8 @@
 
 #define I2C_ADDR 0x10;  // actual addr is 0x08
 
-#define RECV_BUF_SIZE (NUM_OPTION_BYTES+2)
-#define SEND_BUF_SIZE (NUM_OPTION_BYTES+1)
+#define RECV_BUF_SIZE (NUM_OPT_BYTES_IO+2)
+#define SEND_BUF_SIZE (NUM_OPT_BYTES_IO+1)
 
 #define RdNotWrite SSP1STATbits.I2C_READ
 #define I2C_SSPOV  SSP1CON1bits.SSPOV

@@ -14,6 +14,8 @@ volatile uint8 i2cSendBytes[SEND_BUF_SIZE];
 volatile uint8 i2cSendBytesPtr;
 
 void i2cInit(void) { 
+  SCL_TRIS           = 1;
+  SDA_TRIS           = 1;
   SSP1CLKPPS         = 0x10;       // clk input  is C0
   SSP1DATPPS         = 0x11;       // dat input  is C1
   RC0PPS             = 0x15;       // clk output is C0
@@ -24,29 +26,33 @@ void i2cInit(void) {
   SSP1STATbits.SMP   = 0;          // slew-rate enabled
   SSP1STATbits.CKE   = 0;          // smb voltage levels
   SSP1CON2bits.SEN   = 0;          // no clock stretching 
-  SSP1CON2bits.ACKDT = 0;          // send ack
   SSP1CON3bits.AHEN  = 0;          // no clock stretch before addr ack
   SSP1CON3bits.DHEN  = 0;          // no clock stretch before data ack
-  SSP1CON3bits.BOEN  = 1;          // enable buffer overwrite check
+  SSP1CON3bits.BOEN  = 1;          // enable buffer overwrite
   SSP1CON1bits.SSPEN = 1;          // Enable the serial port
   SSP1IF = 0;                      // int flag
   SSP1IE = 1;                      // enable ints
 }
 
-void __interrupt() i2cInterrupt() {
+void i2cInterrupt() {
   SSP1IF = 0;
+  if(SSP1CON1bits.SSPOV) {
+    setErrorInt(OVERFLOW_ERROR);
+    return;
+  }
+  SSP1CON1bits.CKP = 1;          // release any clock stretching
+  
   if(!SSP1STATbits.DA) {
     // address byte
     i2cSendBytesPtr = 0;
     i2cRecvBytesPtr = 0;
-    if(RdNotWrite)
+    if(RdNotWrite) { 
       SSP1BUF = i2cSendBytes[i2cSendBytesPtr++];
-    else
+    } else
       dummy = SSP1BUF;  // clear BF flag
     
   } else if(!RdNotWrite) {
-    
-    // received byte (i2c write to slave)
+    // received data byte (i2c write to slave)
     if (haveCommand) {
       // last command for this motor not handled yet by event loop
       setErrorInt(OVERFLOW_ERROR);
@@ -60,14 +66,7 @@ void __interrupt() i2cInterrupt() {
          haveCommand = true;
     }
 
-  } else {
-    
+  } else
     // sent byte (i2c read from slave), load buffer for next send
-    if(i2cSendBytesPtr >= SEND_BUF_SIZE) {
-      // asked foe too many bytes
-      setErrorInt(SEND_BUF_ERROR);
-      SSP1BUF = 0;
-    } else
-      SSP1BUF = i2cSendBytes[i2cSendBytesPtr++];
-  }
+    SSP1BUF = i2cSendBytes[i2cSendBytesPtr++];
 }
