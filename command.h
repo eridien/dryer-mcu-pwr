@@ -2,7 +2,7 @@
 #ifndef COMMAND_H
 #define	COMMAND_H
  
-#define NUM_OPTION_BYTES 64 // first half of SAF safe application flash nmmory
+#define NUM_OPTION_BYTES 30 // arduino buffer is only 32 bytes
 
 // commands (second byte))
 #define CMD_CLR_ERR       1
@@ -11,7 +11,7 @@
 #define CMD_SET_FAN       4  // 0 to 1023
 #define CMD_SET_FLAP      5  // 0: beads, 1: filament
 #define CMD_BEEP          6  // ms
-#define CMD_SET_OPTIONS   7  // 64 bytes of options
+#define CMD_SET_OPTIONS   7  // 30 bytes of options
  
 // registers (also second byte)
 #define REG_CHIPID       20

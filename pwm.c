@@ -20,7 +20,7 @@ void setDutyCycle(uint8 pwm, uint16 count) {
 
 void pwmInit(void) {
   // timer2 is base for both PWMs
-  T2PR     = 255; // 10-bit resolution
+  T2PR            = 255; // 10-bit resolution
   T2CLKCONbits.CS = 1;   // must use FOsc/4 for PWM clocking
   T2CONbits.CKPS  = 7;   // prescaler is 1:2^^CKPS,    1:128
   T2CONbits.OUTPS = 15;  // postscaler is (1:OUTPS+1), 1:16

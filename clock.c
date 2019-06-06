@@ -7,7 +7,7 @@
 #include "buzzer.h"
 #include "sensor.h"
 
-volatile uint16 timeTicks; 
+volatile uint8 timeTicks; 
 
 void clkInit(void) {
   // timer 0 interrupts every ms
@@ -22,9 +22,9 @@ void clkInit(void) {
   T0EN                  =  1;  // enable timer0
 }
 
-volatile uint16 timeTicks;     // units: 1 ms
-
 // interrupts every ms
+
+
 void clockInterrupt(void) {
   TMR0IF = 0;
   timeTicks++;

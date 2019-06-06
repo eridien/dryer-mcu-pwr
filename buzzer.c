@@ -3,7 +3,7 @@
 #include "pins.h"
 #include "buzzer.h"
 
-uint16 buzzCountdown = 0;
+volatile uint16 buzzCountdown = 0;
 
 void buzzerInit(void) {
   BUZZ_LAT  = 0;
@@ -16,17 +16,11 @@ void buzzEnd(void){
   GIE = 1;
   BUZZ_LAT = 0;
 }
-void buzzEndInt(void){
-  buzzCountdown = 0;
-  BUZZ_LAT = 0;
-}
 
 // called from interrupt every 1 ms
 void chkBuzzer(void) {
-  if(buzzCountdown) {
-    if(buzzCountdown-- == 1) 
-      buzzEndInt();
-  }
+  if(buzzCountdown && --buzzCountdown == 0) 
+    BUZZ_LAT = 0;
 }
 
 // called from command
@@ -36,7 +30,8 @@ void buzz(uint16 ms) {
     BUZZ_LAT = 1;
     GIE = 0;
     buzzCountdown = ms;
-    GIE = 1;
+    GIE = 1;    GIE = 1;
+
   }
 }
 

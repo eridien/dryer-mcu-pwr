@@ -16,6 +16,7 @@ uint8 curRegister = 0;
 void setSendBytes(void);
 
 void resetBoard(void) {
+  buzzEnd();
   motorOff();
   setDutyCycle(HPWM, 0);
   setDutyCycle(FPWM, 0);
@@ -41,6 +42,8 @@ void setSendBytes(void) {
   i2cSendBytes[0] = curRegister;
   
   switch (curRegister) {
+    case 0: break;
+    
     case REG_CHIPID:
       // read-only chip id at addr 0x8100
       NVMCON1bits.NVMREGS = 1;
@@ -81,7 +84,8 @@ void setSendBytes(void) {
 
 void handleDelayedError() {
   resetBoard();
-  buzz(2000); // 2 secs
+  if(delayedError != curError)
+    buzz(2000); // 2 secs
   curError = delayedError;
   curRegister = REG_ERROR;
   setSendBytes();
@@ -184,6 +188,7 @@ void eventLoop (void) {
               NVMCON1bits.LWLO = 0; 
               NVMADRH = (flashAddr >> 8);
               NVMADRL = (flashAddr & 0x00ff);
+              flashAddr++;
               NVMDATH = 0; // only 8 bits per 14-bit word
               NVMDATL = i2cRecvBytes[cmdBufIdx++];
               // unlock and set data latch and write entire row
@@ -194,8 +199,6 @@ void eventLoop (void) {
               GIE = 1;
               // finished writing  one 32-word row
               NVMCON1bits.WREN = 0;
-              flashAddr++;
-              cmdBufIdx++;
             }
           }
           break;

@@ -4,6 +4,7 @@
 
 void buzzerInit(void);
 void chkBuzzer(void);
+void buzzEnd(void);
 void buzz(uint16 ms);
 
 #endif	/* BUZZER_H */

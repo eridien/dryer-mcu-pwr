@@ -4,8 +4,6 @@
 
 #include "motor.h"
 
-extern volatile uint16 timeTicks; 
-
 void clkInit(void);
 void clockInterrupt(void);
 

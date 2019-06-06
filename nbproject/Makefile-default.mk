@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c motor.c i2c.c buzzer.c pwm.c sensor.c clock.c command.c error.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c motor.c i2c.c buzzer.c pwm.c sensor.c clock.c command.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/motor.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/buzzer.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/command.p1 ${OBJECTDIR}/error.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/motor.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/buzzer.p1.d ${OBJECTDIR}/pwm.p1.d ${OBJECTDIR}/sensor.p1.d ${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/command.p1.d ${OBJECTDIR}/error.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/motor.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/buzzer.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/command.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/motor.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/buzzer.p1.d ${OBJECTDIR}/pwm.p1.d ${OBJECTDIR}/sensor.p1.d ${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/command.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/motor.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/buzzer.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/command.p1 ${OBJECTDIR}/error.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/motor.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/buzzer.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/command.p1
 
 # Source Files
-SOURCEFILES=main.c motor.c i2c.c buzzer.c pwm.c sensor.c clock.c command.c error.c
+SOURCEFILES=main.c motor.c i2c.c buzzer.c pwm.c sensor.c clock.c command.c
 
 
 CFLAGS=
@@ -157,14 +157,6 @@ ${OBJECTDIR}/command.p1: command.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/command.d ${OBJECTDIR}/command.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/command.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/error.p1: error.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/error.p1.d 
-	@${RM} ${OBJECTDIR}/error.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -Og -maddrqual=ignore -xassembler-with-cpp -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/error.p1 error.c 
-	@-${MV} ${OBJECTDIR}/error.d ${OBJECTDIR}/error.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/error.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -229,14 +221,6 @@ ${OBJECTDIR}/command.p1: command.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -Og -maddrqual=ignore -xassembler-with-cpp -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/command.p1 command.c 
 	@-${MV} ${OBJECTDIR}/command.d ${OBJECTDIR}/command.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/command.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/error.p1: error.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/error.p1.d 
-	@${RM} ${OBJECTDIR}/error.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -Og -maddrqual=ignore -xassembler-with-cpp -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/error.p1 error.c 
-	@-${MV} ${OBJECTDIR}/error.d ${OBJECTDIR}/error.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/error.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
