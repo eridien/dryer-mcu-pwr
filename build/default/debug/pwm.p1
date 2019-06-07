@@ -1,118 +1,93 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15996 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"16054
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
-"16550
-[v _RC0PPS `Vuc ~T0 @X0 0 e@7968 ]
-"16594
-[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
-"2497
-[s S133 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . SSPM CKP SSPEN SSPOV WCOL ]
-"2504
-[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S134 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"2510
-[s S135 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S135 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"2496
-[u S132 `S133 1 `S134 1 `S135 1 ]
-[n S132 . . . . ]
-"2521
-[v _SSP1CON1bits `VS132 ~T0 @X0 0 e@400 ]
-"2057
-[v _SSP1MSK `Vuc ~T0 @X0 0 e@398 ]
-"1937
-[v _SSP1ADD `Vuc ~T0 @X0 0 e@397 ]
-"2133
-[s S117 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S117 . BF UA R_nW S P D_nA CKE SMP ]
-"2143
-[s S118 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S118 . . R_W . D_A ]
-"2149
-[s S119 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S119 . . nW . nA ]
-"2155
-[s S120 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S120 . . nWRITE . nADDRESS ]
-"2161
-[s S121 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S121 . . READ_WRITE . DATA_ADDRESS ]
-"2167
-[s S122 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S122 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"2174
-[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S123 . BF1 UA1 R START STOP D CKE1 SMP1 ]
-"2184
-[s S124 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S124 . . RW START1 STOP1 DA ]
-"2191
-[s S125 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S125 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
-"2198
-[s S126 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S126 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
-"2205
-[s S127 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S127 . . READ_WRITE1 . D_A1 ]
-"2211
-[s S128 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S128 . . R_W1 . D_nA1 ]
-"2217
-[s S129 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S129 . . R_nW1 . I2C_DAT1 ]
-"2223
-[s S130 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S130 . . nW2 . nA2 ]
-"2229
-[s S131 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S131 . . nWRITE1 . nADDRESS1 ]
-"2132
-[u S116 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 `S123 1 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
-[n S116 . . . . . . . . . . . . . . . . ]
-"2236
-[v _SSP1STATbits `VS116 ~T0 @X0 0 e@399 ]
-"2617
-[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S137 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"2627
-[s S138 :1 `uc 1 :5 `uc 1 ]
-[n S138 . . ADMSK ]
-"2631
-[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S139 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
-"2639
-[s S140 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S140 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
-"2649
-[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S141 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
-"2616
-[u S136 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 ]
-[n S136 . . . . . . ]
-"2658
-[v _SSP1CON2bits `VS136 ~T0 @X0 0 e@401 ]
-"2804
-[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S143 . DHEN AHEN SBCDE SDAHT BOEN SCIE PCIE ACKTIM ]
-"2803
-[u S142 `S143 1 ]
-[n S142 . . ]
-"2815
-[v _SSP1CON3bits `VS142 ~T0 @X0 0 e@402 ]
-"21289
-[v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
-"21286
-[v _SSP1IE `Vb ~T0 @X0 0 e@14536 ]
-"44 ./command.h
-[v _setErrorInt `(v ~T0 @X0 0 ef1`uc ]
-"1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
-"38 ./command.h
-[v _haveCommand `Vuc ~T0 @X0 0 e ]
+"4856 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _PWM3DCH `Vuc ~T0 @X0 0 e@789 ]
+"4790
+[v _PWM3DCL `Vuc ~T0 @X0 0 e@788 ]
+"5155
+[v _PWM4DCH `Vuc ~T0 @X0 0 e@793 ]
+"5089
+[v _PWM4DCL `Vuc ~T0 @X0 0 e@792 ]
+"3811
+[v _T2PR `Vuc ~T0 @X0 0 e@653 ]
+"4145
+[s S205 :4 `uc 1 ]
+[n S205 . CS ]
+"4148
+[s S206 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S206 . CS0 CS1 CS2 CS3 ]
+"4154
+[s S207 :4 `uc 1 ]
+[n S207 . T2CS ]
+"4157
+[s S208 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S208 . T2CS0 T2CS1 T2CS2 T2CS3 ]
+"4144
+[u S204 `S205 1 `S206 1 `S207 1 `S208 1 ]
+[n S204 . . . . . ]
+"4164
+[v _T2CLKCONbits `VS204 ~T0 @X0 0 e@656 ]
+"3871
+[s S195 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S195 . OUTPS CKPS ON ]
+"3876
+[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S196 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 ]
+"3885
+[s S197 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S197 . T2OUTPS T2CKPS T2ON ]
+"3890
+[s S198 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 T2CKPS0 T2CKPS1 T2CKPS2 TMR2ON ]
+"3870
+[u S194 `S195 1 `S196 1 `S197 1 `S198 1 ]
+[n S194 . . . . . ]
+"3901
+[v _T2CONbits `VS194 ~T0 @X0 0 e@654 ]
+"21676
+[v _T2PSYNC `Vb ~T0 @X0 0 e@5247 ]
+"21601
+[v _T2CKPOL `Vb ~T0 @X0 0 e@5246 ]
+"21613
+[v _T2CKSYNC `Vb ~T0 @X0 0 e@5245 ]
+"4017
+[s S200 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S200 . MODE CKSYNC CKPOL PSYNC ]
+"4023
+[s S201 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S201 . MODE0 MODE1 MODE2 MODE3 MODE4 ]
+"4030
+[s S202 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S202 . T2MODE T2CKSYNC T2CKPOL T2PSYNC ]
+"4036
+[s S203 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S203 . T2MODE0 T2MODE1 T2MODE2 T2MODE3 T2MODE4 ]
+"4016
+[u S199 `S200 1 `S201 1 `S202 1 `S203 1 ]
+[n S199 . . . . . ]
+"4044
+[v _T2HLTbits `VS199 ~T0 @X0 0 e@655 ]
+"21943
+[v _TRISC2 `Vb ~T0 @X0 0 e@162 ]
+"21946
+[v _TRISC3 `Vb ~T0 @X0 0 e@163 ]
+"20737
+[v _PWM3POL `Vb ~T0 @X0 0 e@6324 ]
+"20779
+[v _PWM4POL `Vb ~T0 @X0 0 e@6356 ]
+"20734
+[v _PWM3OUT `Vb ~T0 @X0 0 e@6325 ]
+"20776
+[v _PWM4OUT `Vb ~T0 @X0 0 e@6357 ]
+"16638
+[v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
+"16682
+[v _RC3PPS `Vuc ~T0 @X0 0 e@7971 ]
+"20728
+[v _PWM3EN `Vb ~T0 @X0 0 e@6327 ]
+"20770
+[v _PWM4EN `Vb ~T0 @X0 0 e@6359 ]
+"21661
+[v _T2ON `Vb ~T0 @X0 0 e@5239 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -691,197 +666,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 i2c.c
-[v _dummy `Vuc ~T0 @X0 1 e ]
+"7 pwm.c
+[v _setDutyCycle `(v ~T0 @X0 1 ef2`uc`ui ]
+{
+[e :U _setDutyCycle ]
+[v _pwm `uc ~T0 @X0 1 r1 ]
+[v _count `ui ~T0 @X0 1 r2 ]
+[f ]
 "10
-[v _i2cRecvBytes `Vuc ~T0 @X0 -> 32 `i e ]
-"11
-[v _i2cRecvBytesPtr `Vuc ~T0 @X0 1 e ]
+[e $ ! == -> _pwm `i -> 0 `i 840  ]
+{
 "12
-[v _i2cSendBytes `Vuc ~T0 @X0 -> 31 `i e ]
+[e = _PWM3DCH -> -> > _count -> -> 2 `i `ui `i `uc ]
 "13
-[v _i2cSendBytesPtr `Vuc ~T0 @X0 1 e ]
-"15
-[v _i2cInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _i2cInit ]
-[f ]
-"16
-[e = _SSP1CLKPPS -> -> 16 `i `uc ]
-"17
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
-"18
-[e = _RC0PPS -> -> 21 `i `uc ]
-"19
-[e = _RC1PPS -> -> 22 `i `uc ]
-"20
-[e = . . _SSP1CON1bits 0 0 -> -> 6 `i `uc ]
-"21
-[e = _SSP1MSK -> -> 254 `i `uc ]
-"22
-[e = _SSP1ADD -> -> 16 `i `uc ]
-"23
-[e = . . _SSP1STATbits 0 7 -> -> 0 `i `uc ]
-"24
-[e = . . _SSP1STATbits 0 6 -> -> 0 `i `uc ]
-"25
-[e = . . _SSP1CON2bits 0 0 -> -> 0 `i `uc ]
-"26
-[e = . . _SSP1CON3bits 0 1 -> -> 0 `i `uc ]
-"27
-[e = . . _SSP1CON3bits 0 0 -> -> 0 `i `uc ]
-"28
-[e = . . _SSP1CON3bits 0 4 -> -> 0 `i `uc ]
-"29
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
-"30
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"31
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"32
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-"33
-[e = _SSP1IF -> -> 0 `i `b ]
-"34
-[e = _SSP1IE -> -> 1 `i `b ]
-"35
-[e :UE 839 ]
+[e = _PWM3DCL -> << & _count -> -> 3 `i `ui -> 6 `i `uc ]
+"14
 }
-"37
-[v _i2cInterrupt `(v ~T0 @X0 1 ef ]
+[e $U 841  ]
+[e :U 840 ]
 {
-[e :U _i2cInterrupt ]
-[f ]
-"38
-[e = _SSP1IF -> -> 0 `i `b ]
-"39
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"40
-[e $ ! != -> . . _SSP1CON1bits 0 3 `i -> 0 `i 841  ]
-{
-"41
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
-"42
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"43
-[e $UE 840  ]
-"44
+"16
+[e = _PWM4DCH -> -> > _count -> -> 2 `i `ui `i `uc ]
+"17
+[e = _PWM4DCL -> << & _count -> -> 3 `i `ui -> 6 `i `uc ]
+"18
 }
 [e :U 841 ]
+"19
+[e :UE 839 ]
+}
+"21
+[v _pwmInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _pwmInit ]
+[f ]
+"23
+[e = _T2PR -> -> 255 `i `uc ]
+"24
+[e = . . _T2CLKCONbits 0 0 -> -> 1 `i `uc ]
+"25
+[e = . . _T2CONbits 0 1 -> -> 7 `i `uc ]
+"26
+[e = . . _T2CONbits 0 0 -> -> 15 `i `uc ]
+"28
+[e = _T2PSYNC -> -> 1 `i `b ]
+"29
+[e = _T2CKPOL -> -> 0 `i `b ]
+"30
+[e = _T2CKSYNC -> -> 1 `i `b ]
+"31
+[e = . . _T2HLTbits 0 0 -> -> 0 `i `uc ]
+"34
+[e = _TRISC2 -> -> 1 `i `b ]
+"35
+[e = _TRISC3 -> -> 1 `i `b ]
+"37
+[e = _PWM3POL -> -> 0 `i `b ]
+"38
+[e = _PWM4POL -> -> 0 `i `b ]
+"40
+[e = _PWM3OUT -> -> 0 `i `b ]
+"41
+[e = _PWM4OUT -> -> 0 `i `b ]
+"43
+[e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 0 `i `ui ]
+"44
+[e ( _setDutyCycle (2 , -> -> 0 `i `uc -> -> 0 `i `ui ]
 "46
-[e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 842  ]
-{
-"48
-[e $ ! ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 843  ]
+[e = _RC2PPS -> -> 11 `i `uc ]
+"47
+[e = _RC3PPS -> -> 12 `i `uc ]
 "49
-[e = _dummy -> -> 1 `i `uc ]
-[e :U 843 ]
+[e = _PWM3EN -> -> 1 `i `b ]
 "50
-[e = _dummy _SSP1BUF ]
-"51
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 844  ]
+[e = _PWM4EN -> -> 1 `i `b ]
 "52
-[e = _dummy -> -> 2 `i `uc ]
-[e :U 844 ]
+[e = _T2ON -> -> 1 `i `b ]
 "53
-[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
-"54
-[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
-"55
-[e $ ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 845  ]
-{
-"56
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 846  ]
-"57
-[e = _dummy -> -> 2 `i `uc ]
-[e :U 846 ]
-"58
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-"59
-[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 847  ]
-{
-"60
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"61
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"62
-[e $UE 840  ]
-"63
-}
-[e :U 847 ]
-"64
-}
-[e :U 845 ]
-"66
-}
-[e $U 848  ]
-[e :U 842 ]
-[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 849  ]
-{
-"68
-[e $ ! != -> _haveCommand `i -> 0 `i 850  ]
-{
-"70
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"72
-}
-[e $U 851  ]
-[e :U 850 ]
-[e $ ! >= -> _i2cRecvBytesPtr `i + -> 30 `i -> 2 `i 852  ]
-{
-"74
-[e ( _setErrorInt (1 -> -> 2 `i `uc ]
-"76
-}
-[e $U 853  ]
-[e :U 852 ]
-{
-"77
-[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
-"78
-[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 854  ]
-"79
-[e = _haveCommand -> -> 1 `i `uc ]
-[e :U 854 ]
-"80
-}
-[e :U 853 ]
-[e :U 851 ]
-"82
-}
-[e $U 855  ]
-[e :U 849 ]
-{
-"84
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 856  ]
-{
-"85
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"86
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"87
-[e $UE 840  ]
-"88
-}
-[e :U 856 ]
-"90
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-"92
-[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 857  ]
-{
-"93
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"94
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"95
-[e $UE 840  ]
-"96
-}
-[e :U 857 ]
-"97
-}
-[e :U 855 ]
-[e :U 848 ]
-"98
-[e :UE 840 ]
+[e :UE 842 ]
 }

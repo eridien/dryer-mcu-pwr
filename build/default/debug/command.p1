@@ -1,118 +1,40 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15996 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"16054
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
-"16550
-[v _RC0PPS `Vuc ~T0 @X0 0 e@7968 ]
-"16594
-[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
-"2497
-[s S133 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . SSPM CKP SSPEN SSPOV WCOL ]
-"2504
-[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S134 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"2510
-[s S135 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S135 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"2496
-[u S132 `S133 1 `S134 1 `S135 1 ]
-[n S132 . . . . ]
-"2521
-[v _SSP1CON1bits `VS132 ~T0 @X0 0 e@400 ]
-"2057
-[v _SSP1MSK `Vuc ~T0 @X0 0 e@398 ]
-"1937
-[v _SSP1ADD `Vuc ~T0 @X0 0 e@397 ]
-"2133
-[s S117 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S117 . BF UA R_nW S P D_nA CKE SMP ]
-"2143
-[s S118 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S118 . . R_W . D_A ]
-"2149
-[s S119 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S119 . . nW . nA ]
-"2155
-[s S120 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S120 . . nWRITE . nADDRESS ]
-"2161
-[s S121 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S121 . . READ_WRITE . DATA_ADDRESS ]
-"2167
-[s S122 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S122 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"2174
-[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S123 . BF1 UA1 R START STOP D CKE1 SMP1 ]
-"2184
-[s S124 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S124 . . RW START1 STOP1 DA ]
-"2191
-[s S125 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S125 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
-"2198
-[s S126 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S126 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
-"2205
-[s S127 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S127 . . READ_WRITE1 . D_A1 ]
-"2211
-[s S128 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S128 . . R_W1 . D_nA1 ]
-"2217
-[s S129 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S129 . . R_nW1 . I2C_DAT1 ]
-"2223
-[s S130 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S130 . . nW2 . nA2 ]
-"2229
-[s S131 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S131 . . nWRITE1 . nADDRESS1 ]
-"2132
-[u S116 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 `S123 1 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
-[n S116 . . . . . . . . . . . . . . . . ]
-"2236
-[v _SSP1STATbits `VS116 ~T0 @X0 0 e@399 ]
-"2617
-[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S137 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"2627
-[s S138 :1 `uc 1 :5 `uc 1 ]
-[n S138 . . ADMSK ]
-"2631
-[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S139 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
-"2639
-[s S140 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S140 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
-"2649
-[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S141 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
-"2616
-[u S136 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 ]
-[n S136 . . . . . . ]
-"2658
-[v _SSP1CON2bits `VS136 ~T0 @X0 0 e@401 ]
-"2804
-[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S143 . DHEN AHEN SBCDE SDAHT BOEN SCIE PCIE ACKTIM ]
-"2803
-[u S142 `S143 1 ]
-[n S142 . . ]
-"2815
-[v _SSP1CON3bits `VS142 ~T0 @X0 0 e@402 ]
-"21289
-[v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
-"21286
-[v _SSP1IE `Vb ~T0 @X0 0 e@14536 ]
-"44 ./command.h
-[v _setErrorInt `(v ~T0 @X0 0 ef1`uc ]
-"1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
-"38 ./command.h
-[v _haveCommand `Vuc ~T0 @X0 0 e ]
+"7 ./buzzer.h
+[v _buzzEnd `(v ~T0 @X0 0 ef ]
+"19 ./motor.h
+[v _motorOff `(v ~T0 @X0 0 ef ]
+"9 ./pwm.h
+[v _setDutyCycle `(v ~T0 @X0 0 ef2`uc`ui ]
+"19024 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"19 ./i2c.h
+[v _i2cSendBytes `Vuc ~T0 @X0 -> 0 `x e ]
+"9495 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[s S464 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S464 . RD WR WREN WRERR FREE LWLO NVMREGS ]
+"9494
+[u S463 `S464 1 ]
+[n S463 . . ]
+"9505
+[v _NVMCON1bits `VS463 ~T0 @X0 0 e@2078 ]
+"9314
+[v _NVMADRH `Vuc ~T0 @X0 0 e@2075 ]
+"9252
+[v _NVMADRL `Vuc ~T0 @X0 0 e@2074 ]
+"9377
+[v _NVMDATL `Vuc ~T0 @X0 0 e@2076 ]
+"10 ./sensor.h
+[v _curSensorReading `Vui ~T0 @X0 -> 0 `x e ]
+"8 ./buzzer.h
+[v _buzz `(v ~T0 @X0 0 ef1`ui ]
+"17 ./i2c.h
+[v _i2cRecvBytes `Vuc ~T0 @X0 -> 0 `x e ]
+"9545 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _NVMCON2 `Vuc ~T0 @X0 0 e@2079 ]
+"9439
+[v _NVMDATH `Vuc ~T0 @X0 0 e@2077 ]
+"20 ./motor.h
+[v _setFlapPos `(v ~T0 @X0 0 ef1`uc ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -691,197 +613,454 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"8 i2c.c
-[v _dummy `Vuc ~T0 @X0 1 e ]
-"10
-[v _i2cRecvBytes `Vuc ~T0 @X0 -> 32 `i e ]
+"10 command.c
+[v _haveCommand `Vuc ~T0 @X0 1 e ]
+[i _haveCommand
+-> -> 0 `i `uc
+]
 "11
-[v _i2cRecvBytesPtr `Vuc ~T0 @X0 1 e ]
+[v _delayedError `Vuc ~T0 @X0 1 e ]
+[i _delayedError
+-> -> 0 `i `uc
+]
 "12
-[v _i2cSendBytes `Vuc ~T0 @X0 -> 31 `i e ]
-"13
-[v _i2cSendBytesPtr `Vuc ~T0 @X0 1 e ]
-"15
-[v _i2cInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _i2cInit ]
-[f ]
-"16
-[e = _SSP1CLKPPS -> -> 16 `i `uc ]
-"17
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
+[v _curError `Vuc ~T0 @X0 1 e ]
+[i _curError
+-> -> 0 `i `uc
+]
+"14
+[v _curRegister `uc ~T0 @X0 1 e ]
+[i _curRegister
+-> -> 0 `i `uc
+]
 "18
-[e = _RC0PPS -> -> 21 `i `uc ]
+[v _resetBoard `(v ~T0 @X0 1 ef ]
+{
+[e :U _resetBoard ]
+[f ]
 "19
-[e = _RC1PPS -> -> 22 `i `uc ]
+[e ( _buzzEnd ..  ]
 "20
-[e = . . _SSP1CON1bits 0 0 -> -> 6 `i `uc ]
+[e ( _motorOff ..  ]
 "21
-[e = _SSP1MSK -> -> 254 `i `uc ]
+[e ( _setDutyCycle (2 , -> -> 0 `i `uc -> -> 0 `i `ui ]
 "22
-[e = _SSP1ADD -> -> 16 `i `uc ]
+[e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 0 `i `ui ]
 "23
-[e = . . _SSP1STATbits 0 7 -> -> 0 `i `uc ]
-"24
-[e = . . _SSP1STATbits 0 6 -> -> 0 `i `uc ]
-"25
-[e = . . _SSP1CON2bits 0 0 -> -> 0 `i `uc ]
-"26
-[e = . . _SSP1CON3bits 0 1 -> -> 0 `i `uc ]
-"27
-[e = . . _SSP1CON3bits 0 0 -> -> 0 `i `uc ]
-"28
-[e = . . _SSP1CON3bits 0 4 -> -> 0 `i `uc ]
-"29
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
-"30
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"31
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"32
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-"33
-[e = _SSP1IF -> -> 0 `i `b ]
-"34
-[e = _SSP1IE -> -> 1 `i `b ]
-"35
 [e :UE 839 ]
 }
-"37
-[v _i2cInterrupt `(v ~T0 @X0 1 ef ]
+"25
+[v _cmdInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _i2cInterrupt ]
+[e :U _cmdInit ]
 [f ]
+"26
+[e ( _resetBoard ..  ]
+"27
+[e = _haveCommand -> -> 0 `i `uc ]
+"28
+[e = _curError -> -> 0 `i `uc ]
+"29
+[e = _curRegister -> -> 0 `i `uc ]
+"30
+[e :UE 840 ]
+}
+"32
+[v _setError `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setError ]
+[v _err `uc ~T0 @X0 1 r1 ]
+[f ]
+"33
+[e = _delayedError _err ]
+"34
+[e :UE 841 ]
+}
+"36
+[v _setErrorInt `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setErrorInt ]
+[v _err `uc ~T0 @X0 1 r1 ]
+[f ]
+"37
+[e = _delayedError _err ]
 "38
-[e = _SSP1IF -> -> 0 `i `b ]
-"39
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+[e :UE 842 ]
+}
 "40
-[e $ ! != -> . . _SSP1CON1bits 0 3 `i -> 0 `i 841  ]
+[v _setSendBytes `(v ~T0 @X0 1 ef ]
 {
+[e :U _setSendBytes ]
+[f ]
 "41
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
+[e = _GIE -> -> 0 `i `b ]
 "42
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"43
-[e $UE 840  ]
+[e = *U + &U _i2cSendBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curRegister ]
 "44
-}
-[e :U 841 ]
+[e $ ! && >= -> _curRegister `i -> 30 `i <= -> _curRegister `i -> 33 `i 844  ]
+{
+"45
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
 "46
-[e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 842  ]
-{
+[e = _NVMADRH -> -> 7 `i `uc ]
+"47
+[e = _NVMADRL -> + -> 128 `i * - -> _curRegister `i -> 30 `i -> 32 `i `uc ]
 "48
-[e $ ! ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 843  ]
-"49
-[e = _dummy -> -> 1 `i `uc ]
-[e :U 843 ]
-"50
-[e = _dummy _SSP1BUF ]
-"51
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 844  ]
-"52
-[e = _dummy -> -> 2 `i `uc ]
-[e :U 844 ]
-"53
-[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
-"54
-[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
-"55
-[e $ ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 845  ]
 {
-"56
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 846  ]
-"57
-[e = _dummy -> -> 2 `i `uc ]
-[e :U 846 ]
-"58
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-"59
-[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 847  ]
-{
-"60
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"61
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"62
-[e $UE 840  ]
-"63
-}
-[e :U 847 ]
-"64
-}
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 845  ]
+[e $U 846  ]
 [e :U 845 ]
-"66
+{
+"49
+[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
+"50
+[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
+"51
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 845  ]
+[e :U 846 ]
+}
+"52
 }
 [e $U 848  ]
-[e :U 842 ]
-[e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 849  ]
+"54
+[e :U 844 ]
+[e $U 850  ]
 {
-"68
-[e $ ! != -> _haveCommand `i -> 0 `i 850  ]
-{
-"70
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"72
-}
-[e $U 851  ]
-[e :U 850 ]
-[e $ ! >= -> _i2cRecvBytesPtr `i + -> 30 `i -> 2 `i 852  ]
-{
-"74
-[e ( _setErrorInt (1 -> -> 2 `i `uc ]
-"76
-}
-[e $U 853  ]
-[e :U 852 ]
-{
-"77
-[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
-"78
-[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 854  ]
-"79
-[e = _haveCommand -> -> 1 `i `uc ]
-[e :U 854 ]
-"80
-}
-[e :U 853 ]
+"55
 [e :U 851 ]
-"82
-}
-[e $U 855  ]
-[e :U 849 ]
+[e $U 849  ]
+"57
+[e :U 852 ]
+"59
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
+"60
+[e = _NVMADRH -> -> 1 `i `uc ]
+"61
+[e = _NVMADRL -> -> 0 `i `uc ]
+"62
 {
-"84
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 856  ]
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 9 `i 853  ]
+[e $U 854  ]
+[e :U 853 ]
 {
-"85
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"86
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"87
-[e $UE 840  ]
-"88
+"63
+[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
+"64
+[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
+"65
 }
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 9 `i 853  ]
+[e :U 854 ]
+}
+"66
+[e $U 849  ]
+"68
 [e :U 856 ]
-"90
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-"92
-[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 857  ]
-{
-"93
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"94
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"95
-[e $UE 840  ]
-"96
-}
+"69
+[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curError ]
+"70
+[e $U 849  ]
+"72
 [e :U 857 ]
-"97
+"73
+[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> -> 170 `i `uc ]
+"74
+[e = *U + &U _i2cSendBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _curSensorReading * -> -> -> 0 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> -> 255 `i `ui `uc ]
+"75
+[e = *U + &U _i2cSendBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _curSensorReading * -> -> -> 1 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> 8 `i `uc ]
+"76
+[e = *U + &U _i2cSendBytes * -> -> -> 4 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _curSensorReading * -> -> -> 1 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> -> 255 `i `ui `uc ]
+"77
+[e $U 849  ]
+"79
+[e :U 858 ]
+"80
+[e ( _setError (1 -> -> 4 `i `uc ]
+"81
 }
-[e :U 855 ]
+[e $U 849  ]
+[e :U 850 ]
+[e [\ -> _curRegister `i , $ -> 0 `i 851
+ , $ -> 20 `i 852
+ , $ -> 21 `i 856
+ , $ -> 22 `i 857
+ 858 ]
+[e :U 849 ]
 [e :U 848 ]
+"82
+[e = _GIE -> -> 1 `i `b ]
+"83
+[e :UE 843 ]
+}
+"85
+[v _handleDelayedError `(v ~T0 @X0 1 ef ]
+{
+[e :U _handleDelayedError ]
+[f ]
+"86
+[e ( _resetBoard ..  ]
+"87
+[e $ ! != -> _delayedError `i -> _curError `i 860  ]
+"88
+[e ( _buzz (1 -> -> 2000 `i `ui ]
+[e :U 860 ]
+"89
+[e = _curError _delayedError ]
+"90
+[e = _curRegister -> -> 21 `i `uc ]
+"91
+[e ( _setSendBytes ..  ]
+"92
+[e :UE 859 ]
+}
+"94
+[v _cmdLen `uc ~T0 @X0 1 e ]
+"96
+[v _cmdLenIs `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _cmdLenIs ]
+[v _len `uc ~T0 @X0 1 r1 ]
+[f ]
+"97
+[e $ ! != -> _cmdLen `i -> _len `i 862  ]
+{
 "98
-[e :UE 840 ]
+[e ( _setError (1 -> -> 5 `i `uc ]
+"99
+[e ) -> -> 0 `i `uc ]
+[e $UE 861  ]
+"100
+}
+[e :U 862 ]
+"101
+[e ) -> -> 1 `i `uc ]
+[e $UE 861  ]
+"102
+[e :UE 861 ]
+}
+"105
+[v _eventLoop `(v ~T0 @X0 1 ef ]
+{
+[e :U _eventLoop ]
+[f ]
+"106
+[e :U 865 ]
+{
+"107
+[e $ ! != -> _delayedError `i -> 0 `i 867  ]
+[e ( _handleDelayedError ..  ]
+[e $U 868  ]
+"109
+[e :U 867 ]
+[e $ ! != -> _haveCommand `i -> 0 `i 869  ]
+{
+"110
+[e = _cmdLen *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
+"111
+[v _cmdByte `uc ~T0 @X0 1 a ]
+[e = _cmdByte *U + &U _i2cRecvBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
+"113
+[e $ ! && >= -> _cmdByte `i -> 10 `i <= -> _cmdByte `i -> 13 `i 870  ]
+{
+"114
+[e $ ! != -> ( _cmdLenIs (1 -> + -> 2 `i -> 30 `i `uc `i -> 0 `i 871  ]
+{
+"115
+[v _cmdBufIdx `uc ~T0 @X0 1 a ]
+[e = _cmdBufIdx -> -> 2 `i `uc ]
+"116
+[v _flashAddr `ui ~T0 @X0 1 a ]
+[e = _flashAddr -> + -> 1920 `i * - -> _cmdByte `i -> 10 `i -> 32 `i `ui ]
+"118
+[e $U 872  ]
+[e :U 873 ]
+{
+"120
+[e = _NVMADRH -> >> _flashAddr -> 8 `i `uc ]
+"121
+[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
+"122
+[e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
+"123
+[e = . . _NVMCON1bits 0 4 -> -> 1 `i `uc ]
+"124
+[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
+"126
+[e = _GIE -> -> 0 `i `b ]
+"127
+[e = _NVMCON2 -> -> 85 `i `uc ]
+"128
+[e = _NVMCON2 -> -> 170 `i `uc ]
+"129
+[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
+"130
+[e = _GIE -> -> 1 `i `b ]
+"131
+[e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
+"134
+[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
+"135
+[e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
+"137
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 30 `i 875  ]
+[e $U 876  ]
+[e :U 875 ]
+{
+"138
+[e = . . _NVMCON1bits 0 5 -> -> < -> _j `i - -> 30 `i -> 1 `i `i `uc ]
+"139
+[e = _NVMADRH -> >> _flashAddr -> 8 `i `uc ]
+"140
+[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
+"141
+[e = _NVMDATH -> -> 0 `i `uc ]
+"142
+[e = _NVMDATL *U + &U _i2cRecvBytes * -> ++ _cmdBufIdx -> -> 1 `i `uc `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
+"144
+[e = _GIE -> -> 0 `i `b ]
+"145
+[e = _NVMCON2 -> -> 85 `i `uc ]
+"146
+[e = _NVMCON2 -> -> 170 `i `uc ]
+"147
+[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
+"148
+[e = _GIE -> -> 1 `i `b ]
+"149
+}
+[e ; ++ _j -> -> 1 `i `uc ++ _flashAddr -> -> 1 `i `ui ]
+[e $ < -> _j `i -> 30 `i 875  ]
+[e :U 876 ]
+}
+"151
+[e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
+"152
+}
+[e :U 872 ]
+"118
+[e $ < -> _cmdBufIdx `i + -> 2 `i -> 30 `i 873  ]
+[e :U 874 ]
+"153
+}
+[e :U 871 ]
+"155
+}
+[e $U 878  ]
+[e :U 870 ]
+[e $U 880  ]
+{
+"156
+[e :U 881 ]
+"157
+[e $ ! != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i 882  ]
+{
+"158
+[e = _curRegister -> -> 0 `i `uc ]
+"159
+[e = _cmdByte -> -> 0 `i `uc ]
+"160
+}
+[e :U 882 ]
+"161
+[e $U 879  ]
+"163
+[e :U 883 ]
+"164
+[e $ ! != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i 884  ]
+{
+"165
+[e ( _resetBoard ..  ]
+"166
+[e = _cmdByte -> -> 0 `i `uc ]
+"167
+}
+[e :U 884 ]
+"168
+[e $U 879  ]
+"170
+[e :U 885 ]
+"171
+[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 886  ]
+{
+"172
+[e ( _setDutyCycle (2 , -> -> 0 `i `uc | << -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui -> 8 `i -> *U + &U _i2cRecvBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
+"173
+}
+[e :U 886 ]
+"174
+[e $U 879  ]
+"176
+[e :U 887 ]
+"177
+[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 888  ]
+"178
+[e ( _setDutyCycle (2 , -> -> 1 `i `uc | << -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui -> 8 `i -> *U + &U _i2cRecvBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
+[e :U 888 ]
+"179
+[e $U 879  ]
+"181
+[e :U 889 ]
+"182
+[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 890  ]
+"183
+[e ( _setFlapPos (1 *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
+[e :U 890 ]
+"184
+[e $U 879  ]
+"186
+[e :U 891 ]
+"187
+[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 892  ]
+"188
+[e ( _buzz (1 -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
+[e :U 892 ]
+"189
+[e $U 879  ]
+"191
+[e :U 893 ]
+"193
+[e $ ! && != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i != -> _curRegister `i -> 21 `i 894  ]
+"194
+[e = _curRegister _cmdByte ]
+[e :U 894 ]
+"195
+[e $U 879  ]
+"196
+}
+[e $U 879  ]
+[e :U 880 ]
+[e [\ -> _cmdByte `i , $ -> 1 `i 881
+ , $ -> 2 `i 883
+ , $ -> 3 `i 885
+ , $ -> 4 `i 887
+ , $ -> 5 `i 889
+ , $ -> 6 `i 891
+ 893 ]
+[e :U 879 ]
+[e :U 878 ]
+"197
+[e ( _setSendBytes ..  ]
+"198
+[e = _haveCommand -> -> 0 `i `uc ]
+"199
+}
+[e :U 869 ]
+[e :U 868 ]
+"200
+}
+[e :U 864 ]
+[e $U 865  ]
+[e :U 866 ]
+"201
+[e :UE 863 ]
 }
