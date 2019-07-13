@@ -57,7 +57,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9
 [p x FCMEN = ON ]
 "10
-[p x MCLRE = OFF ]
+[p x MCLRE = ON ]
 "11
 [p x PWRTE = OFF ]
 "12
@@ -709,7 +709,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [e ( _cmdInit ..  ]
 "60
-[e ( _buzz (1 -> -> 200 `i `ui ]
+[e ( _buzz (1 -> -> 20 `i `ui ]
 "63
 [e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 512 `i `ui ]
 "66

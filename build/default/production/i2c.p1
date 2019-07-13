@@ -107,6 +107,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
 "21286
 [v _SSP1IE `Vb ~T0 @X0 0 e@14536 ]
+"21928
+[v _TRISA2 `Vb ~T0 @X0 0 e@146 ]
+"19306
+[v _LATA2 `Vb ~T0 @X0 0 e@194 ]
 "44 ./command.h
 [v _setErrorInt `(v ~T0 @X0 0 ef1`uc ]
 "1917 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
@@ -744,144 +748,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SSP1IF -> -> 0 `i `b ]
 "34
 [e = _SSP1IE -> -> 1 `i `b ]
-"35
+"36
+[e = _TRISA2 -> -> 0 `i `b ]
+"37
+[e = _LATA2 -> -> 0 `i `b ]
+"38
 [e :UE 839 ]
 }
-"37
+"40
 [v _i2cInterrupt `(v ~T0 @X0 1 ef ]
 {
 [e :U _i2cInterrupt ]
 [f ]
-"38
+"41
+[e = _LATA2 -> -> 1 `i `b ]
+"42
 [e = _SSP1IF -> -> 0 `i `b ]
-"39
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"40
+"43
 [e $ ! != -> . . _SSP1CON1bits 0 3 `i -> 0 `i 841  ]
 {
-"41
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
-"42
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
-"43
-[e $UE 840  ]
 "44
+[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
+"45
+[e ( _setErrorInt (1 -> -> 1 `i `uc ]
+"46
+[e $UE 840  ]
+"47
 }
 [e :U 841 ]
-"46
+"48
 [e $ ! ! != -> . . _SSP1STATbits 7 4 `i -> 0 `i 842  ]
 {
-"48
+"50
 [e $ ! ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 843  ]
-"49
+"51
 [e = _dummy -> -> 1 `i `uc ]
 [e :U 843 ]
-"50
-[e = _dummy _SSP1BUF ]
-"51
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 844  ]
 "52
+[e = _dummy _SSP1BUF ]
+"53
+[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 844  ]
+"54
 [e = _dummy -> -> 2 `i `uc ]
 [e :U 844 ]
-"53
-[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
-"54
-[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
 "55
+[e = _i2cSendBytesPtr -> -> 0 `i `uc ]
+"56
+[e = _i2cRecvBytesPtr -> -> 0 `i `uc ]
+"57
 [e $ ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 845  ]
 {
-"56
+"58
 [e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 846  ]
-"57
+"59
 [e = _dummy -> -> 2 `i `uc ]
 [e :U 846 ]
-"58
+"60
 [e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
-"59
+"61
 [e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 847  ]
 {
-"60
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"61
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
 "62
-[e $UE 840  ]
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
 "63
+[e ( _setErrorInt (1 -> -> 6 `i `uc ]
+"64
+[e $UE 840  ]
+"65
 }
 [e :U 847 ]
-"64
+"66
 }
 [e :U 845 ]
-"66
+"68
 }
 [e $U 848  ]
 [e :U 842 ]
 [e $ ! ! != -> . . _SSP1STATbits 5 1 `i -> 0 `i 849  ]
 {
-"68
+"70
 [e $ ! != -> _haveCommand `i -> 0 `i 850  ]
 {
-"70
-[e ( _setErrorInt (1 -> -> 1 `i `uc ]
 "72
+[e ( _setErrorInt (1 -> -> 1 `i `uc ]
+"74
 }
 [e $U 851  ]
 [e :U 850 ]
 [e $ ! >= -> _i2cRecvBytesPtr `i + -> 30 `i -> 2 `i 852  ]
 {
-"74
-[e ( _setErrorInt (1 -> -> 2 `i `uc ]
 "76
+[e ( _setErrorInt (1 -> -> 2 `i `uc ]
+"78
 }
 [e $U 853  ]
 [e :U 852 ]
 {
-"77
-[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
-"78
-[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 854  ]
 "79
+[e = *U + &U _i2cRecvBytes * -> ++ _i2cRecvBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cRecvBytes `ui `ux _SSP1BUF ]
+"80
+[e $ ! == -> _i2cRecvBytesPtr `i -> *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `i 854  ]
+"81
 [e = _haveCommand -> -> 1 `i `uc ]
 [e :U 854 ]
-"80
+"82
 }
 [e :U 853 ]
 [e :U 851 ]
-"82
+"84
 }
 [e $U 855  ]
 [e :U 849 ]
 {
-"84
-[e $ ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i 856  ]
-{
-"85
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
 "86
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
+[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
 "87
-[e $UE 840  ]
+[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 856  ]
+{
 "88
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
+"89
+[e ( _setErrorInt (1 -> -> 6 `i `uc ]
+"90
+[e $UE 840  ]
+"91
 }
 [e :U 856 ]
-"90
-[e = _SSP1BUF *U + &U _i2cSendBytes * -> ++ _i2cSendBytesPtr -> -> 1 `i `Vuc `ux -> -> # *U &U _i2cSendBytes `ui `ux ]
 "92
-[e $ ! != -> . . _SSP1CON1bits 0 4 `i -> 0 `i 857  ]
-{
-"93
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"94
-[e ( _setErrorInt (1 -> -> 6 `i `uc ]
-"95
-[e $UE 840  ]
-"96
-}
-[e :U 857 ]
-"97
 }
 [e :U 855 ]
 [e :U 848 ]
-"98
+"93
+[e = _LATA2 -> -> 0 `i `b ]
+"94
+[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+"95
 [e :UE 840 ]
 }

@@ -11,47 +11,47 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
+$C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 10 10 1 2
 config CONFIG 0 8007 8007 5 2
 $dist/default/debug\power.debug.o
 cinit CODE 0 11 11 1B 2
-text1 CODE 0 392 392 1F 2
-text2 CODE 0 33F 33F 2F 2
-text3 CODE 0 468 468 B 2
-text4 CODE 0 36E 36E 24 2
-text5 CODE 0 2C 2C 109 2
-text6 CODE 0 412 412 F 2
-text7 CODE 0 3E9 3E9 16 2
-text8 CODE 0 135 135 8A 2
-text9 CODE 0 421 421 F 2
-text10 CODE 0 45C 45C C 2
-text11 CODE 0 473 473 7 2
-text12 CODE 0 49C 49C 6 2
-text13 CODE 0 430 430 F 2
-text14 CODE 0 308 308 37 2
-text15 CODE 0 47A 47A 7 2
-text16 CODE 0 481 481 7 2
-text17 CODE 0 3FF 3FF 13 2
-text18 CODE 0 4A6 4A6 4 2
-text20 CODE 0 1BF 1BF 71 2
-text21 CODE 0 488 488 7 2
-text22 CODE 0 44E 44E E 2
-text23 CODE 0 2A0 2A0 68 2
-text24 CODE 0 3CD 3CD 1C 2
-text25 CODE 0 230 230 70 2
-text26 CODE 0 48F 48F 7 2
-text27 CODE 0 43F 43F F 2
-maintext CODE 0 3B1 3B1 1C 2
+text1 CODE 0 391 391 1F 2
+text2 CODE 0 341 341 2F 2
+text3 CODE 0 466 466 B 2
+text4 CODE 0 370 370 21 2
+text5 CODE 0 2C 2C 114 2
+text6 CODE 0 411 411 F 2
+text7 CODE 0 3E8 3E8 16 2
+text8 CODE 0 140 140 80 2
+text9 CODE 0 43E 43E E 2
+text10 CODE 0 45A 45A C 2
+text11 CODE 0 471 471 7 2
+text12 CODE 0 49A 49A 6 2
+text13 CODE 0 420 420 F 2
+text14 CODE 0 30A 30A 37 2
+text15 CODE 0 478 478 7 2
+text16 CODE 0 47F 47F 7 2
+text17 CODE 0 3FE 3FE 13 2
+text18 CODE 0 4A4 4A4 4 2
+text20 CODE 0 230 230 6E 2
+text21 CODE 0 486 486 7 2
+text22 CODE 0 44C 44C E 2
+text23 CODE 0 29E 29E 6C 2
+text24 CODE 0 3CC 3CC 1C 2
+text25 CODE 0 1C0 1C0 70 2
+text26 CODE 0 48D 48D 7 2
+text27 CODE 0 42F 42F F 2
+maintext CODE 0 3B0 3B0 1C 2
 cstackCOMMON COMMON 1 70 70 A 1
 cstackBANK0 BANK0 1 57 57 15 1
 intentry CODE 0 4 4 C 2
 bssBANK0 BANK0 1 20 20 37 1
-bssBANK1 BANK1 1 A0 A0 1F 1
-idataBANK0 CODE 0 4A2 4A2 4 2
+bssBANK1 BANK1 1 A0 A0 20 1
+idataBANK0 CODE 0 4A0 4A0 4 2
 dataBANK0 BANK0 1 6C 6C 4 1
-clrtext CODE 0 496 496 6 2
+clrtext CODE 0 494 494 6 2
 bssCOMMON COMMON 1 7A 7A 4 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -59,14 +59,14 @@ bssCOMMON COMMON 1 7A 7A 4 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM BF-EF 1
+RAM C0-EF 1
 RAM 120-16F 1
-BANK1 BF-EF 1
+BANK1 C0-EF 1
 BANK2 120-16F 1
 CONST 1-3 2
-CONST 4AA-7FF 2
+CONST 4A8-7FF 2
 ENTRY 1-3 2
-ENTRY 4AA-7FF 2
+ENTRY 4A8-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -122,9 +122,9 @@ SFR60 1E00-1E6F 1
 SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
-STACK 206F-20EF 1
+STACK 2070-20EF 1
 CODE 1-3 2
-CODE 4AA-7FF 2
+CODE 4A8-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -137,9 +137,9 @@ SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-20EF 1
 STRCODE 1-3 2
-STRCODE 4AA-7FF 2
+STRCODE 4A8-7FF 2
 STRING 1-3 2
-STRING 4AA-7FF 2
+STRING 4A8-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -154,392 +154,387 @@ STRING 4AA-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\power.debug.o
-11 cinit CODE >4993:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-11 cinit CODE >4996:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-11 cinit CODE >5079:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-12 cinit CODE >5080:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-13 cinit CODE >5081:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-14 cinit CODE >5082:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-15 cinit CODE >5083:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-16 cinit CODE >5084:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-17 cinit CODE >5085:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-18 cinit CODE >5086:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-19 cinit CODE >5103:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1A cinit CODE >5104:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1B cinit CODE >5105:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1C cinit CODE >5106:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1D cinit CODE >5110:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1E cinit CODE >5111:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-1F cinit CODE >5112:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-20 cinit CODE >5113:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-21 cinit CODE >5114:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-22 cinit CODE >5115:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-23 cinit CODE >5119:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-24 cinit CODE >5120:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-25 cinit CODE >5121:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-26 cinit CODE >5122:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-27 cinit CODE >5123:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-28 cinit CODE >5124:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-29 cinit CODE >5130:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-29 cinit CODE >5132:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-2A cinit CODE >5133:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-2B cinit CODE >5134:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
+11 cinit CODE >4995:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+11 cinit CODE >4998:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+11 cinit CODE >5081:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+12 cinit CODE >5082:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+13 cinit CODE >5083:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+14 cinit CODE >5084:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+15 cinit CODE >5085:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+16 cinit CODE >5086:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+17 cinit CODE >5087:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+18 cinit CODE >5088:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+19 cinit CODE >5105:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1A cinit CODE >5106:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1B cinit CODE >5107:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1C cinit CODE >5108:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1D cinit CODE >5112:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1E cinit CODE >5113:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+1F cinit CODE >5114:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+20 cinit CODE >5115:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+21 cinit CODE >5116:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+22 cinit CODE >5117:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+23 cinit CODE >5121:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+24 cinit CODE >5122:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+25 cinit CODE >5123:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+26 cinit CODE >5124:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+27 cinit CODE >5125:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+28 cinit CODE >5126:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+29 cinit CODE >5132:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+29 cinit CODE >5134:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+2A cinit CODE >5135:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+2B cinit CODE >5136:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
 4 intentry CODE >72:S:\dev\erdry\power\main.c
 6 intentry CODE >73:S:\dev\erdry\power\main.c
 9 intentry CODE >74:S:\dev\erdry\power\main.c
 A intentry CODE >76:S:\dev\erdry\power\main.c
 D intentry CODE >77:S:\dev\erdry\power\main.c
 E intentry CODE >79:S:\dev\erdry\power\main.c
-43F text27 CODE >21:S:\dev\erdry\power\buzzer.c
-43F text27 CODE >22:S:\dev\erdry\power\buzzer.c
-44C text27 CODE >23:S:\dev\erdry\power\buzzer.c
-44D text27 CODE >24:S:\dev\erdry\power\buzzer.c
-48F text26 CODE >23:S:\dev\erdry\power\motor.c
-48F text26 CODE >24:S:\dev\erdry\power\motor.c
-491 text26 CODE >25:S:\dev\erdry\power\motor.c
-492 text26 CODE >26:S:\dev\erdry\power\motor.c
-493 text26 CODE >27:S:\dev\erdry\power\motor.c
-494 text26 CODE >28:S:\dev\erdry\power\motor.c
-495 text26 CODE >29:S:\dev\erdry\power\motor.c
-230 text25 CODE >36:S:\dev\erdry\power\motor.c
-231 text25 CODE >37:S:\dev\erdry\power\motor.c
-240 text25 CODE >38:S:\dev\erdry\power\motor.c
-253 text25 CODE >40:S:\dev\erdry\power\motor.c
-257 text25 CODE >41:S:\dev\erdry\power\motor.c
-25C text25 CODE >42:S:\dev\erdry\power\motor.c
-262 text25 CODE >43:S:\dev\erdry\power\motor.c
-268 text25 CODE >44:S:\dev\erdry\power\motor.c
-27E text25 CODE >45:S:\dev\erdry\power\motor.c
-28E text25 CODE >46:S:\dev\erdry\power\motor.c
-297 text25 CODE >47:S:\dev\erdry\power\motor.c
-29F text25 CODE >48:S:\dev\erdry\power\motor.c
-3CD text24 CODE >62:S:\dev\erdry\power\motor.c
-3CD text24 CODE >63:S:\dev\erdry\power\motor.c
-3D1 text24 CODE >64:S:\dev\erdry\power\motor.c
-3DC text24 CODE >65:S:\dev\erdry\power\motor.c
-3E7 text24 CODE >66:S:\dev\erdry\power\motor.c
-3E8 text24 CODE >68:S:\dev\erdry\power\motor.c
-2A0 text23 CODE >32:S:\dev\erdry\power\sensor.c
-2A0 text23 CODE >33:S:\dev\erdry\power\sensor.c
-2A4 text23 CODE >34:S:\dev\erdry\power\sensor.c
-2A6 text23 CODE >35:S:\dev\erdry\power\sensor.c
-2A9 text23 CODE >37:S:\dev\erdry\power\sensor.c
-2AC text23 CODE >39:S:\dev\erdry\power\sensor.c
-2AF text23 CODE >41:S:\dev\erdry\power\sensor.c
-2B3 text23 CODE >42:S:\dev\erdry\power\sensor.c
-2BB text23 CODE >43:S:\dev\erdry\power\sensor.c
-2D3 text23 CODE >44:S:\dev\erdry\power\sensor.c
-2EB text23 CODE >46:S:\dev\erdry\power\sensor.c
-2F0 text23 CODE >47:S:\dev\erdry\power\sensor.c
-302 text23 CODE >49:S:\dev\erdry\power\sensor.c
-307 text23 CODE >51:S:\dev\erdry\power\sensor.c
-44E text22 CODE >28:S:\dev\erdry\power\clock.c
-44E text22 CODE >29:S:\dev\erdry\power\clock.c
-450 text22 CODE >30:S:\dev\erdry\power\clock.c
-455 text22 CODE >32:S:\dev\erdry\power\clock.c
-456 text22 CODE >33:S:\dev\erdry\power\clock.c
-457 text22 CODE >35:S:\dev\erdry\power\clock.c
-45A text22 CODE >36:S:\dev\erdry\power\clock.c
-45B text22 CODE >37:S:\dev\erdry\power\clock.c
-488 text21 CODE >36:S:\dev\erdry\power\command.c
-489 text21 CODE >37:S:\dev\erdry\power\command.c
-48E text21 CODE >38:S:\dev\erdry\power\command.c
-1BF text20 CODE >40:S:\dev\erdry\power\i2c.c
-1BF text20 CODE >41:S:\dev\erdry\power\i2c.c
-1C1 text20 CODE >42:S:\dev\erdry\power\i2c.c
-1C3 text20 CODE >43:S:\dev\erdry\power\i2c.c
-1C6 text20 CODE >44:S:\dev\erdry\power\i2c.c
-1C7 text20 CODE >45:S:\dev\erdry\power\i2c.c
-1CA text20 CODE >47:S:\dev\erdry\power\i2c.c
-1CA text20 CODE >48:S:\dev\erdry\power\i2c.c
-1CC text20 CODE >50:S:\dev\erdry\power\i2c.c
-1CE text20 CODE >51:S:\dev\erdry\power\i2c.c
-1D3 text20 CODE >52:S:\dev\erdry\power\i2c.c
-1D9 text20 CODE >53:S:\dev\erdry\power\i2c.c
-1DC text20 CODE >54:S:\dev\erdry\power\i2c.c
-1E1 text20 CODE >55:S:\dev\erdry\power\i2c.c
-1E2 text20 CODE >56:S:\dev\erdry\power\i2c.c
-1E3 text20 CODE >57:S:\dev\erdry\power\i2c.c
-1E6 text20 CODE >58:S:\dev\erdry\power\i2c.c
-1E8 text20 CODE >59:S:\dev\erdry\power\i2c.c
-1ED text20 CODE >60:S:\dev\erdry\power\i2c.c
-1F4 text20 CODE >68:S:\dev\erdry\power\i2c.c
-1F6 text20 CODE >70:S:\dev\erdry\power\i2c.c
-1FA text20 CODE >72:S:\dev\erdry\power\i2c.c
-1FC text20 CODE >74:S:\dev\erdry\power\i2c.c
-201 text20 CODE >76:S:\dev\erdry\power\i2c.c
-203 text20 CODE >78:S:\dev\erdry\power\i2c.c
-204 text20 CODE >79:S:\dev\erdry\power\i2c.c
-211 text20 CODE >80:S:\dev\erdry\power\i2c.c
-216 text20 CODE >81:S:\dev\erdry\power\i2c.c
-21B text20 CODE >86:S:\dev\erdry\power\i2c.c
-225 text20 CODE >87:S:\dev\erdry\power\i2c.c
-227 text20 CODE >88:S:\dev\erdry\power\i2c.c
-228 text20 CODE >89:S:\dev\erdry\power\i2c.c
-22B text20 CODE >92:S:\dev\erdry\power\i2c.c
-22B text20 CODE >93:S:\dev\erdry\power\i2c.c
-22D text20 CODE >94:S:\dev\erdry\power\i2c.c
-22F text20 CODE >95:S:\dev\erdry\power\i2c.c
-4A6 text18 CODE >8:S:\dev\erdry\power\buzzer.c
-4A6 text18 CODE >9:S:\dev\erdry\power\buzzer.c
-4A8 text18 CODE >10:S:\dev\erdry\power\buzzer.c
-4A9 text18 CODE >11:S:\dev\erdry\power\buzzer.c
-3FF text17 CODE >12:S:\dev\erdry\power\clock.c
-3FF text17 CODE >14:S:\dev\erdry\power\clock.c
-401 text17 CODE >15:S:\dev\erdry\power\clock.c
-402 text17 CODE >16:S:\dev\erdry\power\clock.c
-406 text17 CODE >17:S:\dev\erdry\power\clock.c
-408 text17 CODE >18:S:\dev\erdry\power\clock.c
-40A text17 CODE >19:S:\dev\erdry\power\clock.c
-40C text17 CODE >20:S:\dev\erdry\power\clock.c
-40E text17 CODE >21:S:\dev\erdry\power\clock.c
-40F text17 CODE >22:S:\dev\erdry\power\clock.c
-411 text17 CODE >23:S:\dev\erdry\power\clock.c
-481 text16 CODE >13:S:\dev\erdry\power\buzzer.c
-481 text16 CODE >14:S:\dev\erdry\power\buzzer.c
-482 text16 CODE >15:S:\dev\erdry\power\buzzer.c
-485 text16 CODE >16:S:\dev\erdry\power\buzzer.c
-486 text16 CODE >17:S:\dev\erdry\power\buzzer.c
-487 text16 CODE >18:S:\dev\erdry\power\buzzer.c
-47A text15 CODE >15:S:\dev\erdry\power\motor.c
-47A text15 CODE >16:S:\dev\erdry\power\motor.c
-47C text15 CODE >17:S:\dev\erdry\power\motor.c
-47D text15 CODE >18:S:\dev\erdry\power\motor.c
-47E text15 CODE >19:S:\dev\erdry\power\motor.c
-47F text15 CODE >20:S:\dev\erdry\power\motor.c
-480 text15 CODE >21:S:\dev\erdry\power\motor.c
-308 text14 CODE >7:S:\dev\erdry\power\pwm.c
-30A text14 CODE >10:S:\dev\erdry\power\pwm.c
-30D text14 CODE >12:S:\dev\erdry\power\pwm.c
-319 text14 CODE >13:S:\dev\erdry\power\pwm.c
-325 text14 CODE >14:S:\dev\erdry\power\pwm.c
-326 text14 CODE >16:S:\dev\erdry\power\pwm.c
-332 text14 CODE >17:S:\dev\erdry\power\pwm.c
-33E text14 CODE >19:S:\dev\erdry\power\pwm.c
-430 text13 CODE >18:S:\dev\erdry\power\command.c
-430 text13 CODE >19:S:\dev\erdry\power\command.c
-431 text13 CODE >20:S:\dev\erdry\power\command.c
-432 text13 CODE >21:S:\dev\erdry\power\command.c
-438 text13 CODE >22:S:\dev\erdry\power\command.c
-43E text13 CODE >23:S:\dev\erdry\power\command.c
-49C text12 CODE >25:S:\dev\erdry\power\command.c
-49C text12 CODE >26:S:\dev\erdry\power\command.c
-49D text12 CODE >27:S:\dev\erdry\power\command.c
-49F text12 CODE >28:S:\dev\erdry\power\command.c
-4A0 text12 CODE >29:S:\dev\erdry\power\command.c
-4A1 text12 CODE >30:S:\dev\erdry\power\command.c
-473 text11 CODE >32:S:\dev\erdry\power\command.c
-475 text11 CODE >33:S:\dev\erdry\power\command.c
-479 text11 CODE >34:S:\dev\erdry\power\command.c
-45C text10 CODE >96:S:\dev\erdry\power\command.c
-45E text10 CODE >97:S:\dev\erdry\power\command.c
-462 text10 CODE >98:S:\dev\erdry\power\command.c
-464 text10 CODE >99:S:\dev\erdry\power\command.c
-466 text10 CODE >101:S:\dev\erdry\power\command.c
-467 text10 CODE >102:S:\dev\erdry\power\command.c
-421 text9 CODE >27:S:\dev\erdry\power\buzzer.c
-421 text9 CODE >28:S:\dev\erdry\power\buzzer.c
-422 text9 CODE >29:S:\dev\erdry\power\buzzer.c
-427 text9 CODE >30:S:\dev\erdry\power\buzzer.c
-428 text9 CODE >31:S:\dev\erdry\power\buzzer.c
-429 text9 CODE >32:S:\dev\erdry\power\buzzer.c
-42D text9 CODE >33:S:\dev\erdry\power\buzzer.c
-42F text9 CODE >36:S:\dev\erdry\power\buzzer.c
-135 text8 CODE >40:S:\dev\erdry\power\command.c
-135 text8 CODE >41:S:\dev\erdry\power\command.c
-136 text8 CODE >42:S:\dev\erdry\power\command.c
-13C text8 CODE >44:S:\dev\erdry\power\command.c
-145 text8 CODE >45:S:\dev\erdry\power\command.c
-147 text8 CODE >46:S:\dev\erdry\power\command.c
-149 text8 CODE >47:S:\dev\erdry\power\command.c
-155 text8 CODE >48:S:\dev\erdry\power\command.c
-157 text8 CODE >49:S:\dev\erdry\power\command.c
-159 text8 CODE >50:S:\dev\erdry\power\command.c
-162 text8 CODE >51:S:\dev\erdry\power\command.c
-16B text8 CODE >57:S:\dev\erdry\power\command.c
-16B text8 CODE >59:S:\dev\erdry\power\command.c
-16D text8 CODE >60:S:\dev\erdry\power\command.c
-16F text8 CODE >61:S:\dev\erdry\power\command.c
-170 text8 CODE >62:S:\dev\erdry\power\command.c
-172 text8 CODE >63:S:\dev\erdry\power\command.c
-174 text8 CODE >64:S:\dev\erdry\power\command.c
-17D text8 CODE >65:S:\dev\erdry\power\command.c
-186 text8 CODE >69:S:\dev\erdry\power\command.c
-18B text8 CODE >70:S:\dev\erdry\power\command.c
-18C text8 CODE >73:S:\dev\erdry\power\command.c
-191 text8 CODE >74:S:\dev\erdry\power\command.c
-197 text8 CODE >75:S:\dev\erdry\power\command.c
-19D text8 CODE >76:S:\dev\erdry\power\command.c
-1A3 text8 CODE >77:S:\dev\erdry\power\command.c
-1A4 text8 CODE >80:S:\dev\erdry\power\command.c
-1A6 text8 CODE >81:S:\dev\erdry\power\command.c
-1BD text8 CODE >82:S:\dev\erdry\power\command.c
-1BE text8 CODE >83:S:\dev\erdry\power\command.c
-3E9 text7 CODE >85:S:\dev\erdry\power\command.c
-3E9 text7 CODE >86:S:\dev\erdry\power\command.c
-3EA text7 CODE >87:S:\dev\erdry\power\command.c
-3EF text7 CODE >88:S:\dev\erdry\power\command.c
-3F4 text7 CODE >89:S:\dev\erdry\power\command.c
-3F9 text7 CODE >90:S:\dev\erdry\power\command.c
-3FD text7 CODE >91:S:\dev\erdry\power\command.c
-3FE text7 CODE >92:S:\dev\erdry\power\command.c
-412 text6 CODE >31:S:\dev\erdry\power\motor.c
-414 text6 CODE >32:S:\dev\erdry\power\motor.c
-41E text6 CODE >33:S:\dev\erdry\power\motor.c
-420 text6 CODE >34:S:\dev\erdry\power\motor.c
+42F text27 CODE >21:S:\dev\erdry\power\buzzer.c
+42F text27 CODE >22:S:\dev\erdry\power\buzzer.c
+43C text27 CODE >23:S:\dev\erdry\power\buzzer.c
+43D text27 CODE >24:S:\dev\erdry\power\buzzer.c
+48D text26 CODE >23:S:\dev\erdry\power\motor.c
+48D text26 CODE >24:S:\dev\erdry\power\motor.c
+48F text26 CODE >25:S:\dev\erdry\power\motor.c
+490 text26 CODE >26:S:\dev\erdry\power\motor.c
+491 text26 CODE >27:S:\dev\erdry\power\motor.c
+492 text26 CODE >28:S:\dev\erdry\power\motor.c
+493 text26 CODE >29:S:\dev\erdry\power\motor.c
+1C0 text25 CODE >36:S:\dev\erdry\power\motor.c
+1C1 text25 CODE >37:S:\dev\erdry\power\motor.c
+1D0 text25 CODE >38:S:\dev\erdry\power\motor.c
+1E3 text25 CODE >40:S:\dev\erdry\power\motor.c
+1E7 text25 CODE >41:S:\dev\erdry\power\motor.c
+1EC text25 CODE >42:S:\dev\erdry\power\motor.c
+1F2 text25 CODE >43:S:\dev\erdry\power\motor.c
+1F8 text25 CODE >44:S:\dev\erdry\power\motor.c
+20E text25 CODE >45:S:\dev\erdry\power\motor.c
+21E text25 CODE >46:S:\dev\erdry\power\motor.c
+227 text25 CODE >47:S:\dev\erdry\power\motor.c
+22F text25 CODE >48:S:\dev\erdry\power\motor.c
+3CC text24 CODE >62:S:\dev\erdry\power\motor.c
+3CC text24 CODE >63:S:\dev\erdry\power\motor.c
+3D0 text24 CODE >64:S:\dev\erdry\power\motor.c
+3DB text24 CODE >65:S:\dev\erdry\power\motor.c
+3E6 text24 CODE >66:S:\dev\erdry\power\motor.c
+3E7 text24 CODE >68:S:\dev\erdry\power\motor.c
+29E text23 CODE >32:S:\dev\erdry\power\sensor.c
+29E text23 CODE >33:S:\dev\erdry\power\sensor.c
+2A3 text23 CODE >34:S:\dev\erdry\power\sensor.c
+2AB text23 CODE >36:S:\dev\erdry\power\sensor.c
+2AE text23 CODE >38:S:\dev\erdry\power\sensor.c
+2B1 text23 CODE >40:S:\dev\erdry\power\sensor.c
+2B5 text23 CODE >41:S:\dev\erdry\power\sensor.c
+2BD text23 CODE >42:S:\dev\erdry\power\sensor.c
+2D5 text23 CODE >43:S:\dev\erdry\power\sensor.c
+2ED text23 CODE >45:S:\dev\erdry\power\sensor.c
+2F2 text23 CODE >46:S:\dev\erdry\power\sensor.c
+304 text23 CODE >48:S:\dev\erdry\power\sensor.c
+309 text23 CODE >50:S:\dev\erdry\power\sensor.c
+44C text22 CODE >28:S:\dev\erdry\power\clock.c
+44C text22 CODE >29:S:\dev\erdry\power\clock.c
+44E text22 CODE >30:S:\dev\erdry\power\clock.c
+453 text22 CODE >32:S:\dev\erdry\power\clock.c
+454 text22 CODE >33:S:\dev\erdry\power\clock.c
+455 text22 CODE >35:S:\dev\erdry\power\clock.c
+458 text22 CODE >36:S:\dev\erdry\power\clock.c
+459 text22 CODE >37:S:\dev\erdry\power\clock.c
+486 text21 CODE >36:S:\dev\erdry\power\command.c
+487 text21 CODE >37:S:\dev\erdry\power\command.c
+48C text21 CODE >38:S:\dev\erdry\power\command.c
+230 text20 CODE >37:S:\dev\erdry\power\i2c.c
+230 text20 CODE >38:S:\dev\erdry\power\i2c.c
+232 text20 CODE >39:S:\dev\erdry\power\i2c.c
+235 text20 CODE >40:S:\dev\erdry\power\i2c.c
+236 text20 CODE >41:S:\dev\erdry\power\i2c.c
+239 text20 CODE >43:S:\dev\erdry\power\i2c.c
+239 text20 CODE >44:S:\dev\erdry\power\i2c.c
+23B text20 CODE >46:S:\dev\erdry\power\i2c.c
+23D text20 CODE >47:S:\dev\erdry\power\i2c.c
+242 text20 CODE >48:S:\dev\erdry\power\i2c.c
+248 text20 CODE >49:S:\dev\erdry\power\i2c.c
+24B text20 CODE >50:S:\dev\erdry\power\i2c.c
+250 text20 CODE >51:S:\dev\erdry\power\i2c.c
+251 text20 CODE >52:S:\dev\erdry\power\i2c.c
+252 text20 CODE >53:S:\dev\erdry\power\i2c.c
+255 text20 CODE >54:S:\dev\erdry\power\i2c.c
+257 text20 CODE >55:S:\dev\erdry\power\i2c.c
+25C text20 CODE >56:S:\dev\erdry\power\i2c.c
+263 text20 CODE >64:S:\dev\erdry\power\i2c.c
+265 text20 CODE >66:S:\dev\erdry\power\i2c.c
+269 text20 CODE >68:S:\dev\erdry\power\i2c.c
+26B text20 CODE >70:S:\dev\erdry\power\i2c.c
+270 text20 CODE >72:S:\dev\erdry\power\i2c.c
+272 text20 CODE >74:S:\dev\erdry\power\i2c.c
+273 text20 CODE >75:S:\dev\erdry\power\i2c.c
+280 text20 CODE >76:S:\dev\erdry\power\i2c.c
+285 text20 CODE >77:S:\dev\erdry\power\i2c.c
+28B text20 CODE >82:S:\dev\erdry\power\i2c.c
+295 text20 CODE >83:S:\dev\erdry\power\i2c.c
+297 text20 CODE >84:S:\dev\erdry\power\i2c.c
+298 text20 CODE >85:S:\dev\erdry\power\i2c.c
+29B text20 CODE >88:S:\dev\erdry\power\i2c.c
+29B text20 CODE >89:S:\dev\erdry\power\i2c.c
+29D text20 CODE >90:S:\dev\erdry\power\i2c.c
+4A4 text18 CODE >8:S:\dev\erdry\power\buzzer.c
+4A4 text18 CODE >9:S:\dev\erdry\power\buzzer.c
+4A6 text18 CODE >10:S:\dev\erdry\power\buzzer.c
+4A7 text18 CODE >11:S:\dev\erdry\power\buzzer.c
+3FE text17 CODE >12:S:\dev\erdry\power\clock.c
+3FE text17 CODE >14:S:\dev\erdry\power\clock.c
+400 text17 CODE >15:S:\dev\erdry\power\clock.c
+401 text17 CODE >16:S:\dev\erdry\power\clock.c
+405 text17 CODE >17:S:\dev\erdry\power\clock.c
+407 text17 CODE >18:S:\dev\erdry\power\clock.c
+409 text17 CODE >19:S:\dev\erdry\power\clock.c
+40B text17 CODE >20:S:\dev\erdry\power\clock.c
+40D text17 CODE >21:S:\dev\erdry\power\clock.c
+40E text17 CODE >22:S:\dev\erdry\power\clock.c
+410 text17 CODE >23:S:\dev\erdry\power\clock.c
+47F text16 CODE >13:S:\dev\erdry\power\buzzer.c
+47F text16 CODE >14:S:\dev\erdry\power\buzzer.c
+480 text16 CODE >15:S:\dev\erdry\power\buzzer.c
+483 text16 CODE >16:S:\dev\erdry\power\buzzer.c
+484 text16 CODE >17:S:\dev\erdry\power\buzzer.c
+485 text16 CODE >18:S:\dev\erdry\power\buzzer.c
+478 text15 CODE >15:S:\dev\erdry\power\motor.c
+478 text15 CODE >16:S:\dev\erdry\power\motor.c
+47A text15 CODE >17:S:\dev\erdry\power\motor.c
+47B text15 CODE >18:S:\dev\erdry\power\motor.c
+47C text15 CODE >19:S:\dev\erdry\power\motor.c
+47D text15 CODE >20:S:\dev\erdry\power\motor.c
+47E text15 CODE >21:S:\dev\erdry\power\motor.c
+30A text14 CODE >7:S:\dev\erdry\power\pwm.c
+30C text14 CODE >10:S:\dev\erdry\power\pwm.c
+30F text14 CODE >12:S:\dev\erdry\power\pwm.c
+31B text14 CODE >13:S:\dev\erdry\power\pwm.c
+327 text14 CODE >14:S:\dev\erdry\power\pwm.c
+328 text14 CODE >16:S:\dev\erdry\power\pwm.c
+334 text14 CODE >17:S:\dev\erdry\power\pwm.c
+340 text14 CODE >19:S:\dev\erdry\power\pwm.c
+420 text13 CODE >18:S:\dev\erdry\power\command.c
+420 text13 CODE >19:S:\dev\erdry\power\command.c
+421 text13 CODE >20:S:\dev\erdry\power\command.c
+422 text13 CODE >21:S:\dev\erdry\power\command.c
+428 text13 CODE >22:S:\dev\erdry\power\command.c
+42E text13 CODE >23:S:\dev\erdry\power\command.c
+49A text12 CODE >25:S:\dev\erdry\power\command.c
+49A text12 CODE >26:S:\dev\erdry\power\command.c
+49B text12 CODE >27:S:\dev\erdry\power\command.c
+49D text12 CODE >28:S:\dev\erdry\power\command.c
+49E text12 CODE >29:S:\dev\erdry\power\command.c
+49F text12 CODE >30:S:\dev\erdry\power\command.c
+471 text11 CODE >32:S:\dev\erdry\power\command.c
+473 text11 CODE >33:S:\dev\erdry\power\command.c
+477 text11 CODE >34:S:\dev\erdry\power\command.c
+45A text10 CODE >96:S:\dev\erdry\power\command.c
+45C text10 CODE >97:S:\dev\erdry\power\command.c
+460 text10 CODE >98:S:\dev\erdry\power\command.c
+462 text10 CODE >99:S:\dev\erdry\power\command.c
+464 text10 CODE >101:S:\dev\erdry\power\command.c
+465 text10 CODE >102:S:\dev\erdry\power\command.c
+43E text9 CODE >27:S:\dev\erdry\power\buzzer.c
+43E text9 CODE >28:S:\dev\erdry\power\buzzer.c
+43F text9 CODE >29:S:\dev\erdry\power\buzzer.c
+444 text9 CODE >30:S:\dev\erdry\power\buzzer.c
+445 text9 CODE >31:S:\dev\erdry\power\buzzer.c
+446 text9 CODE >32:S:\dev\erdry\power\buzzer.c
+44A text9 CODE >33:S:\dev\erdry\power\buzzer.c
+44B text9 CODE >35:S:\dev\erdry\power\buzzer.c
+140 text8 CODE >40:S:\dev\erdry\power\command.c
+140 text8 CODE >41:S:\dev\erdry\power\command.c
+141 text8 CODE >42:S:\dev\erdry\power\command.c
+146 text8 CODE >44:S:\dev\erdry\power\command.c
+14E text8 CODE >45:S:\dev\erdry\power\command.c
+150 text8 CODE >46:S:\dev\erdry\power\command.c
+152 text8 CODE >47:S:\dev\erdry\power\command.c
+15E text8 CODE >48:S:\dev\erdry\power\command.c
+160 text8 CODE >49:S:\dev\erdry\power\command.c
+162 text8 CODE >50:S:\dev\erdry\power\command.c
+16B text8 CODE >51:S:\dev\erdry\power\command.c
+174 text8 CODE >57:S:\dev\erdry\power\command.c
+174 text8 CODE >59:S:\dev\erdry\power\command.c
+176 text8 CODE >60:S:\dev\erdry\power\command.c
+178 text8 CODE >61:S:\dev\erdry\power\command.c
+179 text8 CODE >62:S:\dev\erdry\power\command.c
+17B text8 CODE >63:S:\dev\erdry\power\command.c
+17D text8 CODE >64:S:\dev\erdry\power\command.c
+186 text8 CODE >65:S:\dev\erdry\power\command.c
+18F text8 CODE >69:S:\dev\erdry\power\command.c
+193 text8 CODE >70:S:\dev\erdry\power\command.c
+194 text8 CODE >73:S:\dev\erdry\power\command.c
+198 text8 CODE >74:S:\dev\erdry\power\command.c
+19C text8 CODE >75:S:\dev\erdry\power\command.c
+1A0 text8 CODE >76:S:\dev\erdry\power\command.c
+1A4 text8 CODE >77:S:\dev\erdry\power\command.c
+1A5 text8 CODE >80:S:\dev\erdry\power\command.c
+1A7 text8 CODE >81:S:\dev\erdry\power\command.c
+1BE text8 CODE >82:S:\dev\erdry\power\command.c
+1BF text8 CODE >83:S:\dev\erdry\power\command.c
+3E8 text7 CODE >85:S:\dev\erdry\power\command.c
+3E8 text7 CODE >86:S:\dev\erdry\power\command.c
+3E9 text7 CODE >87:S:\dev\erdry\power\command.c
+3EE text7 CODE >88:S:\dev\erdry\power\command.c
+3F3 text7 CODE >89:S:\dev\erdry\power\command.c
+3F8 text7 CODE >90:S:\dev\erdry\power\command.c
+3FC text7 CODE >91:S:\dev\erdry\power\command.c
+3FD text7 CODE >92:S:\dev\erdry\power\command.c
+411 text6 CODE >31:S:\dev\erdry\power\motor.c
+413 text6 CODE >32:S:\dev\erdry\power\motor.c
+41D text6 CODE >33:S:\dev\erdry\power\motor.c
+41F text6 CODE >34:S:\dev\erdry\power\motor.c
 2C text5 CODE >105:S:\dev\erdry\power\command.c
 2C text5 CODE >107:S:\dev\erdry\power\command.c
 2E text5 CODE >106:S:\dev\erdry\power\command.c
 2E text5 CODE >107:S:\dev\erdry\power\command.c
 32 text5 CODE >109:S:\dev\erdry\power\command.c
 35 text5 CODE >110:S:\dev\erdry\power\command.c
-39 text5 CODE >111:S:\dev\erdry\power\command.c
-3D text5 CODE >113:S:\dev\erdry\power\command.c
-45 text5 CODE >114:S:\dev\erdry\power\command.c
-4A text5 CODE >115:S:\dev\erdry\power\command.c
-4F text5 CODE >116:S:\dev\erdry\power\command.c
-5D text5 CODE >118:S:\dev\erdry\power\command.c
-62 text5 CODE >120:S:\dev\erdry\power\command.c
-65 text5 CODE >121:S:\dev\erdry\power\command.c
-69 text5 CODE >122:S:\dev\erdry\power\command.c
-6A text5 CODE >123:S:\dev\erdry\power\command.c
-6B text5 CODE >124:S:\dev\erdry\power\command.c
-6C text5 CODE >126:S:\dev\erdry\power\command.c
-6D text5 CODE >127:S:\dev\erdry\power\command.c
-6F text5 CODE >128:S:\dev\erdry\power\command.c
-71 text5 CODE >129:S:\dev\erdry\power\command.c
-72 text5 CODE >130:S:\dev\erdry\power\command.c
-73 text5 CODE >131:S:\dev\erdry\power\command.c
-74 text5 CODE >134:S:\dev\erdry\power\command.c
-75 text5 CODE >135:S:\dev\erdry\power\command.c
-76 text5 CODE >137:S:\dev\erdry\power\command.c
-78 text5 CODE >138:S:\dev\erdry\power\command.c
-81 text5 CODE >139:S:\dev\erdry\power\command.c
-85 text5 CODE >140:S:\dev\erdry\power\command.c
-89 text5 CODE >141:S:\dev\erdry\power\command.c
-8A text5 CODE >142:S:\dev\erdry\power\command.c
-97 text5 CODE >144:S:\dev\erdry\power\command.c
-98 text5 CODE >145:S:\dev\erdry\power\command.c
-9B text5 CODE >146:S:\dev\erdry\power\command.c
-9D text5 CODE >147:S:\dev\erdry\power\command.c
-9E text5 CODE >148:S:\dev\erdry\power\command.c
-9F text5 CODE >149:S:\dev\erdry\power\command.c
-AC text5 CODE >151:S:\dev\erdry\power\command.c
-AE text5 CODE >118:S:\dev\erdry\power\command.c
-AF text5 CODE >157:S:\dev\erdry\power\command.c
-B4 text5 CODE >158:S:\dev\erdry\power\command.c
-B6 text5 CODE >159:S:\dev\erdry\power\command.c
-B7 text5 CODE >164:S:\dev\erdry\power\command.c
-BC text5 CODE >165:S:\dev\erdry\power\command.c
-BD text5 CODE >166:S:\dev\erdry\power\command.c
-BE text5 CODE >171:S:\dev\erdry\power\command.c
-C3 text5 CODE >172:S:\dev\erdry\power\command.c
-D6 text5 CODE >177:S:\dev\erdry\power\command.c
-DB text5 CODE >178:S:\dev\erdry\power\command.c
-EE text5 CODE >182:S:\dev\erdry\power\command.c
-F3 text5 CODE >183:S:\dev\erdry\power\command.c
-F7 text5 CODE >187:S:\dev\erdry\power\command.c
-FC text5 CODE >188:S:\dev\erdry\power\command.c
-106 text5 CODE >193:S:\dev\erdry\power\command.c
-110 text5 CODE >194:S:\dev\erdry\power\command.c
-115 text5 CODE >196:S:\dev\erdry\power\command.c
-131 text5 CODE >197:S:\dev\erdry\power\command.c
-132 text5 CODE >198:S:\dev\erdry\power\command.c
-36E text4 CODE >15:S:\dev\erdry\power\i2c.c
-36E text4 CODE >16:S:\dev\erdry\power\i2c.c
-371 text4 CODE >17:S:\dev\erdry\power\i2c.c
-373 text4 CODE >18:S:\dev\erdry\power\i2c.c
-376 text4 CODE >19:S:\dev\erdry\power\i2c.c
-378 text4 CODE >20:S:\dev\erdry\power\i2c.c
-37D text4 CODE >21:S:\dev\erdry\power\i2c.c
-37F text4 CODE >22:S:\dev\erdry\power\i2c.c
-381 text4 CODE >23:S:\dev\erdry\power\i2c.c
-382 text4 CODE >24:S:\dev\erdry\power\i2c.c
-383 text4 CODE >25:S:\dev\erdry\power\i2c.c
-384 text4 CODE >26:S:\dev\erdry\power\i2c.c
-385 text4 CODE >27:S:\dev\erdry\power\i2c.c
-386 text4 CODE >28:S:\dev\erdry\power\i2c.c
-387 text4 CODE >29:S:\dev\erdry\power\i2c.c
-388 text4 CODE >30:S:\dev\erdry\power\i2c.c
-389 text4 CODE >31:S:\dev\erdry\power\i2c.c
-38A text4 CODE >32:S:\dev\erdry\power\i2c.c
-38B text4 CODE >33:S:\dev\erdry\power\i2c.c
-38D text4 CODE >34:S:\dev\erdry\power\i2c.c
-38E text4 CODE >36:S:\dev\erdry\power\i2c.c
-390 text4 CODE >37:S:\dev\erdry\power\i2c.c
-391 text4 CODE >38:S:\dev\erdry\power\i2c.c
-468 text3 CODE >50:S:\dev\erdry\power\motor.c
-468 text3 CODE >51:S:\dev\erdry\power\motor.c
-469 text3 CODE >52:S:\dev\erdry\power\motor.c
-46B text3 CODE >53:S:\dev\erdry\power\motor.c
-46C text3 CODE >54:S:\dev\erdry\power\motor.c
-46D text3 CODE >55:S:\dev\erdry\power\motor.c
-46E text3 CODE >57:S:\dev\erdry\power\motor.c
-470 text3 CODE >58:S:\dev\erdry\power\motor.c
-472 text3 CODE >59:S:\dev\erdry\power\motor.c
-33F text2 CODE >21:S:\dev\erdry\power\pwm.c
-33F text2 CODE >23:S:\dev\erdry\power\pwm.c
-342 text2 CODE >24:S:\dev\erdry\power\pwm.c
-346 text2 CODE >25:S:\dev\erdry\power\pwm.c
-348 text2 CODE >26:S:\dev\erdry\power\pwm.c
-34A text2 CODE >28:S:\dev\erdry\power\pwm.c
-34B text2 CODE >29:S:\dev\erdry\power\pwm.c
-34C text2 CODE >30:S:\dev\erdry\power\pwm.c
-34D text2 CODE >31:S:\dev\erdry\power\pwm.c
-34F text2 CODE >34:S:\dev\erdry\power\pwm.c
-351 text2 CODE >35:S:\dev\erdry\power\pwm.c
-352 text2 CODE >37:S:\dev\erdry\power\pwm.c
-354 text2 CODE >38:S:\dev\erdry\power\pwm.c
-355 text2 CODE >40:S:\dev\erdry\power\pwm.c
-356 text2 CODE >41:S:\dev\erdry\power\pwm.c
-357 text2 CODE >43:S:\dev\erdry\power\pwm.c
-35D text2 CODE >44:S:\dev\erdry\power\pwm.c
-363 text2 CODE >46:S:\dev\erdry\power\pwm.c
-366 text2 CODE >47:S:\dev\erdry\power\pwm.c
-368 text2 CODE >49:S:\dev\erdry\power\pwm.c
-36A text2 CODE >50:S:\dev\erdry\power\pwm.c
-36B text2 CODE >52:S:\dev\erdry\power\pwm.c
-36D text2 CODE >53:S:\dev\erdry\power\pwm.c
-392 text1 CODE >13:S:\dev\erdry\power\sensor.c
-392 text1 CODE >14:S:\dev\erdry\power\sensor.c
-394 text1 CODE >15:S:\dev\erdry\power\sensor.c
-396 text1 CODE >16:S:\dev\erdry\power\sensor.c
-39A text1 CODE >17:S:\dev\erdry\power\sensor.c
-39C text1 CODE >19:S:\dev\erdry\power\sensor.c
-39E text1 CODE >20:S:\dev\erdry\power\sensor.c
-39F text1 CODE >21:S:\dev\erdry\power\sensor.c
-3A1 text1 CODE >22:S:\dev\erdry\power\sensor.c
-3A2 text1 CODE >24:S:\dev\erdry\power\sensor.c
-3A3 text1 CODE >25:S:\dev\erdry\power\sensor.c
-3A8 text1 CODE >26:S:\dev\erdry\power\sensor.c
-3AD text1 CODE >27:S:\dev\erdry\power\sensor.c
-3AF text1 CODE >28:S:\dev\erdry\power\sensor.c
-3B0 text1 CODE >29:S:\dev\erdry\power\sensor.c
-3B1 maintext CODE >42:S:\dev\erdry\power\main.c
-3B1 maintext CODE >43:S:\dev\erdry\power\main.c
-3B3 maintext CODE >44:S:\dev\erdry\power\main.c
-3B4 maintext CODE >45:S:\dev\erdry\power\main.c
-3B5 maintext CODE >48:S:\dev\erdry\power\main.c
-3B6 maintext CODE >49:S:\dev\erdry\power\main.c
-3B7 maintext CODE >51:S:\dev\erdry\power\main.c
-3B8 maintext CODE >52:S:\dev\erdry\power\main.c
-3B9 maintext CODE >53:S:\dev\erdry\power\main.c
-3BA maintext CODE >54:S:\dev\erdry\power\main.c
-3BB maintext CODE >55:S:\dev\erdry\power\main.c
-3BC maintext CODE >56:S:\dev\erdry\power\main.c
-3BD maintext CODE >57:S:\dev\erdry\power\main.c
-3BE maintext CODE >60:S:\dev\erdry\power\main.c
-3C4 maintext CODE >63:S:\dev\erdry\power\main.c
-3CB maintext CODE >66:S:\dev\erdry\power\main.c
-3CC maintext CODE >69:S:\dev\erdry\power\main.c
-496 clrtext CODE >5092:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-496 clrtext CODE >5093:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-497 clrtext CODE >5094:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-497 clrtext CODE >5095:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-498 clrtext CODE >5096:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-499 clrtext CODE >5097:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-49A clrtext CODE >5098:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
-49B clrtext CODE >5099:C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.
+3B text5 CODE >111:S:\dev\erdry\power\command.c
+41 text5 CODE >113:S:\dev\erdry\power\command.c
+49 text5 CODE >114:S:\dev\erdry\power\command.c
+4E text5 CODE >115:S:\dev\erdry\power\command.c
+53 text5 CODE >116:S:\dev\erdry\power\command.c
+61 text5 CODE >118:S:\dev\erdry\power\command.c
+66 text5 CODE >120:S:\dev\erdry\power\command.c
+69 text5 CODE >121:S:\dev\erdry\power\command.c
+6D text5 CODE >122:S:\dev\erdry\power\command.c
+6E text5 CODE >123:S:\dev\erdry\power\command.c
+6F text5 CODE >124:S:\dev\erdry\power\command.c
+70 text5 CODE >126:S:\dev\erdry\power\command.c
+71 text5 CODE >127:S:\dev\erdry\power\command.c
+73 text5 CODE >128:S:\dev\erdry\power\command.c
+75 text5 CODE >129:S:\dev\erdry\power\command.c
+76 text5 CODE >130:S:\dev\erdry\power\command.c
+77 text5 CODE >131:S:\dev\erdry\power\command.c
+78 text5 CODE >134:S:\dev\erdry\power\command.c
+79 text5 CODE >135:S:\dev\erdry\power\command.c
+7A text5 CODE >137:S:\dev\erdry\power\command.c
+7C text5 CODE >138:S:\dev\erdry\power\command.c
+85 text5 CODE >139:S:\dev\erdry\power\command.c
+89 text5 CODE >140:S:\dev\erdry\power\command.c
+8D text5 CODE >141:S:\dev\erdry\power\command.c
+8E text5 CODE >142:S:\dev\erdry\power\command.c
+9B text5 CODE >144:S:\dev\erdry\power\command.c
+9C text5 CODE >145:S:\dev\erdry\power\command.c
+9F text5 CODE >146:S:\dev\erdry\power\command.c
+A1 text5 CODE >147:S:\dev\erdry\power\command.c
+A2 text5 CODE >148:S:\dev\erdry\power\command.c
+A3 text5 CODE >149:S:\dev\erdry\power\command.c
+B0 text5 CODE >151:S:\dev\erdry\power\command.c
+B2 text5 CODE >118:S:\dev\erdry\power\command.c
+B3 text5 CODE >157:S:\dev\erdry\power\command.c
+B8 text5 CODE >158:S:\dev\erdry\power\command.c
+BA text5 CODE >159:S:\dev\erdry\power\command.c
+BB text5 CODE >164:S:\dev\erdry\power\command.c
+C0 text5 CODE >165:S:\dev\erdry\power\command.c
+C1 text5 CODE >166:S:\dev\erdry\power\command.c
+C2 text5 CODE >171:S:\dev\erdry\power\command.c
+C7 text5 CODE >172:S:\dev\erdry\power\command.c
+DD text5 CODE >177:S:\dev\erdry\power\command.c
+E2 text5 CODE >178:S:\dev\erdry\power\command.c
+F8 text5 CODE >182:S:\dev\erdry\power\command.c
+FD text5 CODE >183:S:\dev\erdry\power\command.c
+101 text5 CODE >187:S:\dev\erdry\power\command.c
+106 text5 CODE >188:S:\dev\erdry\power\command.c
+111 text5 CODE >193:S:\dev\erdry\power\command.c
+11B text5 CODE >194:S:\dev\erdry\power\command.c
+120 text5 CODE >196:S:\dev\erdry\power\command.c
+13C text5 CODE >197:S:\dev\erdry\power\command.c
+13D text5 CODE >198:S:\dev\erdry\power\command.c
+370 text4 CODE >15:S:\dev\erdry\power\i2c.c
+370 text4 CODE >16:S:\dev\erdry\power\i2c.c
+373 text4 CODE >17:S:\dev\erdry\power\i2c.c
+375 text4 CODE >18:S:\dev\erdry\power\i2c.c
+378 text4 CODE >19:S:\dev\erdry\power\i2c.c
+37A text4 CODE >20:S:\dev\erdry\power\i2c.c
+37F text4 CODE >21:S:\dev\erdry\power\i2c.c
+381 text4 CODE >22:S:\dev\erdry\power\i2c.c
+383 text4 CODE >23:S:\dev\erdry\power\i2c.c
+384 text4 CODE >24:S:\dev\erdry\power\i2c.c
+385 text4 CODE >25:S:\dev\erdry\power\i2c.c
+386 text4 CODE >26:S:\dev\erdry\power\i2c.c
+387 text4 CODE >27:S:\dev\erdry\power\i2c.c
+388 text4 CODE >28:S:\dev\erdry\power\i2c.c
+389 text4 CODE >29:S:\dev\erdry\power\i2c.c
+38A text4 CODE >30:S:\dev\erdry\power\i2c.c
+38B text4 CODE >31:S:\dev\erdry\power\i2c.c
+38C text4 CODE >32:S:\dev\erdry\power\i2c.c
+38D text4 CODE >33:S:\dev\erdry\power\i2c.c
+38F text4 CODE >34:S:\dev\erdry\power\i2c.c
+390 text4 CODE >35:S:\dev\erdry\power\i2c.c
+466 text3 CODE >50:S:\dev\erdry\power\motor.c
+466 text3 CODE >51:S:\dev\erdry\power\motor.c
+467 text3 CODE >52:S:\dev\erdry\power\motor.c
+469 text3 CODE >53:S:\dev\erdry\power\motor.c
+46A text3 CODE >54:S:\dev\erdry\power\motor.c
+46B text3 CODE >55:S:\dev\erdry\power\motor.c
+46C text3 CODE >57:S:\dev\erdry\power\motor.c
+46E text3 CODE >58:S:\dev\erdry\power\motor.c
+470 text3 CODE >59:S:\dev\erdry\power\motor.c
+341 text2 CODE >21:S:\dev\erdry\power\pwm.c
+341 text2 CODE >23:S:\dev\erdry\power\pwm.c
+344 text2 CODE >24:S:\dev\erdry\power\pwm.c
+348 text2 CODE >25:S:\dev\erdry\power\pwm.c
+34A text2 CODE >26:S:\dev\erdry\power\pwm.c
+34C text2 CODE >28:S:\dev\erdry\power\pwm.c
+34D text2 CODE >29:S:\dev\erdry\power\pwm.c
+34E text2 CODE >30:S:\dev\erdry\power\pwm.c
+34F text2 CODE >31:S:\dev\erdry\power\pwm.c
+351 text2 CODE >34:S:\dev\erdry\power\pwm.c
+353 text2 CODE >35:S:\dev\erdry\power\pwm.c
+354 text2 CODE >37:S:\dev\erdry\power\pwm.c
+356 text2 CODE >38:S:\dev\erdry\power\pwm.c
+357 text2 CODE >40:S:\dev\erdry\power\pwm.c
+358 text2 CODE >41:S:\dev\erdry\power\pwm.c
+359 text2 CODE >43:S:\dev\erdry\power\pwm.c
+35F text2 CODE >44:S:\dev\erdry\power\pwm.c
+365 text2 CODE >46:S:\dev\erdry\power\pwm.c
+368 text2 CODE >47:S:\dev\erdry\power\pwm.c
+36A text2 CODE >49:S:\dev\erdry\power\pwm.c
+36C text2 CODE >50:S:\dev\erdry\power\pwm.c
+36D text2 CODE >52:S:\dev\erdry\power\pwm.c
+36F text2 CODE >53:S:\dev\erdry\power\pwm.c
+391 text1 CODE >13:S:\dev\erdry\power\sensor.c
+391 text1 CODE >14:S:\dev\erdry\power\sensor.c
+393 text1 CODE >15:S:\dev\erdry\power\sensor.c
+395 text1 CODE >16:S:\dev\erdry\power\sensor.c
+399 text1 CODE >17:S:\dev\erdry\power\sensor.c
+39B text1 CODE >19:S:\dev\erdry\power\sensor.c
+39D text1 CODE >20:S:\dev\erdry\power\sensor.c
+39E text1 CODE >21:S:\dev\erdry\power\sensor.c
+3A0 text1 CODE >22:S:\dev\erdry\power\sensor.c
+3A1 text1 CODE >24:S:\dev\erdry\power\sensor.c
+3A2 text1 CODE >25:S:\dev\erdry\power\sensor.c
+3A7 text1 CODE >26:S:\dev\erdry\power\sensor.c
+3AC text1 CODE >27:S:\dev\erdry\power\sensor.c
+3AE text1 CODE >28:S:\dev\erdry\power\sensor.c
+3AF text1 CODE >29:S:\dev\erdry\power\sensor.c
+3B0 maintext CODE >42:S:\dev\erdry\power\main.c
+3B0 maintext CODE >43:S:\dev\erdry\power\main.c
+3B2 maintext CODE >44:S:\dev\erdry\power\main.c
+3B3 maintext CODE >45:S:\dev\erdry\power\main.c
+3B4 maintext CODE >48:S:\dev\erdry\power\main.c
+3B5 maintext CODE >49:S:\dev\erdry\power\main.c
+3B6 maintext CODE >51:S:\dev\erdry\power\main.c
+3B7 maintext CODE >52:S:\dev\erdry\power\main.c
+3B8 maintext CODE >53:S:\dev\erdry\power\main.c
+3B9 maintext CODE >54:S:\dev\erdry\power\main.c
+3BA maintext CODE >55:S:\dev\erdry\power\main.c
+3BB maintext CODE >56:S:\dev\erdry\power\main.c
+3BC maintext CODE >57:S:\dev\erdry\power\main.c
+3BD maintext CODE >60:S:\dev\erdry\power\main.c
+3C3 maintext CODE >63:S:\dev\erdry\power\main.c
+3CA maintext CODE >66:S:\dev\erdry\power\main.c
+3CB maintext CODE >69:S:\dev\erdry\power\main.c
+494 clrtext CODE >5094:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+494 clrtext CODE >5095:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+495 clrtext CODE >5096:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+495 clrtext CODE >5097:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+496 clrtext CODE >5098:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+497 clrtext CODE >5099:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+498 clrtext CODE >5100:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
+499 clrtext CODE >5101:C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -555,7 +550,7 @@ FC text5 CODE >188:S:\dev\erdry\power\command.c
 ___latbits 0 0 ABS 0 - dist/default/debug\power.debug.o
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
 __Hspace_0 800C 0 ABS 0 - -
-__Hspace_1 BF 0 ABS 0 - -
+__Hspace_1 C0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
@@ -570,35 +565,36 @@ _PWM4OUT 18D5 0 ABS 0 - dist/default/debug\power.debug.o
 _PWM4POL 18D4 0 ABS 0 - dist/default/debug\power.debug.o
 _minReading 6C 0 BANK0 1 dataBANK0 dist/default/debug\power.debug.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/debug\power.debug.o
 _PEIE 5E 0 ABS 0 - dist/default/debug\power.debug.o
 _T0EN 2CF7 0 ABS 0 - dist/default/debug\power.debug.o
 _T2ON 1477 0 ABS 0 - dist/default/debug\power.debug.o
 _T2PR 28D 0 ABS 0 - dist/default/debug\power.debug.o
-___sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-_buzz 842 0 CODE 0 text9 dist/default/debug\power.debug.o
-_main 762 0 CODE 0 maintext dist/default/debug\power.debug.o
-_step 460 0 CODE 0 text25 dist/default/debug\power.debug.o
+___sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+_buzz 87C 0 CODE 0 text9 dist/default/debug\power.debug.o
+_main 760 0 CODE 0 maintext dist/default/debug\power.debug.o
+_step 380 0 CODE 0 text25 dist/default/debug\power.debug.o
 btemp 7E 0 ABS 0 - dist/default/debug\power.debug.o
-start 20 0 CODE 0 init C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
+start 20 0 CODE 0 init C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
 __size_of_buzz 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_step 0 0 ABS 0 - dist/default/debug\power.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_chkSensors 610 0 CODE 0 text23 dist/default/debug\power.debug.o
+__end_of_chkSensors 614 0 CODE 0 text23 dist/default/debug\power.debug.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_motorOff 0 0 ABS 0 - dist/default/debug\power.debug.o
-_timeTicks 52 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_timeTicks 53 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __size_of_cmdLenIs 0 0 ABS 0 - dist/default/debug\power.debug.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-_i2cInterrupt 37E 0 CODE 0 text20 dist/default/debug\power.debug.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+_i2cInterrupt 460 0 CODE 0 text20 dist/default/debug\power.debug.o
 _step$132 72 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 _step$133 74 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 _step$134 76 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
@@ -607,7 +603,7 @@ wtemp0 7E 0 ABS 0 - dist/default/debug\power.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __size_of_buzzEnd 0 0 ABS 0 - dist/default/debug\power.debug.o
-_curSensorReading 44 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_curSensorReading 43 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __size_of_resetBoard 0 0 ABS 0 - dist/default/debug\power.debug.o
 _ADRESH 9C 0 ABS 0 - dist/default/debug\power.debug.o
 _ADRESL 9B 0 ABS 0 - dist/default/debug\power.debug.o
@@ -615,31 +611,30 @@ __size_of_clockInterrupt 0 0 ABS 0 - dist/default/debug\power.debug.o
 _ANSELA 1F38 0 ABS 0 - dist/default/debug\power.debug.o
 _ANSELC 1F4E 0 ABS 0 - dist/default/debug\power.debug.o
 cmdLenIs@len 59 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
-_i2cInit 6DC 0 CODE 0 text4 dist/default/debug\power.debug.o
+_i2cInit 6E0 0 CODE 0 text4 dist/default/debug\power.debug.o
 _ADACTbits 9F 0 ABS 0 - dist/default/debug\power.debug.o
 setDutyCycle@pwm 5A 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
-__end_of_setErrorInt 91E 0 CODE 0 text21 dist/default/debug\power.debug.o
+__end_of_setErrorInt 91A 0 CODE 0 text21 dist/default/debug\power.debug.o
 __size_of_i2cInterrupt 0 0 ABS 0 - dist/default/debug\power.debug.o
-_motorOff 8F4 0 CODE 0 text15 dist/default/debug\power.debug.o
-_setDutyCycle 610 0 CODE 0 text14 dist/default/debug\power.debug.o
+_motorOff 8F0 0 CODE 0 text15 dist/default/debug\power.debug.o
+_setDutyCycle 614 0 CODE 0 text14 dist/default/debug\power.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-_cmdLenIs 8B8 0 CODE 0 text10 dist/default/debug\power.debug.o
+_cmdLenIs 8B4 0 CODE 0 text10 dist/default/debug\power.debug.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_motorOff 902 0 CODE 0 text15 dist/default/debug\power.debug.o
-_chkSensors$851 72 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
-___stackhi 20EF 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-___stacklo 206F 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
-__end_of_cmdLenIs 8D0 0 CODE 0 text10 dist/default/debug\power.debug.o
-__end_of_i2cInterrupt 460 0 CODE 0 text20 dist/default/debug\power.debug.o
-_setFlapPos 824 0 CODE 0 text6 dist/default/debug\power.debug.o
-_motorOffInt 91E 0 CODE 0 text26 dist/default/debug\power.debug.o
-_setSendBytes 26A 0 CODE 0 text8 dist/default/debug\power.debug.o
-__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
+__end_of_motorOff 8FE 0 CODE 0 text15 dist/default/debug\power.debug.o
+_chkSensors$849 72 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
+___stackhi 20EF 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+___stacklo 2070 0 ABS 0 - C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
+__end_of_cmdLenIs 8CC 0 CODE 0 text10 dist/default/debug\power.debug.o
+__end_of_i2cInterrupt 53C 0 CODE 0 text20 dist/default/debug\power.debug.o
+_setFlapPos 822 0 CODE 0 text6 dist/default/debug\power.debug.o
+_motorOffInt 91A 0 CODE 0 text26 dist/default/debug\power.debug.o
+_setSendBytes 280 0 CODE 0 text8 dist/default/debug\power.debug.o
 _WPUAbits 1F39 0 ABS 0 - dist/default/debug\power.debug.o
 _haveCommand 55 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 setSendBytes@i 5B 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 start_initialization 22 0 CODE 0 cinit dist/default/debug\power.debug.o
-_sensorInit 724 0 CODE 0 text1 dist/default/debug\power.debug.o
+_sensorInit 722 0 CODE 0 text1 dist/default/debug\power.debug.o
 __size_of_handleDelayedError 0 0 ABS 0 - dist/default/debug\power.debug.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_setDutyCycle 0 0 ABS 0 - dist/default/debug\power.debug.o
@@ -649,14 +644,15 @@ _RC0PPS 1F20 0 ABS 0 - dist/default/debug\power.debug.o
 _RC1PPS 1F21 0 ABS 0 - dist/default/debug\power.debug.o
 _RC2PPS 1F22 0 ABS 0 - dist/default/debug\power.debug.o
 _RC3PPS 1F23 0 ABS 0 - dist/default/debug\power.debug.o
-clear_ram0 92C 0 CODE 0 clrtext dist/default/debug\power.debug.o
+clear_ram0 928 0 CODE 0 clrtext dist/default/debug\power.debug.o
 __pcstackBANK0 57 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 _SSP1IE 38C8 0 ABS 0 - dist/default/debug\power.debug.o
 _SSP1IF 3878 0 ABS 0 - dist/default/debug\power.debug.o
 _T2CKSYNC 147D 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_buzzEnd 910 0 CODE 0 text16 dist/default/debug\power.debug.o
+__end_of_buzzEnd 90C 0 CODE 0 text16 dist/default/debug\power.debug.o
 _TMR0IE 38B5 0 ABS 0 - dist/default/debug\power.debug.o
 _TMR0IF 3865 0 ABS 0 - dist/default/debug\power.debug.o
+_TRISA0 90 0 ABS 0 - dist/default/debug\power.debug.o
 _TRISA1 91 0 ABS 0 - dist/default/debug\power.debug.o
 _TRISA2 92 0 ABS 0 - dist/default/debug\power.debug.o
 _TRISA4 94 0 ABS 0 - dist/default/debug\power.debug.o
@@ -669,11 +665,11 @@ setErrorInt@err 71 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 __CFG_RSTOSC$HFINTPLL 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_clkInit 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_chkSensors 0 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_setDutyCycle 67E 0 CODE 0 text14 dist/default/debug\power.debug.o
+__end_of_setDutyCycle 682 0 CODE 0 text14 dist/default/debug\power.debug.o
 __size_of_setSendBytes 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_cmdInit 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_pwmInit 0 0 ABS 0 - dist/default/debug\power.debug.o
-___int_sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
+___int_sp 0 0 STACK 2 stack C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -741,7 +737,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
-_buzzCountdown 48 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_buzzCountdown 49 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 _NVMADRH 81B 0 ABS 0 - dist/default/debug\power.debug.o
 _NVMADRL 81A 0 ABS 0 - dist/default/debug\power.debug.o
 _NVMCON2 81F 0 ABS 0 - dist/default/debug\power.debug.o
@@ -803,9 +799,9 @@ __Hbank62 0 0 BANK62 1 bank62 -
 __Hbank63 0 0 BANK63 1 bank63 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_buzzerInit 94C 0 CODE 0 text18 dist/default/debug\power.debug.o
-_delayedError 51 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-__end_of_setFlapPos 842 0 CODE 0 text6 dist/default/debug\power.debug.o
+_buzzerInit 948 0 CODE 0 text18 dist/default/debug\power.debug.o
+_delayedError 52 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+__end_of_setFlapPos 840 0 CODE 0 text6 dist/default/debug\power.debug.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 0 config -
 _i2cRecvBytesPtr 7C 0 COMMON 1 bssCOMMON dist/default/debug\power.debug.o
@@ -877,8 +873,8 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_sensorInit 762 0 CODE 0 text1 dist/default/debug\power.debug.o
-__end_of_setSendBytes 37E 0 CODE 0 text8 dist/default/debug\power.debug.o
+__end_of_sensorInit 760 0 CODE 0 text1 dist/default/debug\power.debug.o
+__end_of_setSendBytes 380 0 CODE 0 text8 dist/default/debug\power.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 20 0 CODE 0 init -
@@ -914,51 +910,51 @@ int$flags 7E 0 ABS 0 - dist/default/debug\power.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/debug\power.debug.o
 __S0 800C 0 ABS 0 - -
-__S1 BF 0 ABS 0 - -
+__S1 C0 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
-__end_of_chkBuzzer 89C 0 CODE 0 text27 dist/default/debug\power.debug.o
+__end_of_chkBuzzer 87C 0 CODE 0 text27 dist/default/debug\power.debug.o
 __end_of_globalInt 20 0 CODE 0 intentry dist/default/debug\power.debug.o
 __size_of_setErrorInt 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_chkBuzzer 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_globalInt 0 0 ABS 0 - dist/default/debug\power.debug.o
-_cmdLen 4E 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-_curPos 4C 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_cmdLen 4F 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_curPos 4D 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __CFG_BBEN$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
-_chkBuzzer 87E 0 CODE 0 text27 dist/default/debug\power.debug.o
+_chkBuzzer 85E 0 CODE 0 text27 dist/default/debug\power.debug.o
 _globalInt 8 0 CODE 0 intentry dist/default/debug\power.debug.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
-_i2cSendBytes A0 0 BANK1 1 bssBANK1 dist/default/debug\power.debug.o
+_i2cSendBytes 20 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-__end_of_buzzerInit 954 0 CODE 0 text18 dist/default/debug\power.debug.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\MARKHA~1\AppData\Local\Temp\sj0s.o
+__end_of_buzzerInit 950 0 CODE 0 text18 dist/default/debug\power.debug.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\MARKHA~1\AppData\Local\Temp\sbv4.o
 __pdataBANK0 6C 0 BANK0 1 dataBANK0 dist/default/debug\power.debug.o
-__end_of_clkInit 824 0 CODE 0 text17 dist/default/debug\power.debug.o
+__end_of_clkInit 822 0 CODE 0 text17 dist/default/debug\power.debug.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 buzz@ms 57 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
-__end_of_cmdInit 944 0 CODE 0 text12 dist/default/debug\power.debug.o
+__end_of_cmdInit 940 0 CODE 0 text12 dist/default/debug\power.debug.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_pwmInit 6DC 0 CODE 0 text2 dist/default/debug\power.debug.o
-__ptext10 8B8 0 CODE 0 text10 dist/default/debug\power.debug.o
-__ptext11 8E6 0 CODE 0 text11 dist/default/debug\power.debug.o
-__ptext12 938 0 CODE 0 text12 dist/default/debug\power.debug.o
-__ptext13 860 0 CODE 0 text13 dist/default/debug\power.debug.o
-__ptext14 610 0 CODE 0 text14 dist/default/debug\power.debug.o
-__ptext15 8F4 0 CODE 0 text15 dist/default/debug\power.debug.o
-__ptext16 902 0 CODE 0 text16 dist/default/debug\power.debug.o
-__ptext17 7FE 0 CODE 0 text17 dist/default/debug\power.debug.o
-__ptext18 94C 0 CODE 0 text18 dist/default/debug\power.debug.o
-__ptext20 37E 0 CODE 0 text20 dist/default/debug\power.debug.o
-__ptext21 910 0 CODE 0 text21 dist/default/debug\power.debug.o
-__ptext22 89C 0 CODE 0 text22 dist/default/debug\power.debug.o
-__ptext23 540 0 CODE 0 text23 dist/default/debug\power.debug.o
-__ptext24 79A 0 CODE 0 text24 dist/default/debug\power.debug.o
-__ptext25 460 0 CODE 0 text25 dist/default/debug\power.debug.o
-__ptext26 91E 0 CODE 0 text26 dist/default/debug\power.debug.o
-__ptext27 87E 0 CODE 0 text27 dist/default/debug\power.debug.o
+__end_of_pwmInit 6E0 0 CODE 0 text2 dist/default/debug\power.debug.o
+__ptext10 8B4 0 CODE 0 text10 dist/default/debug\power.debug.o
+__ptext11 8E2 0 CODE 0 text11 dist/default/debug\power.debug.o
+__ptext12 934 0 CODE 0 text12 dist/default/debug\power.debug.o
+__ptext13 840 0 CODE 0 text13 dist/default/debug\power.debug.o
+__ptext14 614 0 CODE 0 text14 dist/default/debug\power.debug.o
+__ptext15 8F0 0 CODE 0 text15 dist/default/debug\power.debug.o
+__ptext16 8FE 0 CODE 0 text16 dist/default/debug\power.debug.o
+__ptext17 7FC 0 CODE 0 text17 dist/default/debug\power.debug.o
+__ptext18 948 0 CODE 0 text18 dist/default/debug\power.debug.o
+__ptext20 460 0 CODE 0 text20 dist/default/debug\power.debug.o
+__ptext21 90C 0 CODE 0 text21 dist/default/debug\power.debug.o
+__ptext22 898 0 CODE 0 text22 dist/default/debug\power.debug.o
+__ptext23 53C 0 CODE 0 text23 dist/default/debug\power.debug.o
+__ptext24 798 0 CODE 0 text24 dist/default/debug\power.debug.o
+__ptext25 380 0 CODE 0 text25 dist/default/debug\power.debug.o
+__ptext26 91A 0 CODE 0 text26 dist/default/debug\power.debug.o
+__ptext27 85E 0 CODE 0 text27 dist/default/debug\power.debug.o
 _i2cSendBytesPtr 7B 0 COMMON 1 bssCOMMON dist/default/debug\power.debug.o
-__end_of_motorInit 8E6 0 CODE 0 text3 dist/default/debug\power.debug.o
-_maxReading 40 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+__end_of_motorInit 8E2 0 CODE 0 text3 dist/default/debug\power.debug.o
+_maxReading 3F 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -1013,7 +1009,7 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext 762 0 CODE 0 maintext dist/default/debug\power.debug.o
+__pmaintext 760 0 CODE 0 maintext dist/default/debug\power.debug.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_motorInit 0 0 ABS 0 - dist/default/debug\power.debug.o
@@ -1023,20 +1019,20 @@ __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
-_clockInterrupt 89C 0 CODE 0 text22 dist/default/debug\power.debug.o
+_clockInterrupt 898 0 CODE 0 text22 dist/default/debug\power.debug.o
 __CFG_WRTAPP$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_i2cInit 0 0 ABS 0 - dist/default/debug\power.debug.o
-_tgtPos 4A 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-_motorInit 8D0 0 CODE 0 text3 dist/default/debug\power.debug.o
+_tgtPos 4B 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_motorInit 8CC 0 CODE 0 text3 dist/default/debug\power.debug.o
 step@cw 78 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 _SSP1CLKPPS 1EC5 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_chkMotor 0 0 ABS 0 - dist/default/debug\power.debug.o
-_sensDelaying 53 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_sensDelaying 47 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 _SSP1DATPPS 1EC6 0 ABS 0 - dist/default/debug\power.debug.o
 _ADCON0bits 9D 0 ABS 0 - dist/default/debug\power.debug.o
 _ADCON1bits 9E 0 ABS 0 - dist/default/debug\power.debug.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_motorOffInt 92C 0 CODE 0 text26 dist/default/debug\power.debug.o
+__end_of_motorOffInt 928 0 CODE 0 text26 dist/default/debug\power.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -1048,53 +1044,53 @@ __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 20 0 CODE 0 end_init -
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_buzzEnd 902 0 CODE 0 text16 dist/default/debug\power.debug.o
+_buzzEnd 8FE 0 CODE 0 text16 dist/default/debug\power.debug.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 end_of_initialization 52 0 CODE 0 cinit dist/default/debug\power.debug.o
 _T2CLKCONbits 290 0 ABS 0 - dist/default/debug\power.debug.o
 __Hintentry 20 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_setFlapPos 0 0 ABS 0 - dist/default/debug\power.debug.o
-_resetBoard 860 0 CODE 0 text13 dist/default/debug\power.debug.o
+_resetBoard 840 0 CODE 0 text13 dist/default/debug\power.debug.o
 __Lstrings 0 0 ABS 0 strings -
-_setError 8E6 0 CODE 0 text11 dist/default/debug\power.debug.o
+_setError 8E2 0 CODE 0 text11 dist/default/debug\power.debug.o
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_clockInterrupt 8B8 0 CODE 0 text22 dist/default/debug\power.debug.o
-setSendBytes@i_1000 5C 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
+__end_of_clockInterrupt 8B4 0 CODE 0 text22 dist/default/debug\power.debug.o
 __size_of_sensorInit 0 0 ABS 0 - dist/default/debug\power.debug.o
-__ptext1 724 0 CODE 0 text1 dist/default/debug\power.debug.o
-__ptext2 67E 0 CODE 0 text2 dist/default/debug\power.debug.o
-__ptext3 8D0 0 CODE 0 text3 dist/default/debug\power.debug.o
-__ptext4 6DC 0 CODE 0 text4 dist/default/debug\power.debug.o
+__ptext1 722 0 CODE 0 text1 dist/default/debug\power.debug.o
+__ptext2 682 0 CODE 0 text2 dist/default/debug\power.debug.o
+__ptext3 8CC 0 CODE 0 text3 dist/default/debug\power.debug.o
+__ptext4 6E0 0 CODE 0 text4 dist/default/debug\power.debug.o
 __ptext5 58 0 CODE 0 text5 dist/default/debug\power.debug.o
-__ptext6 824 0 CODE 0 text6 dist/default/debug\power.debug.o
-__ptext7 7D2 0 CODE 0 text7 dist/default/debug\power.debug.o
-__ptext8 26A 0 CODE 0 text8 dist/default/debug\power.debug.o
-__ptext9 842 0 CODE 0 text9 dist/default/debug\power.debug.o
-_curError 50 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-__end_of_setError 8F4 0 CODE 0 text11 dist/default/debug\power.debug.o
+__ptext6 822 0 CODE 0 text6 dist/default/debug\power.debug.o
+__ptext7 7D0 0 CODE 0 text7 dist/default/debug\power.debug.o
+__ptext8 280 0 CODE 0 text8 dist/default/debug\power.debug.o
+__ptext9 87C 0 CODE 0 text9 dist/default/debug\power.debug.o
+_curError 51 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+__end_of_setError 8F0 0 CODE 0 text11 dist/default/debug\power.debug.o
 _curSensor 7A 0 COMMON 1 bssCOMMON dist/default/debug\power.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 eventLoop@cmdByte 67 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 eventLoop@flashAddr 65 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
-_chkMotor 79A 0 CODE 0 text24 dist/default/debug\power.debug.o
+_chkMotor 798 0 CODE 0 text24 dist/default/debug\power.debug.o
+setSendBytes@i_998 5C 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 eventLoop@cmdBufIdx 63 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
-_curRegister 4F 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-_setErrorInt 910 0 CODE 0 text21 dist/default/debug\power.debug.o
+_curRegister 50 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_setErrorInt 90C 0 CODE 0 text21 dist/default/debug\power.debug.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_chkMotor 7D2 0 CODE 0 text24 dist/default/debug\power.debug.o
+__end_of_chkMotor 7D0 0 CODE 0 text24 dist/default/debug\power.debug.o
 __end_of__initialization 52 0 CODE 0 cinit dist/default/debug\power.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 _motorRunning 56 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
-__end_of_i2cInit 724 0 CODE 0 text4 dist/default/debug\power.debug.o
+__end_of_i2cInit 722 0 CODE 0 text4 dist/default/debug\power.debug.o
 _NVMCON1bits 81E 0 ABS 0 - dist/default/debug\power.debug.o
-__pidataBANK0 944 0 CODE 0 idataBANK0 dist/default/debug\power.debug.o
+__pidataBANK0 940 0 CODE 0 idataBANK0 dist/default/debug\power.debug.o
 chkSensors@reading 74 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 setDutyCycle@count 57 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -1104,8 +1100,8 @@ _SSP1CON3bits 192 0 ABS 0 - dist/default/debug\power.debug.o
 _T016BIT 2CF4 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_buzzerInit 0 0 ABS 0 - dist/default/debug\power.debug.o
 _T0ASYNC 2CFC 0 ABS 0 - dist/default/debug\power.debug.o
-__end_of_resetBoard 87E 0 CODE 0 text13 dist/default/debug\power.debug.o
-__end_of_handleDelayedError 7FE 0 CODE 0 text7 dist/default/debug\power.debug.o
+__end_of_resetBoard 85E 0 CODE 0 text13 dist/default/debug\power.debug.o
+__end_of_handleDelayedError 7FC 0 CODE 0 text7 dist/default/debug\power.debug.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/debug\power.debug.o
 _T0CON0bits 59E 0 ABS 0 - dist/default/debug\power.debug.o
 _T0CON1bits 59F 0 ABS 0 - dist/default/debug\power.debug.o
@@ -1115,14 +1111,14 @@ _SSP1BUF 18C 0 ABS 0 - dist/default/debug\power.debug.o
 _SSP1MSK 18E 0 ABS 0 - dist/default/debug\power.debug.o
 _T2PSYNC 147F 0 ABS 0 - dist/default/debug\power.debug.o
 __Hend_init 22 0 CODE 0 end_init -
-__end_of_buzz 860 0 CODE 0 text9 dist/default/debug\power.debug.o
-__end_of_main 79A 0 CODE 0 maintext dist/default/debug\power.debug.o
-__end_of_step 540 0 CODE 0 text25 dist/default/debug\power.debug.o
-__end_of_eventLoop 26A 0 CODE 0 text5 dist/default/debug\power.debug.o
+__end_of_buzz 898 0 CODE 0 text9 dist/default/debug\power.debug.o
+__end_of_main 798 0 CODE 0 maintext dist/default/debug\power.debug.o
+__end_of_step 460 0 CODE 0 text25 dist/default/debug\power.debug.o
+__end_of_eventLoop 280 0 CODE 0 text5 dist/default/debug\power.debug.o
 __CFG_WRTSAF$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 __CFG_SAFEN$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
+_LATA0 C0 0 ABS 0 - dist/default/debug\power.debug.o
 _LATA1 C1 0 ABS 0 - dist/default/debug\power.debug.o
-_LATA2 C2 0 ABS 0 - dist/default/debug\power.debug.o
 _LATA5 C5 0 ABS 0 - dist/default/debug\power.debug.o
 _LATC4 D4 0 ABS 0 - dist/default/debug\power.debug.o
 _LATC5 D5 0 ABS 0 - dist/default/debug\power.debug.o
@@ -1134,18 +1130,18 @@ _dummy 54 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 _phase 7D 0 COMMON 1 bssCOMMON dist/default/debug\power.debug.o
 setFlapPos@pos 57 0 BANK0 1 cstackBANK0 dist/default/debug\power.debug.o
 __pintentry 8 0 CODE 0 intentry dist/default/debug\power.debug.o
-_clkInit 7FE 0 CODE 0 text17 dist/default/debug\power.debug.o
+_clkInit 7FC 0 CODE 0 text17 dist/default/debug\power.debug.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-_cmdInit 938 0 CODE 0 text12 dist/default/debug\power.debug.o
+_cmdInit 934 0 CODE 0 text12 dist/default/debug\power.debug.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/debug\power.debug.o
-_pwmInit 67E 0 CODE 0 text2 dist/default/debug\power.debug.o
-_chkSensors 540 0 CODE 0 text23 dist/default/debug\power.debug.o
-_i2cRecvBytes 20 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
+_pwmInit 682 0 CODE 0 text2 dist/default/debug\power.debug.o
+_chkSensors 53C 0 CODE 0 text23 dist/default/debug\power.debug.o
+_i2cRecvBytes A0 0 BANK1 1 bssBANK1 dist/default/debug\power.debug.o
 __initialization 22 0 CODE 0 cinit dist/default/debug\power.debug.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/debug\power.debug.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/debug\power.debug.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/debug\power.debug.o
-_handleDelayedError 7D2 0 CODE 0 text7 dist/default/debug\power.debug.o
+_handleDelayedError 7D0 0 CODE 0 text7 dist/default/debug\power.debug.o
 _T2CONbits 28E 0 ABS 0 - dist/default/debug\power.debug.o
 __size_of_motorOffInt 0 0 ABS 0 - dist/default/debug\power.debug.o
 _eventLoop 58 0 CODE 0 text5 dist/default/debug\power.debug.o
@@ -1176,8 +1172,8 @@ _ANSELAbits 1F38 0 ABS 0 - dist/default/debug\power.debug.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 E 1
-intentry 0 4 8 4A6 2
+intentry 0 4 8 4A4 2
 reset_vec 0 0 0 1 2
 bssBANK0 1 20 20 50 1
-bssBANK1 1 A0 A0 1F 1
+bssBANK1 1 A0 A0 20 1
 config 0 8007 1000E 5 2

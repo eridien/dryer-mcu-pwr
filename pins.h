@@ -11,8 +11,8 @@
 #define SDA_TRIS    TRISC1
 #define HPWM_TRIS   TRISC2
 #define FPWM_TRIS   TRISC3
-#define MA_TRIS     TRISA1
-#define MB_TRIS     TRISA2
+#define MA_TRIS     TRISA0
+#define MB_TRIS     TRISA1
 #define MC_TRIS     TRISC5
 #define MD_TRIS     TRISC4
 
@@ -23,8 +23,8 @@
 #define SDA_LAT    LATC1
 #define HPWM_LAT   LATC2
 #define FPWM_LAT   LATC3
-#define MA_LAT     LATA1
-#define MB_LAT     LATA2
+#define MA_LAT     LATA0
+#define MB_LAT     LATA1
 #define MC_LAT     LATC5
 #define MD_LAT     LATC4
 

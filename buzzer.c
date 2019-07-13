@@ -30,8 +30,7 @@ void buzz(uint16 ms) {
     BUZZ_LAT = 1;
     GIE = 0;
     buzzCountdown = ms;
-    GIE = 1;    GIE = 1;
-
+    GIE = 1;
   }
 }
 

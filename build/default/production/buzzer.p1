@@ -648,10 +648,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _buzzCountdown _ms ]
 "33
 [e = _GIE -> -> 1 `i `b ]
-[e = _GIE -> -> 1 `i `b ]
-"35
+"34
 }
 [e :U 844 ]
-"36
+"35
 [e :UE 843 ]
 }

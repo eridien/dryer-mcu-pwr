@@ -770,7 +770,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72
 [e :U 857 ]
 "73
-[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> -> 170 `i `uc ]
+[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _curSensorReading * -> -> -> 0 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> 8 `i `uc ]
 "74
 [e = *U + &U _i2cSendBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _curSensorReading * -> -> -> 0 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> -> 255 `i `ui `uc ]
 "75

@@ -70,7 +70,7 @@ void setSendBytes(void) {
        break;
 
     case REG_SENS:
-      i2cSendBytes[1] = 0xaa; // (curSensorReading[0] >> 8   );
+      i2cSendBytes[1] = (curSensorReading[0] >> 8   );
       i2cSendBytes[2] = (curSensorReading[0] &  0xff);
       i2cSendBytes[3] = (curSensorReading[1] >> 8   );
       i2cSendBytes[4] = (curSensorReading[1] &  0xff);

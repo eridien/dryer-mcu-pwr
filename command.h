@@ -10,7 +10,7 @@
 #define CMD_SET_HTR       3  // 4 bytes -- 0 to 1023
 #define CMD_SET_FAN       4  // 4 bytes -- 0 to 1023
 #define CMD_SET_FLAP      5  // 3 bytes -- 0: beads to 255: filament
-#define CMD_BEEP          6  // 4 bytes -- 0ms
+#define CMD_BEEP          6  // 4 bytes -- ms
 
 #define CMD_SET_OPTIONS0  10 // 32 bytes 
 #define CMD_SET_OPTIONS1  11

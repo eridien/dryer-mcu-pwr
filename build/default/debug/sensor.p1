@@ -629,7 +629,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6 sensor.c
 [v _curSensor `uc ~T0 @X0 1 e ]
 "7
-[v _sensDelaying `uc ~T0 @X0 1 e ]
+[v _sensDelaying `ui ~T0 @X0 1 e ]
 "9
 [v _curSensorReading `Vui ~T0 @X0 -> 2 `i e ]
 "10
@@ -674,7 +674,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [e = . . _ADCON0bits 1 1 -> -> 4 `i `uc ]
 "26
-[e = _sensDelaying -> -> 100 `i `uc ]
+[e = _sensDelaying -> -> 500 `i `ui ]
 "27
 [e = . . _ADCON0bits 0 1 -> -> 0 `i `uc ]
 "28
@@ -688,47 +688,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _chkSensors ]
 [f ]
 "33
-[e $ ! != -> _sensDelaying `i -> 0 `i 841  ]
+[e $ ! != _sensDelaying -> -> 0 `i `ui 841  ]
 {
 "34
-[e -- _sensDelaying -> -> 1 `i `uc ]
-"35
-[e $ ! == -> _sensDelaying `i -> 0 `i 842  ]
+[e $ ! == =- _sensDelaying -> -> 1 `i `ui -> -> 0 `i `ui 842  ]
 {
-"37
+"36
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-"38
+"37
 }
 [e :U 842 ]
-"39
+"38
 }
 [e $U 843  ]
 [e :U 841 ]
 [e $ ! ! != -> . . _ADCON0bits 0 1 `i -> 0 `i 844  ]
 {
-"41
+"40
 [v _reading `ui ~T0 @X0 1 a ]
 [e = _reading | << -> _ADRESH `ui -> 8 `i -> _ADRESL `ui ]
-"42
+"41
 [e = *U + &U _curSensorReading * -> _curSensor `ux -> -> # *U &U _curSensorReading `ui `ux _reading ]
-"43
+"42
 [e $ ! < _reading *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux 845  ]
 [e = *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux _reading ]
 [e :U 845 ]
-"44
+"43
 [e $ ! > _reading *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux 846  ]
 [e = *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux _reading ]
 [e :U 846 ]
-"46
+"45
 [e = _curSensor -> - -> 1 `i -> _curSensor `i `uc ]
-"47
+"46
 [e = . . _ADCON0bits 1 1 -> ? != -> _curSensor `i -> 0 `i : -> 2 `i -> 4 `i `uc ]
+"48
+[e = _sensDelaying -> -> 500 `i `ui ]
 "49
-[e = _sensDelaying -> -> 100 `i `uc ]
-"50
 }
 [e :U 844 ]
 [e :U 843 ]
-"51
+"50
 [e :UE 840 ]
 }

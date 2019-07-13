@@ -7,7 +7,7 @@
 #pragma config CLKOUTEN = OFF   // Clock Out Enable bit (CLKOUT function is disabled; i/o or oscillator function on OSC2)
 #pragma config CSWEN = ON       // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
 #pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
-#pragma config MCLRE = OFF      // Master Clear Enable bit (MCLR pin function is port defined function)
+#pragma config MCLRE = ON       // Master Clear Enable bit (MCLR pin function is reset)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config LPBOREN = OFF    // Low-Power BOR enable bit (ULPBOR disabled)
 #pragma config BOREN = ON       // Brown-out reset enable bits (Brown-out Reset Enabled, SBOREN bit is ignored)
@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
   cmdInit();
   
   // beep at wakeup
-  buzz(200); // 200 msec
+  buzz(20); // 20 msec
   
   // test pwm
   setDutyCycle(FPWM, 512); //set fan to 50%

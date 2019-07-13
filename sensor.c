@@ -3,8 +3,8 @@
 #include "pins.h"
 #include "sensor.h"
 
-uint8 curSensor;    // 0: SENSB_CHAN, 1: SENSH_CHAN
-uint8 sensDelaying; // ms countdown
+uint8  curSensor;    // 0: SENSB_CHAN, 1: SENSH_CHAN
+uint16 sensDelaying; // ms countdown
 
 volatile uint16 curSensorReading[2]; // in ADC counts
 volatile uint16 minReading[2] = {0xffff, 0xffff};
@@ -13,7 +13,7 @@ volatile uint16 maxReading[2] = {0, 0};
 void sensorInit(void) {
   ADCON1bits.ADFM   = 1;  // bits right-justified
   ADCON1bits.ADPREF = 0;  // ref voltage is VDD
-  ADCON1bits.ADCS   = 6;  // FOSC/64
+  ADCON1bits.ADCS   = 6;  // FOSC/64, 2us/bit, 25us conversion time
   ADACTbits.ADACT   = 0;  // no auto-conversion
   
   SENSH_TRIS = 1;
@@ -21,7 +21,7 @@ void sensorInit(void) {
   SENSH_ANS  = 1; // heater sensor pin analog input
   SENSB_ANS  = 1; // bottom sensor pin analog input
   
-  curSensor          = 0;          // start with bottom senstor
+  curSensor          = 0;          // start with bottom sensor
   ADCON0bits.CHS     = SENSB_CHAN; // starting channel select
   sensDelaying       = A2D_SETTLE_TIME; 
   ADCON0bits.GOnDONE = 0;          // no first conversion
@@ -31,8 +31,7 @@ void sensorInit(void) {
 // called from interrupt every 1 ms
 void chkSensors(void) {
   if(sensDelaying) {
-    sensDelaying--;
-    if(sensDelaying == 0) {
+    if(--sensDelaying == 0) {
       // sample delay is done, start conversion
       ADCON0bits.GOnDONE = 1; 
     }

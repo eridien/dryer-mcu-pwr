@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"19303 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+"19300 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
+[v _LATA0 `Vb ~T0 @X0 0 e@192 ]
+"19303
 [v _LATA1 `Vb ~T0 @X0 0 e@193 ]
-"19306
-[v _LATA2 `Vb ~T0 @X0 0 e@194 ]
 "19330
 [v _LATC5 `Vb ~T0 @X0 0 e@213 ]
 "19327
 [v _LATC4 `Vb ~T0 @X0 0 e@212 ]
+"21922
+[v _TRISA0 `Vb ~T0 @X0 0 e@144 ]
 "21925
 [v _TRISA1 `Vb ~T0 @X0 0 e@145 ]
-"21928
-[v _TRISA2 `Vb ~T0 @X0 0 e@146 ]
 "21952
 [v _TRISC5 `Vb ~T0 @X0 0 e@165 ]
 "21949
@@ -619,9 +619,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _motorOff ]
 [f ]
 "16
-[e = _LATA1 -> -> 0 `i `b ]
+[e = _LATA0 -> -> 0 `i `b ]
 "17
-[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATA1 -> -> 0 `i `b ]
 "18
 [e = _LATC5 -> -> 0 `i `b ]
 "19
@@ -637,9 +637,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _motorOffInt ]
 [f ]
 "24
-[e = _LATA1 -> -> 0 `i `b ]
+[e = _LATA0 -> -> 0 `i `b ]
 "25
-[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATA1 -> -> 0 `i `b ]
 "26
 [e = _LATC5 -> -> 0 `i `b ]
 "27
@@ -679,29 +679,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "40
 [e :U 846 ]
-[e = _LATA1 -> -> 1 `i `b ]
-[e = _LATA2 -> -> 0 `i `b ]
+[e = _LATA0 -> -> 1 `i `b ]
+[e = _LATA1 -> -> 0 `i `b ]
 [e = _LATC5 -> -> 0 `i `b ]
 [e = _LATC4 -> -> 0 `i `b ]
 [e $U 844  ]
 "41
 [e :U 847 ]
-[e = _LATA1 -> -> 0 `i `b ]
-[e = _LATA2 -> -> 1 `i `b ]
+[e = _LATA0 -> -> 0 `i `b ]
+[e = _LATA1 -> -> 1 `i `b ]
 [e = _LATC5 -> -> 0 `i `b ]
 [e = _LATC4 -> -> 0 `i `b ]
 [e $U 844  ]
 "42
 [e :U 848 ]
+[e = _LATA0 -> -> 0 `i `b ]
 [e = _LATA1 -> -> 0 `i `b ]
-[e = _LATA2 -> -> 0 `i `b ]
 [e = _LATC5 -> -> 1 `i `b ]
 [e = _LATC4 -> -> 0 `i `b ]
 [e $U 844  ]
 "43
 [e :U 849 ]
+[e = _LATA0 -> -> 0 `i `b ]
 [e = _LATA1 -> -> 0 `i `b ]
-[e = _LATA2 -> -> 0 `i `b ]
 [e = _LATC5 -> -> 0 `i `b ]
 [e = _LATC4 -> -> 1 `i `b ]
 [e $U 844  ]
@@ -736,9 +736,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [e ( _motorOff ..  ]
 "52
-[e = _TRISA1 -> -> 0 `i `b ]
+[e = _TRISA0 -> -> 0 `i `b ]
 "53
-[e = _TRISA2 -> -> 0 `i `b ]
+[e = _TRISA1 -> -> 0 `i `b ]
 "54
 [e = _TRISC5 -> -> 0 `i `b ]
 "55

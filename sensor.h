@@ -2,7 +2,7 @@
 #ifndef SENSOR_H
 #define	SENSOR_H
 
-#define A2D_SETTLE_TIME 100
+#define A2D_SETTLE_TIME 500 // ms
 #define SENSB 0
 #define SENSH 1
 

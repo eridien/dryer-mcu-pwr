@@ -32,13 +32,9 @@ void i2cInit(void) {
   SSP1CON1bits.SSPEN = 1;          // Enable the serial port
   SSP1IF = 0;                      // int flag
   SSP1IE = 1;                      // enable ints
-  
-  TRISA2 = 0;
-  LATA2  = 0;
 }
 
 void i2cInterrupt() {
-  LATA2  = 1;
   SSP1IF = 0;
   if(SSP1CON1bits.SSPOV) {
     SSP1CON1bits.SSPOV = 0;
@@ -90,6 +86,5 @@ void i2cInterrupt() {
       return;
     }
   }
-  LATA2 = 0;
   SSP1CON1bits.CKP = 1;   // release any clock stretching
 }
