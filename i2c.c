@@ -43,16 +43,10 @@ void i2cInterrupt() {
   }
   if(!SSP1STATbits.DA) {
     // address byte
-    if(!SSP1STATbits.BF)
-      dummy = 1;
     dummy = SSP1BUF;  // clear BF flag
-    if(SSP1STATbits.BF)
-      dummy = 2;
     i2cSendBytesPtr = 0;
     i2cRecvBytesPtr = 0;
     if(RdNotWrite) {
-      if(SSP1STATbits.BF)
-        dummy = 2;
       SSP1BUF = i2cSendBytes[i2cSendBytesPtr++];
       if(SSP1CON1bits.WCOL) {
         SSP1CON1bits.WCOL = 0;

@@ -34,6 +34,7 @@
 #define REG_MISSING_ERROR  4
 #define CMD_LEN_ERROR      5
 #define WCOL_ERROR         6
+#define INTERNAL_ERROR     7
 
 extern volatile bool  haveCommand;
 extern volatile uint8 curError;

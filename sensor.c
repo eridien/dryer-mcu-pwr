@@ -2,14 +2,17 @@
 #include "types.h"
 #include "pins.h"
 #include "sensor.h"
+#include "command.h"
 
 uint8  curSensor;    // 0: SENSB_CHAN, 1: SENSH_CHAN
 uint16 sensDelaying; // ms countdown
 
-volatile uint16 curSensorReading[2]; // in ADC counts
-volatile uint16 minReading[2] = {0xffff, 0xffff};
-volatile uint16 maxReading[2] = {0, 0};
-        
+uint16 curSensorReading[2][READINGS]; // last 5 in ADC counts
+uint8  sensorPtr = 0;
+uint16 minReading[2] = {0xffff, 0xffff};
+uint16 maxReading[2] = {0, 0};
+uint16 readings[READINGS]; // used only in getMedianSensorReading
+
 void sensorInit(void) {
   ADCON1bits.ADFM   = 1;  // bits right-justified
   ADCON1bits.ADPREF = 0;  // ref voltage is VDD
@@ -38,7 +41,12 @@ void chkSensors(void) {
   } else if(!ADCON0bits.GOnDONE) {
     // conversion done, get reading
     uint16 reading = ((uint16) ADRESH << 8) | ADRESL;
-    curSensorReading[curSensor] = reading;
+    
+    if(reading < 50) while(true);
+    
+    curSensorReading[curSensor][sensorPtr] = reading;
+    if(curSensor && ++sensorPtr == READINGS) sensorPtr = 0;
+    
     if(reading < minReading[curSensor]) minReading[curSensor] = reading;
     if(reading > maxReading[curSensor]) maxReading[curSensor] = reading;
 
@@ -47,4 +55,26 @@ void chkSensors(void) {
 
     sensDelaying = A2D_SETTLE_TIME;
   }
+}
+
+uint16 getMedianSensorReading(uint8 sensor) {
+  GIE = 0;
+  for(int i=0; i < READINGS; i++)
+    readings[i] = curSensorReading[sensor][i];
+  GIE = 1;
+  // bubble sort (quicksort requires recursion)
+  uint16 temp;
+  bool hadFlip = true;
+  while(hadFlip) {
+    hadFlip = false;
+    for(int i=0; i < READINGS-1; i++) {
+      if(readings[i] > readings[i+1]) {
+        temp = readings[i+1];
+        readings[i+1] = readings[i];
+        readings[i] = temp;
+        hadFlip = true;
+      }
+    }
+  }
+  return readings[READINGS/2];
 }

@@ -20,7 +20,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _clkInit `(v ~T0 @X0 0 ef ]
 "8 ./pwm.h
 [v _pwmInit `(v ~T0 @X0 0 ef ]
-"12 ./sensor.h
+"11 ./sensor.h
 [v _sensorInit `(v ~T0 @X0 0 ef ]
 "17 ./motor.h
 [v _motorInit `(v ~T0 @X0 0 ef ]
@@ -28,13 +28,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _buzzerInit `(v ~T0 @X0 0 ef ]
 "22 ./i2c.h
 [v _i2cInit `(v ~T0 @X0 0 ef ]
-"41 ./command.h
+"42 ./command.h
 [v _cmdInit `(v ~T0 @X0 0 ef ]
 "8 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
 "9 ./pwm.h
 [v _setDutyCycle `(v ~T0 @X0 0 ef2`uc`ui ]
-"42 ./command.h
+"43 ./command.h
 [v _eventLoop `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
@@ -711,37 +711,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [e ( _buzz (1 -> -> 20 `i `ui ]
 "63
-[e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 512 `i `ui ]
-"66
+[e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 1023 `i `ui ]
+"64
+[e ( _setDutyCycle (2 , -> -> 0 `i `uc -> -> 1023 `i `ui ]
+"67
 [e ( _eventLoop ..  ]
-"68
+"69
 [e ) -> 0 `i ]
 [e $UE 839  ]
-"69
+"70
 [e :UE 839 ]
 }
 [v $root$_globalInt `(v ~T0 @X0 0 e ]
-"72
+"73
 [v _globalInt `(v ~T1 @X0 1 ef ]
 {
 [e :U _globalInt ]
 [f ]
-"73
+"74
 [e $ ! _TMR0IF 841  ]
 {
-"74
-[e ( _clockInterrupt ..  ]
 "75
+[e ( _clockInterrupt ..  ]
+"76
 }
 [e :U 841 ]
-"76
+"77
 [e $ ! _SSP1IF 842  ]
 {
-"77
-[e ( _i2cInterrupt ..  ]
 "78
+[e ( _i2cInterrupt ..  ]
+"79
 }
 [e :U 842 ]
-"79
+"80
 [e :UE 840 ]
 }

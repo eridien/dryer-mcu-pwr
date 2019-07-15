@@ -48,6 +48,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
 "743
 [v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
+"19024
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f15323.h
 [; <" INDF0 equ 00h ;# ">
 "130
@@ -626,107 +628,200 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 01FEEh ;# ">
 "17909
 [; <" TOSH equ 01FEFh ;# ">
-"6 sensor.c
+"7 sensor.c
 [v _curSensor `uc ~T0 @X0 1 e ]
-"7
+"8
 [v _sensDelaying `ui ~T0 @X0 1 e ]
-"9
-[v _curSensorReading `Vui ~T0 @X0 -> 2 `i e ]
+[v F6229 `ui ~T0 @X0 -> 11 `i t ]
 "10
-[v _minReading `Vui ~T0 @X0 -> 2 `i e ]
+[v _curSensorReading `F6229 ~T0 @X0 -> 2 `i e ]
+"11
+[v _sensorPtr `uc ~T0 @X0 1 e ]
+[i _sensorPtr
+-> -> 0 `i `uc
+]
+"12
+[v _minReading `ui ~T0 @X0 -> 2 `i e ]
 [i _minReading
 :U ..
 -> 65535 `ui
 -> 65535 `ui
 ..
 ]
-"11
-[v _maxReading `Vui ~T0 @X0 -> 2 `i e ]
+"13
+[v _maxReading `ui ~T0 @X0 -> 2 `i e ]
 [i _maxReading
 :U ..
 -> -> 0 `i `ui
 -> -> 0 `i `ui
 ..
 ]
-"13
+"14
+[v _readings `ui ~T0 @X0 -> 11 `i e ]
+"16
 [v _sensorInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _sensorInit ]
 [f ]
-"14
-[e = . . _ADCON1bits 0 6 -> -> 1 `i `uc ]
-"15
-[e = . . _ADCON1bits 1 0 -> -> 0 `i `uc ]
-"16
-[e = . . _ADCON1bits 1 2 -> -> 6 `i `uc ]
 "17
-[e = . . _ADACTbits 1 0 -> -> 0 `i `uc ]
+[e = . . _ADCON1bits 0 6 -> -> 1 `i `uc ]
+"18
+[e = . . _ADCON1bits 1 0 -> -> 0 `i `uc ]
 "19
-[e = _TRISA2 -> -> 1 `i `b ]
+[e = . . _ADCON1bits 1 2 -> -> 6 `i `uc ]
 "20
-[e = _TRISA4 -> -> 1 `i `b ]
-"21
-[e = . . _ANSELAbits 0 2 -> -> 1 `i `uc ]
+[e = . . _ADACTbits 1 0 -> -> 0 `i `uc ]
 "22
-[e = . . _ANSELAbits 0 4 -> -> 1 `i `uc ]
+[e = _TRISA2 -> -> 1 `i `b ]
+"23
+[e = _TRISA4 -> -> 1 `i `b ]
 "24
-[e = _curSensor -> -> 0 `i `uc ]
+[e = . . _ANSELAbits 0 2 -> -> 1 `i `uc ]
 "25
-[e = . . _ADCON0bits 1 1 -> -> 4 `i `uc ]
-"26
-[e = _sensDelaying -> -> 500 `i `ui ]
+[e = . . _ANSELAbits 0 4 -> -> 1 `i `uc ]
 "27
-[e = . . _ADCON0bits 0 1 -> -> 0 `i `uc ]
+[e = _curSensor -> -> 0 `i `uc ]
 "28
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[e = . . _ADCON0bits 1 1 -> -> 4 `i `uc ]
 "29
+[e = _sensDelaying -> -> 100 `i `ui ]
+"30
+[e = . . _ADCON0bits 0 1 -> -> 0 `i `uc ]
+"31
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"32
 [e :UE 839 ]
 }
-"32
+"35
 [v _chkSensors `(v ~T0 @X0 1 ef ]
 {
 [e :U _chkSensors ]
 [f ]
-"33
+"36
 [e $ ! != _sensDelaying -> -> 0 `i `ui 841  ]
 {
-"34
+"37
 [e $ ! == =- _sensDelaying -> -> 1 `i `ui -> -> 0 `i `ui 842  ]
 {
-"36
+"39
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-"37
+"40
 }
 [e :U 842 ]
-"38
+"41
 }
 [e $U 843  ]
 [e :U 841 ]
 [e $ ! ! != -> . . _ADCON0bits 0 1 `i -> 0 `i 844  ]
 {
-"40
+"43
 [v _reading `ui ~T0 @X0 1 a ]
 [e = _reading | << -> _ADRESH `ui -> 8 `i -> _ADRESL `ui ]
-"41
-[e = *U + &U _curSensorReading * -> _curSensor `ux -> -> # *U &U _curSensorReading `ui `ux _reading ]
-"42
-[e $ ! < _reading *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux 845  ]
-[e = *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux _reading ]
-[e :U 845 ]
-"43
-[e $ ! > _reading *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux 846  ]
-[e = *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux _reading ]
-[e :U 846 ]
 "45
-[e = _curSensor -> - -> 1 `i -> _curSensor `i `uc ]
-"46
-[e = . . _ADCON0bits 1 1 -> ? != -> _curSensor `i -> 0 `i : -> 2 `i -> 4 `i `uc ]
+[e $ ! < _reading -> -> 50 `i `ui 845  ]
+[e :U 847 ]
+[e :U 846 ]
+[e $U 847  ]
+[e :U 848 ]
+[e :U 845 ]
+"47
+[e = *U + &U *U + &U _curSensorReading * -> _curSensor `ux -> * -> # *U &U *U &U _curSensorReading `ui -> -> 11 `i `ui `ux * -> _sensorPtr `ux -> -> # *U &U *U + &U _curSensorReading * -> _curSensor `ux -> * -> # *U &U *U &U _curSensorReading `ui -> -> 11 `i `ui `ux `ui `ux _reading ]
 "48
-[e = _sensDelaying -> -> 500 `i `ui ]
-"49
+[e $ ! && != -> _curSensor `i -> 0 `i == -> =+ _sensorPtr -> -> 1 `i `uc `i -> 11 `i 849  ]
+[e = _sensorPtr -> -> 0 `i `uc ]
+[e :U 849 ]
+"50
+[e $ ! < _reading *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux 850  ]
+[e = *U + &U _minReading * -> _curSensor `ux -> -> # *U &U _minReading `ui `ux _reading ]
+[e :U 850 ]
+"51
+[e $ ! > _reading *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux 851  ]
+[e = *U + &U _maxReading * -> _curSensor `ux -> -> # *U &U _maxReading `ui `ux _reading ]
+[e :U 851 ]
+"53
+[e = _curSensor -> - -> 1 `i -> _curSensor `i `uc ]
+"54
+[e = . . _ADCON0bits 1 1 -> ? != -> _curSensor `i -> 0 `i : -> 2 `i -> 4 `i `uc ]
+"56
+[e = _sensDelaying -> -> 100 `i `ui ]
+"57
 }
 [e :U 844 ]
 [e :U 843 ]
-"50
+"58
 [e :UE 840 ]
+}
+"60
+[v _getMedianSensorReading `(ui ~T0 @X0 1 ef1`uc ]
+{
+[e :U _getMedianSensorReading ]
+[v _sensor `uc ~T0 @X0 1 r1 ]
+[f ]
+"61
+[e = _GIE -> -> 0 `i `b ]
+"62
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 11 `i 853  ]
+[e $U 854  ]
+[e :U 853 ]
+"63
+[e = *U + &U _readings * -> -> _i `ui `ux -> -> # *U &U _readings `ui `ux *U + &U *U + &U _curSensorReading * -> _sensor `ux -> * -> # *U &U *U &U _curSensorReading `ui -> -> 11 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _curSensorReading * -> _sensor `ux -> * -> # *U &U *U &U _curSensorReading `ui -> -> 11 `i `ui `ux `ui `ux ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 11 `i 853  ]
+[e :U 854 ]
+}
+"64
+[e = _GIE -> -> 1 `i `b ]
+"66
+[v _temp `ui ~T0 @X0 1 a ]
+"67
+[v _hadFlip `uc ~T0 @X0 1 a ]
+[e = _hadFlip -> -> 1 `i `uc ]
+"68
+[e $U 856  ]
+[e :U 857 ]
+{
+"69
+[e = _hadFlip -> -> 0 `i `uc ]
+"70
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i - -> 11 `i -> 1 `i 859  ]
+[e $U 860  ]
+[e :U 859 ]
+{
+"71
+[e $ ! > *U + &U _readings * -> -> _i `ui `ux -> -> # *U &U _readings `ui `ux *U + &U _readings * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _readings `ui `ux 862  ]
+{
+"72
+[e = _temp *U + &U _readings * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _readings `ui `ux ]
+"73
+[e = *U + &U _readings * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _readings `ui `ux *U + &U _readings * -> -> _i `ui `ux -> -> # *U &U _readings `ui `ux ]
+"74
+[e = *U + &U _readings * -> -> _i `ui `ux -> -> # *U &U _readings `ui `ux _temp ]
+"75
+[e = _hadFlip -> -> 1 `i `uc ]
+"76
+}
+[e :U 862 ]
+"77
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i - -> 11 `i -> 1 `i 859  ]
+[e :U 860 ]
+}
+"78
+}
+[e :U 856 ]
+"68
+[e $ != -> _hadFlip `i -> 0 `i 857  ]
+[e :U 858 ]
+"79
+[e ) *U + &U _readings * -> -> / -> 11 `i -> 2 `i `ui `ux -> -> # *U &U _readings `ui `ux ]
+[e $UE 852  ]
+"80
+[e :UE 852 ]
 }

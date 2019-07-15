@@ -38,6 +38,8 @@ void setErrorInt(uint8 err) {
 }
 
 void setSendBytes(void) {
+  uint16 medVal[2];
+  
   GIE = 0;
   i2cSendBytes[0] = curRegister;
   
@@ -70,10 +72,12 @@ void setSendBytes(void) {
        break;
 
     case REG_SENS:
-      i2cSendBytes[1] = (curSensorReading[0] >> 8   );
-      i2cSendBytes[2] = (curSensorReading[0] &  0xff);
-      i2cSendBytes[3] = (curSensorReading[1] >> 8   );
-      i2cSendBytes[4] = (curSensorReading[1] &  0xff);
+      medVal[SENSB] = getMedianSensorReading(SENSB);
+      medVal[SENSH] = getMedianSensorReading(SENSH);
+      i2cSendBytes[1] = (medVal[SENSB] >> 8   );
+      i2cSendBytes[2] = (medVal[SENSB] &  0xff);
+      i2cSendBytes[3] = (medVal[SENSH] >> 8   );
+      i2cSendBytes[4] = (medVal[SENSH] &  0xff);
       break;
       
     default: 
@@ -87,6 +91,7 @@ void handleDelayedError() {
   if(delayedError != curError)
     buzz(2000); // 2 secs
   curError = delayedError;
+  delayedError = 0;
   curRegister = REG_ERROR;
   setSendBytes();
 }
@@ -168,9 +173,8 @@ void eventLoop (void) {
           break;
 
         case CMD_SET_HTR:
-          if(cmdLenIs(4)) {
+          if(cmdLenIs(4))
             setDutyCycle(HPWM, ((uint16) i2cRecvBytes[2] << 8) | i2cRecvBytes[3]);
-          }
           break;
 
         case CMD_SET_FAN:

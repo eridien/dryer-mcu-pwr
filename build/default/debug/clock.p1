@@ -41,7 +41,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _T0EN `Vb ~T0 @X0 0 e@11511 ]
 "6 ./buzzer.h
 [v _chkBuzzer `(v ~T0 @X0 0 ef ]
-"13 ./sensor.h
+"12 ./sensor.h
 [v _chkSensors `(v ~T0 @X0 0 ef ]
 "18 ./motor.h
 [v _chkMotor `(v ~T0 @X0 0 ef ]

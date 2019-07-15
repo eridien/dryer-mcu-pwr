@@ -74,10 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PWM3POL `Vb ~T0 @X0 0 e@6324 ]
 "20779
 [v _PWM4POL `Vb ~T0 @X0 0 e@6356 ]
-"20734
-[v _PWM3OUT `Vb ~T0 @X0 0 e@6325 ]
-"20776
-[v _PWM4OUT `Vb ~T0 @X0 0 e@6357 ]
 "16638
 [v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
 "16682
@@ -677,7 +673,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _pwm `i -> 0 `i 840  ]
 {
 "12
-[e = _PWM3DCH -> -> > _count -> -> 2 `i `ui `i `uc ]
+[e = _PWM3DCH -> >> _count -> 2 `i `uc ]
 "13
 [e = _PWM3DCL -> << & _count -> -> 3 `i `ui -> 6 `i `uc ]
 "14
@@ -686,7 +682,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 840 ]
 {
 "16
-[e = _PWM4DCH -> -> > _count -> -> 2 `i `ui `i `uc ]
+[e = _PWM4DCH -> >> _count -> 2 `i `uc ]
 "17
 [e = _PWM4DCL -> << & _count -> -> 3 `i `ui -> 6 `i `uc ]
 "18
@@ -717,31 +713,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [e = . . _T2HLTbits 0 0 -> -> 0 `i `uc ]
 "34
-[e = _TRISC2 -> -> 1 `i `b ]
+[e = _TRISC2 -> -> 0 `i `b ]
 "35
-[e = _TRISC3 -> -> 1 `i `b ]
+[e = _TRISC3 -> -> 0 `i `b ]
 "37
 [e = _PWM3POL -> -> 0 `i `b ]
 "38
 [e = _PWM4POL -> -> 0 `i `b ]
 "40
-[e = _PWM3OUT -> -> 0 `i `b ]
-"41
-[e = _PWM4OUT -> -> 0 `i `b ]
-"43
 [e ( _setDutyCycle (2 , -> -> 1 `i `uc -> -> 0 `i `ui ]
-"44
-[e ( _setDutyCycle (2 , -> -> 0 `i `uc -> -> 0 `i `ui ]
-"46
+"42
 [e = _RC2PPS -> -> 11 `i `uc ]
-"47
+"43
 [e = _RC3PPS -> -> 12 `i `uc ]
-"49
+"45
 [e = _PWM3EN -> -> 1 `i `b ]
-"50
+"46
 [e = _PWM4EN -> -> 1 `i `b ]
-"52
+"48
 [e = _T2ON -> -> 1 `i `b ]
-"53
+"49
 [e :UE 842 ]
 }

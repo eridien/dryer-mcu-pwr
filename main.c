@@ -57,10 +57,12 @@ int main(int argc, char** argv) {
   cmdInit();
   
   // beep at wakeup
-  buzz(20); // 20 msec
+  buzz(100); // 20 msec
   
   // test pwm
-  setDutyCycle(FPWM, 512); //set fan to 50%
+  // at grill: 128:43,  256:60, 320:90, 384:144
+  setDutyCycle(FPWM, 1023); //set fan to 100%
+  setDutyCycle(HPWM, 320); //set htr to 100%
           
   // foreground code loop, never returns
   eventLoop();

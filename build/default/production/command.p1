@@ -23,8 +23,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _NVMADRL `Vuc ~T0 @X0 0 e@2074 ]
 "9377
 [v _NVMDATL `Vuc ~T0 @X0 0 e@2076 ]
-"10 ./sensor.h
-[v _curSensorReading `Vui ~T0 @X0 -> 0 `x e ]
+"14 ./sensor.h
+[v _getMedianSensorReading `(ui ~T0 @X0 0 ef1`uc ]
 "8 ./buzzer.h
 [v _buzz `(v ~T0 @X0 0 ef1`ui ]
 "17 ./i2c.h
@@ -693,19 +693,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _setSendBytes ]
 [f ]
 "41
+[v _medVal `ui ~T0 @X0 -> 2 `i a ]
+"43
 [e = _GIE -> -> 0 `i `b ]
-"42
-[e = *U + &U _i2cSendBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curRegister ]
 "44
+[e = *U + &U _i2cSendBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curRegister ]
+"46
 [e $ ! && >= -> _curRegister `i -> 30 `i <= -> _curRegister `i -> 33 `i 844  ]
 {
-"45
-[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
-"46
-[e = _NVMADRH -> -> 7 `i `uc ]
 "47
-[e = _NVMADRL -> + -> 128 `i * - -> _curRegister `i -> 30 `i -> 32 `i `uc ]
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
 "48
+[e = _NVMADRH -> -> 7 `i `uc ]
+"49
+[e = _NVMADRL -> + -> 128 `i * - -> _curRegister `i -> 30 `i -> 32 `i `uc ]
+"50
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -713,35 +715,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 846  ]
 [e :U 845 ]
 {
-"49
-[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
-"50
-[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
 "51
+[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
+"52
+[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
+"53
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 30 `i 845  ]
 [e :U 846 ]
 }
-"52
+"54
 }
 [e $U 848  ]
-"54
+"56
 [e :U 844 ]
 [e $U 850  ]
 {
-"55
+"57
 [e :U 851 ]
 [e $U 849  ]
-"57
-[e :U 852 ]
 "59
-[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
-"60
-[e = _NVMADRH -> -> 1 `i `uc ]
+[e :U 852 ]
 "61
-[e = _NVMADRL -> -> 0 `i `uc ]
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
 "62
+[e = _NVMADRH -> -> 1 `i `uc ]
+"63
+[e = _NVMADRL -> -> 0 `i `uc ]
+"64
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -749,41 +751,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 854  ]
 [e :U 853 ]
 {
-"63
-[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
-"64
-[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
 "65
+[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
+"66
+[e = *U + &U _i2cSendBytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _NVMDATL ]
+"67
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 9 `i 853  ]
 [e :U 854 ]
 }
-"66
-[e $U 849  ]
 "68
-[e :U 856 ]
-"69
-[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curError ]
+[e $U 849  ]
 "70
-[e $U 849  ]
+[e :U 856 ]
+"71
+[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux _curError ]
 "72
-[e :U 857 ]
-"73
-[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _curSensorReading * -> -> -> 0 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> 8 `i `uc ]
-"74
-[e = *U + &U _i2cSendBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _curSensorReading * -> -> -> 0 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> -> 255 `i `ui `uc ]
-"75
-[e = *U + &U _i2cSendBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _curSensorReading * -> -> -> 1 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> 8 `i `uc ]
-"76
-[e = *U + &U _i2cSendBytes * -> -> -> 4 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _curSensorReading * -> -> -> 1 `i `ui `ux -> -> # *U &U _curSensorReading `ui `ux -> -> 255 `i `ui `uc ]
-"77
 [e $U 849  ]
+"74
+[e :U 857 ]
+"75
+[e = *U + &U _medVal * -> -> -> 0 `i `ui `ux -> -> # *U &U _medVal `ui `ux ( _getMedianSensorReading (1 -> -> 0 `i `uc ]
+"76
+[e = *U + &U _medVal * -> -> -> 1 `i `ui `ux -> -> # *U &U _medVal `ui `ux ( _getMedianSensorReading (1 -> -> 1 `i `uc ]
+"77
+[e = *U + &U _i2cSendBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _medVal * -> -> -> 0 `i `ui `ux -> -> # *U &U _medVal `ui `ux -> 8 `i `uc ]
+"78
+[e = *U + &U _i2cSendBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _medVal * -> -> -> 0 `i `ui `ux -> -> # *U &U _medVal `ui `ux -> -> 255 `i `ui `uc ]
 "79
-[e :U 858 ]
+[e = *U + &U _i2cSendBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> >> *U + &U _medVal * -> -> -> 1 `i `ui `ux -> -> # *U &U _medVal `ui `ux -> 8 `i `uc ]
 "80
-[e ( _setError (1 -> -> 4 `i `uc ]
+[e = *U + &U _i2cSendBytes * -> -> -> 4 `i `ui `ux -> -> # *U &U _i2cSendBytes `ui `ux -> & *U + &U _medVal * -> -> -> 1 `i `ui `ux -> -> # *U &U _medVal `ui `ux -> -> 255 `i `ui `uc ]
 "81
+[e $U 849  ]
+"83
+[e :U 858 ]
+"84
+[e ( _setError (1 -> -> 4 `i `uc ]
+"85
 }
 [e $U 849  ]
 [e :U 850 ]
@@ -794,121 +800,123 @@ Version 4.0 HI-TECH Software Intermediate Code
  858 ]
 [e :U 849 ]
 [e :U 848 ]
-"82
+"86
 [e = _GIE -> -> 1 `i `b ]
-"83
+"87
 [e :UE 843 ]
 }
-"85
+"89
 [v _handleDelayedError `(v ~T0 @X0 1 ef ]
 {
 [e :U _handleDelayedError ]
 [f ]
-"86
+"90
 [e ( _resetBoard ..  ]
-"87
+"91
 [e $ ! != -> _delayedError `i -> _curError `i 860  ]
-"88
+"92
 [e ( _buzz (1 -> -> 2000 `i `ui ]
 [e :U 860 ]
-"89
+"93
 [e = _curError _delayedError ]
-"90
+"94
+[e = _delayedError -> -> 0 `i `uc ]
+"95
 [e = _curRegister -> -> 21 `i `uc ]
-"91
+"96
 [e ( _setSendBytes ..  ]
-"92
+"97
 [e :UE 859 ]
 }
-"94
+"99
 [v _cmdLen `uc ~T0 @X0 1 e ]
-"96
+"101
 [v _cmdLenIs `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _cmdLenIs ]
 [v _len `uc ~T0 @X0 1 r1 ]
 [f ]
-"97
+"102
 [e $ ! != -> _cmdLen `i -> _len `i 862  ]
 {
-"98
+"103
 [e ( _setError (1 -> -> 5 `i `uc ]
-"99
+"104
 [e ) -> -> 0 `i `uc ]
 [e $UE 861  ]
-"100
+"105
 }
 [e :U 862 ]
-"101
+"106
 [e ) -> -> 1 `i `uc ]
 [e $UE 861  ]
-"102
+"107
 [e :UE 861 ]
 }
-"105
+"110
 [v _eventLoop `(v ~T0 @X0 1 ef ]
 {
 [e :U _eventLoop ]
 [f ]
-"106
+"111
 [e :U 865 ]
 {
-"107
+"112
 [e $ ! != -> _delayedError `i -> 0 `i 867  ]
 [e ( _handleDelayedError ..  ]
 [e $U 868  ]
-"109
+"114
 [e :U 867 ]
 [e $ ! != -> _haveCommand `i -> 0 `i 869  ]
 {
-"110
+"115
 [e = _cmdLen *U + &U _i2cRecvBytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
-"111
+"116
 [v _cmdByte `uc ~T0 @X0 1 a ]
 [e = _cmdByte *U + &U _i2cRecvBytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
-"113
+"118
 [e $ ! && >= -> _cmdByte `i -> 10 `i <= -> _cmdByte `i -> 13 `i 870  ]
 {
-"114
+"119
 [e $ ! != -> ( _cmdLenIs (1 -> + -> 2 `i -> 30 `i `uc `i -> 0 `i 871  ]
 {
-"115
+"120
 [v _cmdBufIdx `uc ~T0 @X0 1 a ]
 [e = _cmdBufIdx -> -> 2 `i `uc ]
-"116
+"121
 [v _flashAddr `ui ~T0 @X0 1 a ]
 [e = _flashAddr -> + -> 1920 `i * - -> _cmdByte `i -> 10 `i -> 32 `i `ui ]
-"118
+"123
 [e $U 872  ]
 [e :U 873 ]
 {
-"120
+"125
 [e = _NVMADRH -> >> _flashAddr -> 8 `i `uc ]
-"121
-[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
-"122
-[e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
-"123
-[e = . . _NVMCON1bits 0 4 -> -> 1 `i `uc ]
-"124
-[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
 "126
-[e = _GIE -> -> 0 `i `b ]
+[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
 "127
-[e = _NVMCON2 -> -> 85 `i `uc ]
-"128
-[e = _NVMCON2 -> -> 170 `i `uc ]
-"129
-[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
-"130
-[e = _GIE -> -> 1 `i `b ]
-"131
-[e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
-"134
-[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
-"135
 [e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
-"137
+"128
+[e = . . _NVMCON1bits 0 4 -> -> 1 `i `uc ]
+"129
+[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
+"131
+[e = _GIE -> -> 0 `i `b ]
+"132
+[e = _NVMCON2 -> -> 85 `i `uc ]
+"133
+[e = _NVMCON2 -> -> 170 `i `uc ]
+"134
+[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
+"135
+[e = _GIE -> -> 1 `i `b ]
+"136
+[e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
+"139
+[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
+"140
+[e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
+"142
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
@@ -916,126 +924,123 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 876  ]
 [e :U 875 ]
 {
-"138
+"143
 [e = . . _NVMCON1bits 0 5 -> -> < -> _j `i - -> 30 `i -> 1 `i `i `uc ]
-"139
-[e = _NVMADRH -> >> _flashAddr -> 8 `i `uc ]
-"140
-[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
-"141
-[e = _NVMDATH -> -> 0 `i `uc ]
-"142
-[e = _NVMDATL *U + &U _i2cRecvBytes * -> ++ _cmdBufIdx -> -> 1 `i `uc `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
 "144
-[e = _GIE -> -> 0 `i `b ]
+[e = _NVMADRH -> >> _flashAddr -> 8 `i `uc ]
 "145
-[e = _NVMCON2 -> -> 85 `i `uc ]
+[e = _NVMADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
 "146
-[e = _NVMCON2 -> -> 170 `i `uc ]
+[e = _NVMDATH -> -> 0 `i `uc ]
 "147
-[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
-"148
-[e = _GIE -> -> 1 `i `b ]
+[e = _NVMDATL *U + &U _i2cRecvBytes * -> ++ _cmdBufIdx -> -> 1 `i `uc `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
 "149
+[e = _GIE -> -> 0 `i `b ]
+"150
+[e = _NVMCON2 -> -> 85 `i `uc ]
+"151
+[e = _NVMCON2 -> -> 170 `i `uc ]
+"152
+[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
+"153
+[e = _GIE -> -> 1 `i `b ]
+"154
 }
 [e ; ++ _j -> -> 1 `i `uc ++ _flashAddr -> -> 1 `i `ui ]
 [e $ < -> _j `i -> 30 `i 875  ]
 [e :U 876 ]
 }
-"151
+"156
 [e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
-"152
+"157
 }
 [e :U 872 ]
-"118
+"123
 [e $ < -> _cmdBufIdx `i + -> 2 `i -> 30 `i 873  ]
 [e :U 874 ]
-"153
+"158
 }
 [e :U 871 ]
-"155
+"160
 }
 [e $U 878  ]
 [e :U 870 ]
 [e $U 880  ]
 {
-"156
+"161
 [e :U 881 ]
-"157
+"162
 [e $ ! != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i 882  ]
 {
-"158
+"163
 [e = _curRegister -> -> 0 `i `uc ]
-"159
+"164
 [e = _cmdByte -> -> 0 `i `uc ]
-"160
+"165
 }
 [e :U 882 ]
-"161
+"166
 [e $U 879  ]
-"163
+"168
 [e :U 883 ]
-"164
+"169
 [e $ ! != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i 884  ]
 {
-"165
+"170
 [e ( _resetBoard ..  ]
-"166
+"171
 [e = _cmdByte -> -> 0 `i `uc ]
-"167
+"172
 }
 [e :U 884 ]
-"168
-[e $U 879  ]
-"170
-[e :U 885 ]
-"171
-[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 886  ]
-{
-"172
-[e ( _setDutyCycle (2 , -> -> 0 `i `uc | << -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui -> 8 `i -> *U + &U _i2cRecvBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
 "173
-}
-[e :U 886 ]
-"174
 [e $U 879  ]
+"175
+[e :U 885 ]
 "176
-[e :U 887 ]
+[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 886  ]
 "177
-[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 888  ]
+[e ( _setDutyCycle (2 , -> -> 0 `i `uc | << -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui -> 8 `i -> *U + &U _i2cRecvBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
+[e :U 886 ]
 "178
+[e $U 879  ]
+"180
+[e :U 887 ]
+"181
+[e $ ! != -> ( _cmdLenIs (1 -> -> 4 `i `uc `i -> 0 `i 888  ]
+"182
 [e ( _setDutyCycle (2 , -> -> 1 `i `uc | << -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui -> 8 `i -> *U + &U _i2cRecvBytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
 [e :U 888 ]
-"179
-[e $U 879  ]
-"181
-[e :U 889 ]
-"182
-[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 890  ]
 "183
+[e $U 879  ]
+"185
+[e :U 889 ]
+"186
+[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 890  ]
+"187
 [e ( _setFlapPos (1 *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux ]
 [e :U 890 ]
-"184
-[e $U 879  ]
-"186
-[e :U 891 ]
-"187
-[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 892  ]
 "188
+[e $U 879  ]
+"190
+[e :U 891 ]
+"191
+[e $ ! != -> ( _cmdLenIs (1 -> -> 3 `i `uc `i -> 0 `i 892  ]
+"192
 [e ( _buzz (1 -> *U + &U _i2cRecvBytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _i2cRecvBytes `ui `ux `ui ]
 [e :U 892 ]
-"189
-[e $U 879  ]
-"191
-[e :U 893 ]
 "193
+[e $U 879  ]
+"195
+[e :U 893 ]
+"197
 [e $ ! && != -> ( _cmdLenIs (1 -> -> 2 `i `uc `i -> 0 `i != -> _curRegister `i -> 21 `i 894  ]
-"194
+"198
 [e = _curRegister _cmdByte ]
 [e :U 894 ]
-"195
+"199
 [e $U 879  ]
-"196
+"200
 }
 [e $U 879  ]
 [e :U 880 ]
@@ -1048,19 +1053,19 @@ Version 4.0 HI-TECH Software Intermediate Code
  893 ]
 [e :U 879 ]
 [e :U 878 ]
-"197
+"201
 [e ( _setSendBytes ..  ]
-"198
+"202
 [e = _haveCommand -> -> 0 `i `uc ]
-"199
+"203
 }
 [e :U 869 ]
 [e :U 868 ]
-"200
+"204
 }
 [e :U 864 ]
 [e $U 865  ]
 [e :U 866 ]
-"201
+"205
 [e :UE 863 ]
 }
